@@ -1,0 +1,449 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+KidsLearn 隐私政策 / 支持页 生成器
+
+设计要点
+--------
+1. 站点结构：根目录 = 英文版（ASC「隐私政策网址」字段只能填一个，必须是英文，
+   审核员在任何网络环境下打开都能读懂）；各语言位于 /{lang}/ 子目录。
+2. 语言扩展：往 CONTENT 里加一个语种即可自动生成页面，App 侧在
+   AppLanguage.privacyPath 里登记该语种目录名，未登记的语种自动回落英文。
+3. 大陆站点剥离：App 只需改 AppLinks.siteBaseURL 一个常量，子路径保持不变。
+4. 繁体由 opencc 从简体自动转换（pip install opencc-python-reimplemented）。
+
+用法：python3 build_pages.py
+"""
+import os
+import re
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SITE = "https://4gk5msrpwv-cpu.github.io/privacy-pages"
+EFFECTIVE = "2026-09-10"
+DEV = "Frank Zhou"
+MAIL = "fathyzhou@qq.com"
+
+LANGS = ["en", "zh-Hans", "zh-Hant", "ja"]          # 已生成页面的语种
+CANON = {l: ("" if l == "en" else "/" + l) for l in LANGS}   # 各语种路径
+
+SWITCH_LABEL = {
+    "en": "English", "zh-Hans": "简体中文", "zh-Hant": "繁體中文", "ja": "日本語",
+}
+
+# ---------------------------------------------------------------------------
+# 内容
+# ---------------------------------------------------------------------------
+CONTENT = {}
+
+CONTENT["en"] = {
+    "html_lang": "en",
+    "title": "KidsLearn Privacy Policy & Support",
+    "desc": "KidsLearn privacy policy and support: we collect no personal information; all data stays in your own iCloud.",
+    "h1": "🎓 KidsLearn Privacy Policy & Support",
+    "meta_line": "Effective Date: {d} ｜ Developer: {dev} ｜ Contact: {mail}",
+    "nav": ["Privacy Policy", "Support & FAQ"],
+    "nav_id": ["privacy", "support"],
+    "summary": "<b>In short:</b> KidsLearn <b>does not collect any personal information</b>. There is no account system, no server and no third-party analytics or advertising SDK. Timetables, homework, habits, reminders and points you enter are <b>stored only in your own private iCloud database</b> (Apple CloudKit); the developer cannot read or export them. A <b>Child Device Lock (PIN)</b> is provided as a parental control, and all child-related content is created and managed by a parent.",
+    "privacy_title": "Privacy Policy",
+    "sections": [
+        ("1. Overview", [
+            ("p", "KidsLearn is a study-management tool for <b>parents</b>, offering timetables, homework tracking, habit check-ins, reminders and a points/rewards system. It is developed by an independent developer ({dev}) and has <b>no self-hosted server and no backend database</b>. This policy explains how we handle — in fact, do not handle — your information."),
+        ]),
+        ("2. What We Collect: Nothing", [
+            ("p", "KidsLearn <b>does not collect any personal information</b>. Specifically:"),
+            ("ul", [
+                "<b>No sign-up, no login.</b> We do not request or receive your name, email, phone number, contacts, location, photos or any identifier.",
+                "<b>Your data stays in your own iCloud.</b> Timetables, homework, habits, reminders, points and rewards you create are stored in the private iCloud database of your own Apple ID (Apple CloudKit, container <code>iCloud.com.frankzhou.KidLearn</code>). The data belongs to you and is held by Apple; <b>the developer cannot access, read or export it</b>.",
+                "<b>Family Sharing &amp; child spaces.</b> Built on Apple CloudKit CKShare. Data is shared only with Apple IDs you explicitly invite (normally family members); you control and can revoke sharing at any time.",
+            ]),
+            ("p", "<b>Device capabilities and system permissions:</b>"),
+            ("ul", [
+                "<b>Notifications</b> — used solely to deliver the study reminders you set yourself; no advertising or marketing content. \"Remote notifications\" are used only as a <b>silent trigger for iCloud synchronisation</b> and never display a visible alert.",
+                "<b>Photos (system photo picker)</b> — the homework \"scan text (OCR)\" feature picks an image through Apple's system photo picker (PhotosPicker). The app receives <b>only the single image you select</b>, cannot browse or access the rest of your library, and <b>requires no photo-library permission</b>. Recognition runs <b>entirely on device</b> via Apple's Vision framework; neither the image nor the result is <b>ever uploaded</b>, and the original image is not retained. <b>The app does not use the camera and does not request camera permission.</b>",
+                "<b>Face ID / Touch ID / device passcode</b> — used only to authenticate on this device when a parent changes or resets the Child Device Lock PIN, or turns child mode off. Authentication is performed by iOS; <b>the app never receives, reads or stores any biometric data</b>.",
+                "<b>Pasteboard</b> — read once, only when you actively tap \"Paste\", to build a homework list. The text is processed <b>on device</b>; it is <b>never uploaded or retained</b>. The app does not access the pasteboard at any other time.",
+                "<b>Permissions we never request</b> — no location, contacts, calendars, reminders, microphone, camera or App Tracking authorisation. Apart from the items above, the app declares no other permissions.",
+            ]),
+        ]),
+        ("3. Third Parties, Tracking and Advertising: None", [
+            ("ul", [
+                "<b>No third-party code at all</b> — the project depends on no Swift Package, no CocoaPods and no third-party library. There is no advertising SDK, no analytics SDK (no Firebase or similar), no crash-reporting, attribution or push-marketing component.",
+                "<b>No tracking</b> — no IDFA, no App Tracking Transparency prompt, no cross-app or cross-site tracking, no tracking cookies, device fingerprinting or local identifiers.",
+                "<b>We never sell, share or trade user data</b>, and we do not engage in any form of data monetisation. No data is used for advertising or user profiling.",
+                "<b>Every network request goes to Apple services only</b> — iCloud (CloudKit) synchronisation and App Store In-App Purchase (StoreKit). Both are governed by Apple's own privacy policy — see <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Apple Privacy Policy</a>. (The in-app \"Privacy Policy\" and \"Support\" entries open in a system in-app browser. The page is rendered by Safari's engine in a separate process; the app cannot read the page content, cookies or browsing history, and injects no scripts.)",
+            ]),
+        ]),
+        ("4. Children's Privacy", [
+            ("p", "KidsLearn is a <b>parent-facing management tool</b>, not an app made for children: all content is created and managed by parents. The app offers <b>no</b> chat, comments, public profiles, content discovery or recommendation, interaction with strangers, or public sharing of user-generated content."),
+            ("ul", [
+                "<b>We do not collect, sell or disclose children's personal information to any third party.</b> Children's study records (nickname, avatar, courses, homework, habits, points, etc.) are entered by parents and <b>stored only in the parent's own iCloud account</b>; the developer has no access to them.",
+                "<b>No public user-generated content.</b> Text entered by parents is visible only to family members the parent <b>invites one-to-one</b> via iCloud private sharing (CKShare). There is no public audience, no stranger visibility, and no search or recommendation mechanism, so the app carries none of the social risks associated with public UGC.",
+                "<b>Parental controls.</b> The app provides a \"Child Device Lock (PIN)\": once enabled, configuration features are hidden and exiting requires the PIN; changing or resetting the PIN requires system biometric or passcode authentication. Parents can use it to restrict children's access to settings and purchases.",
+                "<b>Children's Apple IDs.</b> If a parent shares a child space with a child Apple ID, that account is created and managed by the parent under Apple's rules; sharing remains under the parent's control and can be stopped at any time.",
+                "<b>On parental consent.</b> Because the app <b>collects no children's personal information at all</b>, the \"verifiable parental consent\" mechanisms required by COPPA (US), GDPR (children's provisions, EU) and China's Regulations on the Protection of Children's Personal Information Online do not apply, and we do not need to collect any parent identity information for that purpose. Parents may delete any child space and all of its data at any time; deletion takes effect immediately.",
+                "We follow China's Personal Information Protection Law and the Regulations on the Protection of Children's Personal Information Online, and align with COPPA / GDPR principles: <b>data minimisation, parental control, no sharing, no selling, and no advertising or profiling</b>.",
+                "Parents who wish to review, correct or permanently delete child-related information can do so inside the app, or email {mail} for assistance.",
+            ]),
+        ]),
+        ("5. Data Storage, Security and Deletion", [
+            ("ul", [
+                "All data resides in the iCloud account of your Apple ID, protected by Apple's encryption and access controls. We keep no server-side copy.",
+                "<b>Deleting the app does not automatically remove iCloud data</b> (so you can restore on a new device). To erase everything: on iPhone/iPad go to <i>Settings → your Apple ID → iCloud → Manage Account Storage → KidsLearn → Delete Data</i>; delete the corresponding child space inside the app under <i>Me → Child Spaces</i>; or email {mail} to request deletion assistance.",
+                "A small number of interface preferences (language, display settings) are stored <b>locally on the device</b> (system UserDefaults). They never leave your device and are not synced to iCloud.",
+                "Please keep your Apple ID and device passcode secure — they are the primary protection for this data.",
+            ]),
+        ]),
+        ("6. Purchases and Payments", [
+            ("p", "KidsLearn is free to download with a local 7-day trial. The full version is a <b>one-time purchase (non-consumable, non-subscription; no auto-renewal)</b>. All payments are processed by the Apple App Store (StoreKit). <b>We never receive or store your payment card details</b>, nor can we see your full account information. Family Sharing is enabled, so family members do not need to purchase again."),
+        ]),
+        ("7. Changes to This Policy", [
+            ("p", "If this policy changes, we will update this page and revise the \"Effective Date\" shown at the top. Material changes (for example, introducing any new data collection) will also be announced prominently inside the app. Please review this page periodically for the latest version."),
+        ]),
+        ("8. Contact Us", [
+            ("p", "For any question, complaint or deletion request regarding this policy or your data, email <b>{mail}</b>. We normally reply within <b>3 business days</b>."),
+        ]),
+    ],
+    "support_title": "Support & FAQ",
+    "support_rows": [
+        ("New device / multi-device sync", "Sign in with the <b>same Apple ID</b> on each device with iCloud Drive enabled; data syncs automatically. If sync stalls, check <i>Settings → Apple ID → iCloud</i>."),
+        ("Family / child space sharing", "Use \"Share child space\" in the app (Apple CloudKit CKShare); the recipient accepts with their own Apple ID. Two different Apple IDs are required for testing."),
+        ("Restore purchases", "Tap \"Restore Purchases\" at the bottom of the paywall — no additional charge."),
+        ("Delete all data", "See section 5 above. Deleting the app does not remove iCloud data."),
+        ("Scan text (OCR)", "Runs fully on device via Apple Vision; no upload, no network required."),
+        ("Supported languages", "10 languages: Simplified & Traditional Chinese, English, Japanese, Spanish, Portuguese (BR), French, German, Korean and Russian."),
+        ("System requirements", "iOS / iPadOS 17.0 or later (iPhone and iPad, including home-screen widgets)."),
+        ("Contact", "Email <b>{mail}</b> — replies within 3 business days."),
+    ],
+    "footer": "© 2026 {dev} · KidsLearn",
+}
+
+CONTENT["zh-Hans"] = {
+    "html_lang": "zh-CN",
+    "title": "KidsLearn 隐私政策与支持",
+    "desc": "KidsLearn 隐私政策与支持：不收集任何个人信息，数据仅存储于用户本人 iCloud。",
+    "h1": "🎓 KidsLearn 隐私政策与支持",
+    "meta_line": "生效日期：{d} ｜ 开发者：{dev} ｜ 联系邮箱：{mail}",
+    "nav": ["隐私政策", "支持与常见问题"],
+    "nav_id": ["privacy", "support"],
+    "summary": "<b>一句话总结：</b>KidsLearn <b>不收集任何个人信息</b>。没有账号系统、没有服务器、没有第三方统计或广告 SDK。你录入的课程表、作业、习惯、提醒与积分数据，<b>只保存在你自己的 iCloud 私人数据库</b>（Apple CloudKit）中，开发者无法读取或导出。应用内置<b>儿童设备锁（PIN）</b>等家长控制功能，儿童相关内容一律由家长创建与管理。",
+    "privacy_title": "隐私政策",
+    "sections": [
+        ("一、概述", [
+            ("p", "KidsLearn 是一款面向<b>家长</b>的儿童学习管理工具，提供课程表、作业记录、习惯打卡、学习提醒与积分奖励等功能。本应用由个人开发者（{dev}）独立开发，<b>无自建服务器、无后台数据库</b>。本政策说明我们如何处理（事实上是：不处理）你的信息。"),
+        ]),
+        ("二、我们收集哪些信息：不收集", [
+            ("p", "KidsLearn <b>不主动收集任何个人信息</b>。具体而言："),
+            ("ul", [
+                "<b>无需注册、无需登录</b>：不要求也不获取姓名、邮箱、手机号、通讯录、位置、相册、身份标识等信息。",
+                "<b>学习数据仅存于你的 iCloud</b>：你创建的课程表、作业、习惯、提醒、积分与奖品等内容，保存在你本人 Apple ID 下的 iCloud 私人数据库（Apple CloudKit，容器 <code>iCloud.com.frankzhou.KidLearn</code>）。这些数据归你所有，由 Apple 保管，<b>开发者无法访问、读取或导出</b>。",
+                "<b>家庭共享与「孩子空间」</b>：基于 Apple CloudKit 的 CKShare 实现，数据仅在你主动邀请的 Apple ID（通常是家庭成员）之间共享，共享范围完全由你控制，可随时停止共享。",
+            ]),
+            ("p", "<b>设备能力与系统权限：</b>"),
+            ("ul", [
+                "<b>通知</b>：用于展示你自行设定的学习提醒，仅在你开启后使用，不含任何广告或营销内容。其中「远程通知」仅用作 iCloud 数据同步的触发信号（静默通知），不会产生任何可见提示，也不承载任何内容。",
+                "<b>相册（系统照片选择器）</b>：作业清单的「图片识字」功能通过 Apple 系统照片选择器（PhotosPicker）挑选图片，<b>App 只会拿到你选中的那一张</b>，无法浏览或访问相册中的其他照片，<b>也无需你授予相册权限</b>。文字识别由 Apple Vision 框架<b>完全在设备端</b>完成，图片与识别结果<b>不上传</b>任何服务器，识别后不保留原图。<b>本应用不使用相机，也不申请相机权限。</b>",
+                "<b>面容 ID / 触控 ID / 设备密码</b>：仅在家长修改或重置「儿童设备锁 PIN」、以及关闭儿童模式时，用于本机身份验证。验证由 iOS 系统完成，<b>App 不会收到、也无法读取或存储任何生物特征信息</b>。",
+                "<b>剪贴板</b>：仅在你主动点击「粘贴」按钮时读取一次剪贴板中的文字，用于生成作业清单；读取后即在设备端处理，<b>不上传、不长期保存</b>。除此之外本应用不会访问剪贴板。",
+                "<b>不申请的权限</b>：本应用不申请、不使用定位、通讯录、日历、提醒事项、麦克风、相机、蓝牙跟踪（App 追踪透明度）等权限，工程内除上述项外无任何权限声明。",
+            ]),
+        ]),
+        ("三、第三方服务、追踪与广告：无", [
+            ("ul", [
+                "本应用<b>不含任何第三方代码库或 SDK</b>：工程不依赖任何第三方包（无 Swift Package、无 CocoaPods），也不含广告 SDK、数据分析 SDK（如 Firebase、友盟等）、崩溃统计、归因或推送营销组件。",
+                "<b>不追踪</b>：不使用 IDFA，不申请 App 追踪透明度授权，不进行跨应用或跨网站追踪，不设置用于追踪的 Cookie、设备指纹或本地标识。",
+                "<b>不出售、不共享、不交易</b>任何用户数据；本应用不参与任何形式的数据商业化，也不将数据用于广告投放或用户画像。",
+                "应用发起的<b>全部网络请求均指向 Apple 官方服务</b>：iCloud（CloudKit）数据同步，以及 App Store 内购（StoreKit）。二者均由 Apple 按其自身隐私政策处理，详见 <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Apple 隐私政策</a>。（应用内「隐私政策」「支持与反馈」入口通过系统应用内浏览器打开，页面由 Safari 渲染引擎在独立进程中加载，本应用无法读取页面内容、Cookie 或浏览历史，也不注入任何脚本。）",
+            ]),
+        ]),
+        ("四、儿童（未成年人）信息保护", [
+            ("p", "KidsLearn 定位为<b>面向家长的管理工具</b>，而非儿童向应用：所有内容由家长创建与管理。应用<b>不提供</b>聊天、评论、公开主页、内容推荐/发现、陌生人互动或用户生成内容的公开发布功能。"),
+            ("ul", [
+                "<b>我们不收集、不出售、不向第三方披露儿童个人信息</b>。儿童相关的学习记录（昵称、头像、课程、作业、习惯、积分等）全部由家长录入，<b>仅存储在家长自己的 iCloud 账户中</b>，开发者不接触、不可见。",
+                "<b>无公开用户生成内容</b>：家长录入的文字内容仅在家长通过 iCloud 隐私共享（CKShare）<b>一对一邀请</b>的家庭成员之间可见，不向公众开放、无陌生人可见渠道、无搜索或推荐机制，因此本应用不涉及公开用户生成内容（UGC）相关的社交风险。",
+                "<b>家长控制工具</b>：应用提供「儿童设备锁（PIN 保护）」——开启后配置类功能被隐藏，退出需输入 PIN；修改或重置 PIN 需通过系统生物识别或设备密码验证。家长可借此限制儿童对设置与购买的访问。",
+                "<b>儿童 Apple ID</b>：若家长把孩子空间共享给儿童 Apple ID，该账号依法由家长创建与管理，共享范围始终由家长掌控，可随时停止共享。",
+                "<b>关于家长同意</b>：由于本应用<b>完全不收集儿童个人信息</b>，美国 COPPA、欧盟 GDPR（儿童条款）以及中国《儿童个人信息网络保护规定》所要求的「可验证家长同意」机制在本应用中不适用；我们也不需要为此收集家长身份信息。家长可随时删除任一「孩子空间」及其全部数据，删除即刻生效。",
+                "我们遵循中国《个人信息保护法》《儿童个人信息网络保护规定》，并参照 COPPA、GDPR 对儿童数据的保护原则：<b>最小必要、家长控制、不共享、不出售、不用于广告或画像</b>。",
+                "如家长希望查询、更正或彻底删除与儿童相关的信息，可在应用内直接操作，或发送邮件至 {mail}，我们将提供协助。",
+            ]),
+        ]),
+        ("五、数据存储、安全与删除", [
+            ("ul", [
+                "全部数据保存在你的 Apple ID 对应的 iCloud 账户中，受 Apple 的加密与访问控制保护，我们没有任何服务端副本。",
+                "<b>卸载 App 不会自动删除 iCloud 中的数据</b>（便于换机恢复）。如需彻底删除：在 iPhone/iPad 进入「设置 → 顶部 Apple ID → iCloud → 管理账户储存空间 → KidsLearn → 删除数据」；或在 App 内进入「我的 → 孩子空间」，删除对应空间；也可发邮件至 {mail} 请求删除协助。",
+                "少量界面偏好（如语言、展示设置）保存在<b>设备本地</b>（系统 UserDefaults），不会离开你的设备，也不与 iCloud 同步。",
+                "请妥善保管你的 Apple ID 与设备锁屏密码，这是保护这些数据的主要手段。",
+            ]),
+        ]),
+        ("六、购买与付款", [
+            ("p", "KidsLearn 免费下载并提供本地 7 天试用；完整版为<b>一次性买断（非订阅型内购，无自动续费）</b>。所有支付由 Apple App Store（StoreKit）处理，<b>我们不会收到或存储你的支付卡信息</b>，也看不到你的完整账户信息。内购已开启「家人共享」，家庭成员无需重复购买。"),
+        ]),
+        ("七、政策更新", [
+            ("p", "如本政策发生变更，我们会更新本页面并修改顶部的「生效日期」；若涉及重大变更（例如新增数据收集），将在应用内以显著方式提示。建议你定期查看本页面以获取最新内容。"),
+        ]),
+        ("八、联系我们", [
+            ("p", "如你对本政策或数据处理有任何疑问、投诉或删除请求，请发送邮件至 <b>{mail}</b>，我们通常在 <b>3 个工作日</b>内回复。"),
+        ]),
+    ],
+    "support_title": "支持与常见问题",
+    "support_rows": [
+        ("换机 / 多设备同步", "在各设备上登录<b>同一个 Apple ID</b> 并开启 iCloud 云盘后打开 KidsLearn，数据会自动同步。若长时间未同步，请检查系统「设置 → Apple ID → iCloud」是否已登录且网络正常。"),
+        ("家人 / 孩子空间共享", "在 App 内使用「孩子空间分享」（基于 Apple CloudKit CKShare）生成链接，对方用其 Apple ID 接受即可。需要两个不同的 Apple ID 才能完成测试。"),
+        ("恢复购买", "打开付费页，点击底部「恢复购买」，按系统提示用购买时使用的 Apple ID 验证即可，不会重复扣费。"),
+        ("彻底删除数据", "见上方「数据存储、安全与删除」章节。卸载 App 不会删除 iCloud 数据。"),
+        ("拍照识字（OCR）", "使用 Apple Vision 在设备端识别，无需联网，图片不上传。"),
+        ("支持的语言", "简体中文、繁体中文、English、日本語、Español、Português (BR)、Français、Deutsch、한국어、Русский（共 10 种）。"),
+        ("系统要求", "iOS / iPadOS 17.0 或更高版本（iPhone 与 iPad 通用，含桌面小组件）。"),
+        ("联系我们", "邮箱：<b>{mail}</b>（一般 3 个工作日内回复）。"),
+    ],
+    "footer": "© 2026 {dev} · KidsLearn",
+}
+
+CONTENT["ja"] = {
+    "html_lang": "ja",
+    "title": "KidsLearn プライバシーポリシーとサポート",
+    "desc": "KidsLearn のプライバシーポリシーとサポート：個人情報は一切収集しません。データはお客様ご自身の iCloud にのみ保存されます。",
+    "h1": "🎓 KidsLearn プライバシーポリシーとサポート",
+    "meta_line": "施行日：{d} ｜ 開発者：{dev} ｜ 連絡先：{mail}",
+    "nav": ["プライバシーポリシー", "サポート・よくあるご質問"],
+    "nav_id": ["privacy", "support"],
+    "summary": "<b>要約：</b>KidsLearn は<b>個人情報を一切収集しません</b>。アカウント登録も、サーバーも、第三者による解析・広告 SDK もありません。入力された時間割・宿題・習慣・リマインダー・ポイントのデータは、<b>お客様ご自身のプライベート iCloud データベース</b>（Apple CloudKit）にのみ保存され、開発者が閲覧・書き出しすることはできません。<b>こどもモード（PIN ロック）</b>などの保護者向け管理機能を備え、こどもに関する内容はすべて保護者が作成・管理します。",
+    "privacy_title": "プライバシーポリシー",
+    "sections": [
+        ("1. 概要", [
+            ("p", "KidsLearn は<b>保護者</b>向けの学習管理アプリです。時間割、宿題の記録、習慣のチェック、学習リマインダー、ポイント報酬などの機能を提供します。個人開発者（{dev}）が開発しており、<b>自社サーバーもバックエンドデータベースもありません</b>。本ポリシーは、私たちがお客様の情報をどのように扱うか（実際には扱わないか）を説明するものです。"),
+        ]),
+        ("2. 収集する情報：ありません", [
+            ("p", "KidsLearn は<b>個人情報を一切収集しません</b>。具体的には："),
+            ("ul", [
+                "<b>登録不要・ログイン不要。</b>氏名、メールアドレス、電話番号、連絡先、位置情報、写真、識別子などを求めることも取得することもありません。",
+                "<b>データはお客様の iCloud にのみ。</b>作成された時間割・宿題・習慣・リマインダー・ポイント・ごほうびは、お客様ご自身の Apple ID のプライベート iCloud データベース（Apple CloudKit、コンテナ <code>iCloud.com.frankzhou.KidLearn</code>）に保存されます。データはお客様に帰属し Apple が保管します。<b>開発者がアクセス・閲覧・書き出しすることはできません</b>。",
+                "<b>ファミリー共有と「こどもスペース」。</b>Apple CloudKit の CKShare を使用し、お客様が明示的に招待した Apple ID（通常はご家族）とのみ共有されます。共有範囲はお客様が管理し、いつでも停止できます。",
+            ]),
+            ("p", "<b>端末機能とシステム権限：</b>"),
+            ("ul", [
+                "<b>通知</b>：お客様が設定した学習リマインダーの表示のみに使用し、広告やマーケティング内容は含まれません。「リモート通知」は iCloud 同期の<b>きっかけ（サイレント通知）</b>としてのみ使われ、画面に表示されることはありません。",
+                "<b>写真（システムの写真選択）</b>：宿題の「文字認識」機能は Apple のシステム写真選択（PhotosPicker）で画像を選びます。アプリが受け取るのは<b>選択された 1 枚のみ</b>で、ライブラリ全体を参照することはできず、<b>写真ライブラリの権限も不要</b>です。認識は Apple Vision により<b>すべて端末内</b>で行われ、画像も結果も<b>サーバーに送信されません</b>。認識後に元画像を保持することもありません。<b>カメラは使用せず、カメラ権限も要求しません。</b>",
+                "<b>Face ID / Touch ID / 端末パスコード</b>：保護者が「こどもモード PIN」を変更・再設定する場合や、こどもモードを解除する場合の本人確認にのみ使用します。認証は iOS が行い、<b>アプリが生体情報を取得・読み取り・保存することはありません</b>。",
+                "<b>ペーストボード</b>：お客様が「貼り付け」をタップしたときに 1 度だけテキストを読み取り、宿題リストの作成に使います。<b>端末内</b>で処理し、<b>送信も保存もありません</b>。それ以外の場面でペーストボードにアクセスすることはありません。",
+                "<b>要求しない権限</b>：位置情報、連絡先、カレンダー、リマインダー、マイク、カメラ、App トラッキングなどの権限は要求も使用もしません。",
+            ]),
+        ]),
+        ("3. 第三者サービス・トラッキング・広告：なし", [
+            ("ul", [
+                "<b>第三者のコードは一切なし</b>：Swift Package や CocoaPods など第三者ライブラリに依存せず、広告 SDK、解析 SDK（Firebase 等）、クラッシュ収集、アトリビューション、マーケティング配信の仕組みもありません。",
+                "<b>トラッキングなし</b>：IDFA を使用せず、App トラッキングの許可も要求しません。アプリ間・サイト間のトラッキング、トラッキング用 Cookie、指紋認証、ローカル識別子も使用しません。",
+                "<b>データの販売・共有・取引は一切行いません。</b>広告配信やユーザープロファイリングにも利用しません。",
+                "<b>すべての通信は Apple のサービス宛てのみ</b>：iCloud（CloudKit）同期と App Store のアプリ内課金（StoreKit）です。いずれも Apple のプライバシーポリシーに従い処理されます。<a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Apple のプライバシーポリシー</a>をご確認ください。（アプリ内の「プライバシーポリシー」「サポート」はシステムのアプリ内ブラウザで開きます。ページは Safari のエンジンにより独立プロセスで描画され、アプリはページ内容・Cookie・閲覧履歴を取得できず、スクリプトも注入しません。）",
+            ]),
+        ]),
+        ("4. こども（未成年者）の情報保護", [
+            ("p", "KidsLearn は<b>保護者向けの管理ツール</b>であり、こども向けアプリではありません。すべての内容は保護者が作成・管理します。チャット、コメント、公開プロフィール、コンテンツの発見・レコメンド、見知らぬ人との交流、ユーザー生成コンテンツの公開共有機能は<b>ありません</b>。"),
+            ("ul", [
+                "<b>こどもの個人情報を収集・販売・第三者開示することはありません。</b>こどもの学習記録（ニックネーム、アバター、教科、宿題、習慣、ポイント等）は保護者が入力し、<b>保護者自身の iCloud アカウントにのみ</b>保存されます。開発者はアクセスできません。",
+                "<b>公開されるユーザー生成コンテンツはありません。</b>保護者が入力したテキストは、保護者が iCloud プライベート共有（CKShare）で<b>1 対 1 で招待した</b>家族にのみ表示されます。一般公開も、見知らぬ人への公開も、検索・レコメンドもありません。",
+                "<b>保護者による管理機能。</b>「こどもモード（PIN）」をオンにすると設定機能が隠され、解除には PIN が必要です。PIN の変更・再設定には生体認証または端末パスコードが必要です。",
+                "<b>こども用 Apple ID。</b>保護者がこども用 Apple ID にスペースを共有した場合、そのアカウントは Apple の規約に従い保護者が作成・管理するものであり、共有は常に保護者が管理し、いつでも停止できます。",
+                "<b>保護者の同意について。</b>本アプリは<b>こどもの個人情報を一切収集しない</b>ため、米国 COPPA、EU GDPR（こどもに関する規定）、中国「児童個人情報ネットワーク保護規定」が定める「検証可能な保護者の同意」の仕組みは適用されず、そのために保護者の身元情報を収集することもありません。保護者はいつでもこどもスペースとその全データを削除でき、即時に反映されます。",
+                "中国「個人情報保護法」「児童個人情報ネットワーク保護規定」に従い、COPPA / GDPR の原則にも準拠します：<b>最小限の収集、保護者による管理、共有しない、販売しない、広告やプロファイリングに利用しない</b>。",
+                "こどもに関する情報の閲覧・訂正・完全削除をご希望の場合は、アプリ内で操作いただくか、{mail} までご連絡ください。",
+            ]),
+        ]),
+        ("5. データの保存・保護・削除", [
+            ("ul", [
+                "すべてのデータはお客様の Apple ID の iCloud アカウントに保存され、Apple の暗号化とアクセス制御で保護されます。サーバー側にコピーは保持しません。",
+                "<b>アプリを削除しても iCloud のデータは自動的には消えません</b>（機種変更時の復元のため）。完全に消去する場合は、iPhone / iPad の「設定 → Apple ID → iCloud → アカウントのストレージを管理 → KidsLearn → データを削除」、またはアプリ内の「マイページ → こどもスペース」から該当スペースを削除してください。{mail} までご連絡いただいても対応します。",
+                "一部の表示設定（言語など）は<b>端末内の</b>システム UserDefaults に保存されます。端末外に出ることはなく、iCloud とも同期しません。",
+                "Apple ID と端末のロック解除パスコードを適切に管理してください。これらがデータを守る主な手段です。",
+            ]),
+        ]),
+        ("6. 購入とお支払い", [
+            ("p", "KidsLearn は無料でダウンロードでき、7 日間のローカル試用期間があります。完全版は<b>買い切り型（非消費型・非サブスクリプション、自動更新なし）</b>です。お支払いは Apple App Store（StoreKit）が処理し、<b>クレジットカード情報を取得・保存することはありません</b>。ファミリー共有に対応しているため、ご家族が重複して購入する必要はありません。"),
+        ]),
+        ("7. ポリシーの変更", [
+            ("p", "本ポリシーを変更した場合は、このページを更新し上部の「施行日」を改めます。重要な変更（新しいデータ収集の開始など）については、アプリ内でも目立つ形でお知らせします。最新の内容をご確認いただくため、定期的にこのページをご覧ください。"),
+        ]),
+        ("8. お問い合わせ", [
+            ("p", "本ポリシーやデータの取り扱いに関するご質問・苦情・削除のご要望は <b>{mail}</b> までご連絡ください。通常 <b>3 営業日</b>以内に返信いたします。"),
+        ]),
+    ],
+    "support_title": "サポート・よくあるご質問",
+    "support_rows": [
+        ("機種変更・複数端末での同期", "各端末で<b>同じ Apple ID</b> でサインインし、iCloud ドライブを有効にすると自動的に同期されます。同期しない場合は「設定 → Apple ID → iCloud」をご確認ください。"),
+        ("家族・こどもスペースの共有", "アプリ内の「こどもスペースを共有」（Apple CloudKit CKShare）を使用し、相手が自分の Apple ID で受け入れます。テストには 2 つの異なる Apple ID が必要です。"),
+        ("購入の復元", "購入画面下部の「購入を復元」をタップしてください。重複して課金されることはありません。"),
+        ("データの完全削除", "上記「5. データの保存・保護・削除」をご覧ください。アプリの削除では iCloud のデータは消えません。"),
+        ("文字認識（OCR）", "Apple Vision により端末内で処理します。アップロードもネットワーク接続も不要です。"),
+        ("対応言語", "簡体字中国語、繁体字中国語、英語、日本語、スペイン語、ポルトガル語（ブラジル）、フランス語、ドイツ語、韓国語、ロシア語（全 10 言語）。"),
+        ("システム要件", "iOS / iPadOS 17.0 以降（iPhone と iPad 対応、ホーム画面ウィジェットを含む）。"),
+        ("お問い合わせ", "メール：<b>{mail}</b>（通常 3 営業日以内に返信）。"),
+    ],
+    "footer": "© 2026 {dev} · KidsLearn",
+}
+
+# 非英文页面底部声明：译本与英文版冲突时以英文版为准
+DISCLAIMER = {
+    "zh-Hans": "本页为英文版的中文译本，如译文与英文版存在歧义，以 <a href=\"{en}\">英文版</a> 为准。",
+    "zh-Hant": "本頁為英文版的中文譯本，如譯文與英文版有歧義，以 <a href=\"{en}\">英文版</a> 為準。",
+    "ja": "本ページは英文版の日本語訳です。訳文と英文版に相違がある場合は <a href=\"{en}\">英文版</a> を正とします。",
+}
+
+CSS = """
+  :root{--bg:#f5f6f8;--card:#ffffff;--ink:#1d2129;--sub:#6b7280;--blue:#2563eb;
+        --blue-bg:#eff6ff;--green:#16a34a;--green-bg:#f0fdf4;--line:#e5e7eb;--tab:#374151;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+       background:var(--bg);color:var(--ink);line-height:1.8;font-size:15px}
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .head-inner{max-width:860px;margin:0 auto;padding:14px 20px 0}
+  h1{font-size:19px}
+  .head-meta{font-size:12.5px;color:var(--sub);margin:4px 0 8px}
+  .langbar{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:8px}
+  .langbar a{font-size:12.5px;text-decoration:none;color:var(--tab);border:1px solid var(--line);
+             border-radius:999px;padding:3px 11px;background:#fff}
+  .langbar a.on{color:#fff;background:var(--blue);border-color:var(--blue)}
+  main{max-width:860px;margin:0 auto;padding:22px 20px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:16px}
+  .summary{background:var(--green-bg);border:1px solid #bbf7d0;border-radius:12px;padding:16px 20px;margin-bottom:18px;font-size:14.5px;color:#166534}
+  h2{font-size:20px;margin:26px 0 12px;display:flex;align-items:center;gap:8px;scroll-margin-top:110px}
+  h2::before{content:"";width:4px;height:20px;background:var(--blue);border-radius:2px}
+  h3{font-size:15.5px;margin:18px 0 6px;color:#111827}
+  p{margin:8px 0}
+  ul{margin:8px 0 8px 20px}
+  li{margin:4px 0}
+  code{background:#f3f4f6;border-radius:4px;padding:1px 6px;font-family:ui-monospace,Menlo,monospace;font-size:13px;word-break:break-all}
+  a{color:var(--blue)}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0;background:var(--card)}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#f9fafb;font-weight:600;white-space:nowrap;width:130px}
+  footer{max-width:860px;margin:0 auto;padding:0 20px 40px;color:var(--sub);font-size:12.5px}
+  .disc{font-size:12.5px;color:var(--sub);margin-top:10px}
+  @media (max-width:600px){body{font-size:14.5px}.card{padding:16px 16px}h2{font-size:18px}}
+"""
+
+
+def fmt(s, d, mail=MAIL, dev=DEV, en_url=SITE + "/"):
+    return s.replace("{d}", d).replace("{mail}", mail).replace("{dev}", dev).replace("{en}", en_url)
+
+
+def render(lang, c):
+    path = CANON[lang]
+    switch = "".join(
+        '<a href="{u}" class="{cls}">{t}</a>'.format(
+            u=(SITE + CANON[l] + "/") if l != "en" else (SITE + "/"),
+            cls="on" if l == lang else "", t=SWITCH_LABEL[l])
+        for l in LANGS)
+    alternates = "".join(
+        '\n  <link rel="alternate" hreflang="{l}" href="{u}">'.format(
+            l=l, u=(SITE + "/") if l == "en" else (SITE + "/" + l + "/"))
+        for l in LANGS)
+    alternates += '\n  <link rel="alternate" hreflang="x-default" href="{}">'.format(SITE + "/")
+
+    body = []
+    body.append('  <div class="summary">{}</div>'.format(fmt(c["summary"], EFFECTIVE)))
+    body.append('<h2 id="privacy">{}</h2>'.format(c["privacy_title"]))
+    body.append('  <div class="card">')
+    for title, items in c["sections"]:
+        body.append('    <h3>{}</h3>'.format(fmt(title, EFFECTIVE)))
+        for kind, val in items:
+            if kind == "p":
+                body.append('    <p>{}</p>'.format(fmt(val, EFFECTIVE)))
+            elif kind == "ul":
+                body.append('    <ul>')
+                for li in val:
+                    body.append('      <li>{}</li>'.format(fmt(li, EFFECTIVE)))
+                body.append('    </ul>')
+    body.append('  </div>')
+    body.append('<h2 id="support">{}</h2>'.format(c["support_title"]))
+    body.append('  <div class="card">')
+    body.append('    <table>')
+    for th, td in c["support_rows"]:
+        body.append('      <tr><th>{}</th><td>{}</td></tr>'.format(
+            fmt(th, EFFECTIVE), fmt(td, EFFECTIVE)))
+    body.append('    </table>')
+    body.append('  </div>')
+    if lang in DISCLAIMER:
+        body.append('  <div class="disc">{}</div>'.format(fmt(DISCLAIMER[lang], EFFECTIVE)))
+
+    url_self = SITE + ("/" if path == "" else path + "/")
+    html = """<!DOCTYPE html>
+<html lang="{hl}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title}</title>
+<meta name="description" content="{desc}">
+<link rel="canonical" href="{self}">{alt}
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<style>{css}</style>
+</head>
+<body>
+<header>
+  <div class="head-inner">
+    <h1>{h1}</h1>
+    <div class="head-meta">{meta}</div>
+    <div class="langbar">{switch}</div>
+  </div>
+</header>
+<main>
+{body}
+</main>
+<footer>{footer}</footer>
+</body>
+</html>
+""".format(hl=c["html_lang"], title=c["title"], desc=c["desc"], self=url_self,
+           alt=alternates, css=CSS, h1=c["h1"], meta=fmt(c["meta_line"], EFFECTIVE),
+           switch=switch, body="\n".join(body), footer=fmt(c["footer"], EFFECTIVE))
+    return html
+
+
+# s2twp 之后的少量台湾用词修正（opencc 未覆盖的异体字）
+TW_FIX = [("賬戶", "帳戶"), ("賬號", "帳號"), ("賬", "帳"),
+          ("許可權", "權限"), ("郵箱", "電子郵件"), ("手機號", "手機號碼"),
+          ("字串", "字串")]
+
+
+def to_traditional(text):
+    try:
+        import opencc
+        out = opencc.OpenCC("s2twp").convert(text)
+    except Exception:
+        return text
+    for a, b in TW_FIX:
+        out = out.replace(a, b)
+    return out
+
+
+def main():
+    # 繁体：由简体自动转换（含标题、正文、表格）
+    zh = CONTENT["zh-Hans"]
+    tr = {k: (to_traditional(v) if isinstance(v, str) else v) for k, v in zh.items()}
+    tr["html_lang"] = "zh-TW"
+    tr["sections"] = [
+        (to_traditional(t),
+         [(k, ([to_traditional(x) for x in v] if k == "ul" else to_traditional(v)))
+          for k, v in items])
+        for t, items in zh["sections"]]
+    tr["support_rows"] = [(to_traditional(a), to_traditional(b)) for a, b in zh["support_rows"]]
+    tr["nav"] = [to_traditional(x) for x in zh["nav"]]
+    CONTENT["zh-Hant"] = tr
+
+    for lang in LANGS:
+        c = CONTENT[lang]
+        html = render(lang, c)
+        if lang == "en":
+            targets = [os.path.join(BASE_DIR, "index.html"),
+                       os.path.join(BASE_DIR, "en", "index.html")]
+        else:
+            targets = [os.path.join(BASE_DIR, lang, "index.html")]
+        for t in targets:
+            os.makedirs(os.path.dirname(t), exist_ok=True)
+            with open(t, "w", encoding="utf-8") as f:
+                f.write(html)
+            print("written:", os.path.relpath(t, BASE_DIR), len(html), "chars")
+
+
+if __name__ == "__main__":
+    main()
