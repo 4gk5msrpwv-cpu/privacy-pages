@@ -23,11 +23,14 @@ EFFECTIVE = "2026-09-10"
 DEV = "Frank Zhou"
 MAIL = "fathyzhou@qq.com"
 
-LANGS = ["en", "zh-Hans", "zh-Hant", "ja"]          # 已生成页面的语种
+LANGS = ["en", "zh-Hans", "zh-Hant", "ja", "es", "pt-BR", "fr", "de", "ko", "ru"]
 CANON = {l: ("" if l == "en" else "/" + l) for l in LANGS}   # 各语种路径
+# 说明：en 恒为根目录（ASC「隐私政策网址」只有一个字段，必须是审核员可读的英文）。
 
 SWITCH_LABEL = {
     "en": "English", "zh-Hans": "简体中文", "zh-Hant": "繁體中文", "ja": "日本語",
+    "es": "Español", "pt-BR": "Português (BR)", "fr": "Français", "de": "Deutsch",
+    "ko": "한국어", "ru": "Русский",
 }
 
 # ---------------------------------------------------------------------------
@@ -281,11 +284,509 @@ CONTENT["ja"] = {
     "footer": "© 2026 {dev} · KidsLearn",
 }
 
+CONTENT["es"] = {
+    "html_lang": "es",
+    "title": "Política de privacidad y soporte de KidsLearn",
+    "desc": "Política de privacidad y soporte de KidsLearn: no recopilamos ninguna información personal; todos los datos permanecen en tu propio iCloud.",
+    "h1": "🎓 Política de privacidad y soporte de KidsLearn",
+    "meta_line": "Fecha de entrada en vigor: {d} ｜ Desarrollador: {dev} ｜ Contacto: {mail}",
+    "nav": ["Política de privacidad", "Soporte y preguntas frecuentes"],
+    "nav_id": ["privacy", "support"],
+    "summary": "<b>En resumen:</b> KidsLearn <b>no recopila ninguna información personal</b>. No hay sistema de cuentas, ni servidor, ni SDK de analítica o publicidad de terceros. Los horarios, tareas, hábitos, recordatorios y puntos que introduzcas se <b>guardan únicamente en tu propia base de datos privada de iCloud</b> (Apple CloudKit); el desarrollador no puede leerlos ni exportarlos. Se incluye un <b>Bloqueo infantil del dispositivo (PIN)</b> como control parental, y todo el contenido relacionado con menores es creado y gestionado por un progenitor.",
+    "privacy_title": "Política de privacidad",
+    "sections": [
+        ("1. Descripción general", [
+            ("p", "KidsLearn es una herramienta de gestión de estudios para <b>padres y madres</b>, que ofrece horarios, registro de tareas, control de hábitos, recordatorios de estudio y un sistema de puntos y recompensas. Está desarrollada por un desarrollador independiente ({dev}) y <b>no tiene servidor propio ni base de datos en backend</b>. Esta política explica cómo tratamos —en realidad, cómo no tratamos— tu información."),
+        ]),
+        ("2. Qué recopilamos: nada", [
+            ("p", "KidsLearn <b>no recopila ninguna información personal</b>. En concreto:"),
+            ("ul", [
+                "<b>Sin registro, sin inicio de sesión.</b> No solicitamos ni recibimos tu nombre, correo electrónico, teléfono, contactos, ubicación, fotos ni ningún identificador.",
+                "<b>Tus datos permanecen en tu propio iCloud.</b> Los horarios, tareas, hábitos, recordatorios, puntos y recompensas que creas se guardan en la base de datos privada de iCloud de tu propio Apple ID (Apple CloudKit, contenedor <code>iCloud.com.frankzhou.KidLearn</code>). Los datos te pertenecen y los custodia Apple; <b>el desarrollador no puede acceder a ellos, leerlos ni exportarlos</b>.",
+                "<b>Compartir en familia y «espacios infantiles».</b> Basado en CKShare de Apple CloudKit. Los datos solo se comparten con los Apple ID que invites explícitamente (normalmente familiares); tú controlas el uso compartido y puedes revocarlo en cualquier momento.",
+            ]),
+            ("p", "<b>Funciones del dispositivo y permisos del sistema:</b>"),
+            ("ul", [
+                "<b>Notificaciones</b>: se usan únicamente para mostrar los recordatorios de estudio que tú mismo configuras; no incluyen publicidad ni contenido de marketing. Las «notificaciones remotas» se usan solo como <b>señal silenciosa para la sincronización con iCloud</b> y nunca muestran un aviso visible.",
+                "<b>Fotos (selector de fotos del sistema)</b>: la función «escanear texto (OCR)» de las tareas selecciona una imagen mediante el selector de fotos del sistema de Apple (PhotosPicker). La app recibe <b>solo la imagen que seleccionas</b>, no puede explorar ni acceder al resto de tu biblioteca y <b>no requiere permiso de la fototeca</b>. El reconocimiento se realiza <b>íntegramente en el dispositivo</b> con el marco Vision de Apple; ni la imagen ni el resultado se <b>envían nunca</b> a ningún servidor y la imagen original no se conserva. <b>La app no usa la cámara ni solicita permiso de cámara.</b>",
+                "<b>Face ID / Touch ID / código del dispositivo</b>: se usa solo para verificar la identidad en este dispositivo cuando un progenitor cambia o restablece el PIN del Bloqueo infantil, o desactiva el modo infantil. La autenticación la realiza iOS; <b>la app nunca recibe, lee ni almacena ningún dato biométrico</b>.",
+                "<b>Portapapeles</b>: se lee una sola vez, únicamente cuando tocas activamente «Pegar», para crear una lista de tareas. El texto se procesa <b>en el dispositivo</b>; <b>nunca se envía ni se conserva</b>. La app no accede al portapapeles en ningún otro momento.",
+                "<b>Permisos que nunca solicitamos</b>: ubicación, contactos, calendarios, recordatorios, micrófono, cámara ni autorización de seguimiento de apps. Aparte de lo anterior, la app no declara ningún otro permiso.",
+            ]),
+        ]),
+        ("3. Terceros, seguimiento y publicidad: ninguno", [
+            ("ul", [
+                "<b>Ningún código de terceros</b>: el proyecto no depende de ningún paquete Swift, ni CocoaPods, ni biblioteca de terceros. No hay SDK de publicidad, ni SDK de analítica (ni Firebase ni similares), ni recopilación de informes de fallos, atribución ni marketing push.",
+                "<b>Sin seguimiento</b>: no se usa IDFA, no se solicita la autorización de App Tracking Transparency, no hay seguimiento entre apps ni entre sitios, ni cookies de seguimiento, huella digital del dispositivo ni identificadores locales.",
+                "<b>Nunca vendemos, compartimos ni comercializamos datos de usuarios</b>, y no participamos en ninguna forma de monetización de datos. Ningún dato se usa para publicidad ni para elaborar perfiles de usuario.",
+                "<b>Todas las solicitudes de red se dirigen únicamente a servicios de Apple</b>: sincronización con iCloud (CloudKit) y compras integradas de la App Store (StoreKit). Ambas se rigen por la política de privacidad de Apple: consulta la <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">política de privacidad de Apple</a>. (Las entradas «Política de privacidad» y «Soporte» dentro de la app se abren en el navegador integrado del sistema. La página se muestra con el motor de Safari en un proceso independiente; la app no puede leer el contenido de la página, las cookies ni el historial de navegación, y no inyecta scripts.)",
+            ]),
+        ]),
+        ("4. Privacidad de los menores", [
+            ("p", "KidsLearn es una <b>herramienta de gestión para progenitores</b>, no una app dirigida a menores: todo el contenido lo crean y gestionan los padres o tutores. La app <b>no</b> ofrece chat, comentarios, perfiles públicos, descubrimiento ni recomendación de contenidos, interacción con desconocidos, ni publicación pública de contenido generado por los usuarios."),
+            ("ul", [
+                "<b>No recopilamos, vendemos ni divulgamos a terceros información personal de menores.</b> Los registros de estudio de los menores (apodo, avatar, asignaturas, tareas, hábitos, puntos, etc.) los introducen los progenitores y se <b>guardan únicamente en la cuenta de iCloud del progenitor</b>; el desarrollador no tiene acceso a ellos.",
+                "<b>Sin contenido público generado por usuarios.</b> El texto introducido por los progenitores solo es visible para los familiares que el progenitor <b>invita individualmente</b> mediante el uso compartido privado de iCloud (CKShare). No hay audiencia pública, ni visibilidad para desconocidos, ni mecanismos de búsqueda o recomendación, por lo que la app no presenta ninguno de los riesgos sociales asociados al contenido público generado por usuarios.",
+                "<b>Controles parentales.</b> La app ofrece un «Bloqueo infantil del dispositivo (PIN)»: una vez activado, las funciones de configuración se ocultan y salir requiere el PIN; cambiar o restablecer el PIN exige autenticación biométrica del sistema o el código del dispositivo. Los progenitores pueden usarlo para restringir el acceso de los menores a los ajustes y a las compras.",
+                "<b>Apple ID de menores.</b> Si un progenitor comparte un espacio infantil con el Apple ID de un menor, esa cuenta la crea y gestiona el progenitor conforme a las normas de Apple; el uso compartido permanece bajo su control y puede detenerse en cualquier momento.",
+                "<b>Sobre el consentimiento parental.</b> Dado que la app <b>no recopila ninguna información personal de menores</b>, los mecanismos de «consentimiento parental verificable» exigidos por la COPPA (EE. UU.), el RGPD (disposiciones sobre menores, UE) y la normativa china sobre protección de la información personal de menores en línea no resultan de aplicación, y no necesitamos recopilar información de identidad de los progenitores para ello. Los progenitores pueden eliminar cualquier espacio infantil y todos sus datos en cualquier momento; la eliminación surte efecto inmediato.",
+                "Cumplimos la Ley de Protección de la Información Personal de China y la normativa sobre protección de la información personal de menores en línea, y seguimos los principios de la COPPA y el RGPD: <b>minimización de datos, control parental, no compartir, no vender, sin publicidad ni elaboración de perfiles</b>.",
+                "Los progenitores que deseen consultar, corregir o eliminar definitivamente la información relativa a un menor pueden hacerlo desde la app o escribir a {mail} para solicitar ayuda.",
+            ]),
+        ]),
+        ("5. Almacenamiento, seguridad y eliminación de datos", [
+            ("ul", [
+                "Todos los datos residen en la cuenta de iCloud de tu Apple ID, protegidos por el cifrado y los controles de acceso de Apple. No conservamos ninguna copia en servidores.",
+                "<b>Eliminar la app no borra automáticamente los datos de iCloud</b> (para que puedas restaurarlos en un dispositivo nuevo). Para borrar todo: en iPhone/iPad ve a <i>Ajustes → tu Apple ID → iCloud → Gestionar el almacenamiento de la cuenta → KidsLearn → Eliminar datos</i>; elimina el espacio infantil correspondiente dentro de la app en <i>Yo → Espacios infantiles</i>; o escribe a {mail} para solicitar ayuda con la eliminación.",
+                "Un pequeño número de preferencias de interfaz (idioma, ajustes de visualización) se guarda <b>localmente en el dispositivo</b> (UserDefaults del sistema). Nunca salen de tu dispositivo y no se sincronizan con iCloud.",
+                "Mantén seguros tu Apple ID y el código del dispositivo: son la protección principal de estos datos.",
+            ]),
+        ]),
+        ("6. Compras y pagos", [
+            ("p", "KidsLearn se descarga gratis e incluye una prueba local de 7 días. La versión completa es una <b>compra única (no consumible, sin suscripción ni renovación automática)</b>. Todos los pagos los procesa la App Store de Apple (StoreKit). <b>Nunca recibimos ni almacenamos los datos de tu tarjeta</b>, ni podemos ver la información completa de tu cuenta. «Compartir en familia» está activado, por lo que los familiares no necesitan volver a comprar."),
+        ]),
+        ("7. Cambios en esta política", [
+            ("p", "Si esta política cambia, actualizaremos esta página y modificaremos la «Fecha de entrada en vigor» que aparece arriba. Los cambios sustanciales (por ejemplo, la introducción de cualquier nueva recopilación de datos) también se anunciarán de forma destacada dentro de la app. Te recomendamos revisar esta página periódicamente para conocer la versión más reciente."),
+        ]),
+        ("8. Contacto", [
+            ("p", "Para cualquier pregunta, reclamación o solicitud de eliminación relativa a esta política o a tus datos, escribe a <b>{mail}</b>. Normalmente respondemos en un plazo de <b>3 días laborables</b>."),
+        ]),
+    ],
+    "support_title": "Soporte y preguntas frecuentes",
+    "support_rows": [
+        ("Dispositivo nuevo / sincronización en varios dispositivos", "Inicia sesión con el <b>mismo Apple ID</b> en cada dispositivo con iCloud Drive activado; los datos se sincronizan automáticamente. Si la sincronización se detiene, revisa <i>Ajustes → Apple ID → iCloud</i>."),
+        ("Compartir en familia / espacio infantil", "Usa «Compartir espacio infantil» en la app (CKShare de Apple CloudKit); el destinatario acepta con su propio Apple ID. Se necesitan dos Apple ID distintos para probarlo."),
+        ("Restaurar compras", "Toca «Restaurar compras» en la parte inferior de la pantalla de compra: no se realiza ningún cargo adicional."),
+        ("Eliminar todos los datos", "Consulta la sección 5. Eliminar la app no borra los datos de iCloud."),
+        ("Escanear texto (OCR)", "Se ejecuta íntegramente en el dispositivo con Apple Vision; sin subidas ni conexión de red."),
+        ("Idiomas admitidos", "10 idiomas: chino simplificado y tradicional, inglés, japonés, español, portugués (Brasil), francés, alemán, coreano y ruso."),
+        ("Requisitos del sistema", "iOS / iPadOS 17.0 o posterior (iPhone y iPad, incluidos los widgets de la pantalla de inicio)."),
+        ("Contacto", "Escribe a <b>{mail}</b>: respondemos en un plazo de 3 días laborables."),
+    ],
+    "footer": "© 2026 {dev} · KidsLearn",
+}
+
+CONTENT["pt-BR"] = {
+    "html_lang": "pt-BR",
+    "title": "Política de Privacidade e Suporte do KidsLearn",
+    "desc": "Política de privacidade e suporte do KidsLearn: não coletamos nenhuma informação pessoal; todos os dados ficam no seu próprio iCloud.",
+    "h1": "🎓 Política de Privacidade e Suporte do KidsLearn",
+    "meta_line": "Data de vigência: {d} ｜ Desenvolvedor: {dev} ｜ Contato: {mail}",
+    "nav": ["Política de Privacidade", "Suporte e Perguntas Frequentes"],
+    "nav_id": ["privacy", "support"],
+    "summary": "<b>Em resumo:</b> o KidsLearn <b>não coleta nenhuma informação pessoal</b>. Não há sistema de contas, nem servidor, nem SDK de análise ou publicidade de terceiros. Os horários, tarefas, hábitos, lembretes e pontos que você cadastra ficam <b>armazenados apenas no seu próprio banco de dados privado do iCloud</b> (Apple CloudKit); o desenvolvedor não pode lê-los nem exportá-los. Há um <b>Bloqueio Infantil do Dispositivo (PIN)</b> como controle parental, e todo o conteúdo relacionado a crianças é criado e gerenciado por um dos pais ou responsável.",
+    "privacy_title": "Política de Privacidade",
+    "sections": [
+        ("1. Visão geral", [
+            ("p", "O KidsLearn é uma ferramenta de gestão de estudos para <b>pais e responsáveis</b>, com horários, registro de tarefas, acompanhamento de hábitos, lembretes de estudo e um sistema de pontos e recompensas. É desenvolvido por um desenvolvedor independente ({dev}) e <b>não possui servidor próprio nem banco de dados de backend</b>. Esta política explica como tratamos — na verdade, como não tratamos — as suas informações."),
+        ]),
+        ("2. O que coletamos: nada", [
+            ("p", "O KidsLearn <b>não coleta nenhuma informação pessoal</b>. Especificamente:"),
+            ("ul", [
+                "<b>Sem cadastro, sem login.</b> Não solicitamos nem recebemos seu nome, e-mail, telefone, contatos, localização, fotos ou qualquer identificador.",
+                "<b>Seus dados ficam no seu próprio iCloud.</b> Os horários, tarefas, hábitos, lembretes, pontos e recompensas que você cria são armazenados no banco de dados privado do iCloud do seu próprio Apple ID (Apple CloudKit, contêiner <code>iCloud.com.frankzhou.KidLearn</code>). Os dados pertencem a você e são mantidos pela Apple; <b>o desenvolvedor não pode acessá-los, lê-los nem exportá-los</b>.",
+                "<b>Compartilhamento familiar e «espaços infantis».</b> Baseado no CKShare do Apple CloudKit. Os dados são compartilhados apenas com os Apple IDs que você convidar explicitamente (normalmente familiares); você controla o compartilhamento e pode revogá-lo a qualquer momento.",
+            ]),
+            ("p", "<b>Recursos do dispositivo e permissões do sistema:</b>"),
+            ("ul", [
+                "<b>Notificações</b>: usadas apenas para exibir os lembretes de estudo que você mesmo define; sem publicidade ou conteúdo de marketing. As «notificações remotas» são usadas somente como <b>gatilho silencioso para a sincronização com o iCloud</b> e nunca exibem um alerta visível.",
+                "<b>Fotos (seletor de fotos do sistema)</b>: a função «ler texto (OCR)» das tarefas escolhe uma imagem pelo seletor de fotos do sistema da Apple (PhotosPicker). O app recebe <b>apenas a imagem que você seleciona</b>, não pode navegar nem acessar o restante da sua biblioteca e <b>não exige permissão da biblioteca de fotos</b>. O reconhecimento é feito <b>inteiramente no dispositivo</b> com o framework Vision da Apple; nem a imagem nem o resultado são <b>enviados</b> a qualquer servidor, e a imagem original não é mantida. <b>O app não usa a câmera e não solicita permissão de câmera.</b>",
+                "<b>Face ID / Touch ID / código do dispositivo</b>: usado apenas para autenticar neste dispositivo quando um responsável altera ou redefine o PIN do Bloqueio Infantil, ou desativa o modo infantil. A autenticação é feita pelo iOS; <b>o app nunca recebe, lê nem armazena qualquer dado biométrico</b>.",
+                "<b>Área de transferência</b>: lida uma única vez, apenas quando você toca ativamente em «Colar», para montar uma lista de tarefas. O texto é processado <b>no dispositivo</b>; <b>nunca é enviado nem retido</b>. O app não acessa a área de transferência em nenhum outro momento.",
+                "<b>Permissões que nunca solicitamos</b>: localização, contatos, calendários, lembretes, microfone, câmera e autorização de rastreamento de apps. Além dos itens acima, o app não declara nenhuma outra permissão.",
+            ]),
+        ]),
+        ("3. Terceiros, rastreamento e publicidade: nenhum", [
+            ("ul", [
+                "<b>Nenhum código de terceiros</b>: o projeto não depende de nenhum pacote Swift, CocoaPods ou biblioteca de terceiros. Não há SDK de publicidade, nem SDK de análise (nem Firebase ou similar), nem coleta de relatórios de falhas, atribuição ou marketing por push.",
+                "<b>Sem rastreamento</b>: não usamos IDFA, não solicitamos a autorização de App Tracking Transparency, não fazemos rastreamento entre apps ou entre sites, nem usamos cookies de rastreamento, impressão digital do dispositivo ou identificadores locais.",
+                "<b>Nunca vendemos, compartilhamos ou negociamos dados de usuários</b>, e não participamos de nenhuma forma de monetização de dados. Nenhum dado é usado para publicidade ou criação de perfis.",
+                "<b>Todas as requisições de rede vão apenas para serviços da Apple</b>: sincronização com o iCloud (CloudKit) e compras integradas da App Store (StoreKit). Ambas são regidas pela política de privacidade da Apple: veja a <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Política de Privacidade da Apple</a>. (As entradas «Política de Privacidade» e «Suporte» no app abrem no navegador integrado do sistema. A página é renderizada pelo motor do Safari em um processo separado; o app não consegue ler o conteúdo da página, cookies ou histórico de navegação e não injeta scripts.)",
+            ]),
+        ]),
+        ("4. Privacidade de crianças e adolescentes", [
+            ("p", "O KidsLearn é uma <b>ferramenta de gestão para pais e responsáveis</b>, não um app voltado a crianças: todo o conteúdo é criado e gerenciado pelos pais ou responsável. O app <b>não</b> oferece chat, comentários, perfis públicos, descoberta ou recomendação de conteúdo, interação com desconhecidos, nem publicação pública de conteúdo gerado por usuários."),
+            ("ul", [
+                "<b>Não coletamos, vendemos nem divulgamos a terceiros informações pessoais de crianças.</b> Os registros de estudo das crianças (apelido, avatar, matérias, tarefas, hábitos, pontos etc.) são inseridos pelos responsáveis e <b>armazenados apenas na conta de iCloud do responsável</b>; o desenvolvedor não tem acesso a eles.",
+                "<b>Sem conteúdo público gerado por usuários.</b> O texto inserido pelos responsáveis é visível apenas para os familiares que o responsável <b>convidar individualmente</b> pelo compartilhamento privado do iCloud (CKShare). Não há público aberto, nem visibilidade para desconhecidos, nem mecanismos de busca ou recomendação, de modo que o app não apresenta os riscos sociais associados ao conteúdo público gerado por usuários.",
+                "<b>Controles parentais.</b> O app oferece o «Bloqueio Infantil do Dispositivo (PIN)»: quando ativado, as funções de configuração ficam ocultas e sair exige o PIN; alterar ou redefinir o PIN exige autenticação biométrica do sistema ou o código do dispositivo. Os responsáveis podem usá-lo para restringir o acesso de crianças a ajustes e compras.",
+                "<b>Apple IDs de crianças.</b> Se um responsável compartilhar um espaço infantil com o Apple ID de uma criança, essa conta é criada e gerenciada pelo responsável segundo as regras da Apple; o compartilhamento permanece sob seu controle e pode ser encerrado a qualquer momento.",
+                "<b>Sobre o consentimento dos pais.</b> Como o app <b>não coleta nenhuma informação pessoal de crianças</b>, os mecanismos de «consentimento parental verificável» exigidos pela COPPA (EUA), pelo GDPR (disposições sobre crianças, UE) e pela regulamentação chinesa de proteção de informações pessoais de crianças on-line não se aplicam, e não precisamos coletar informações de identidade dos pais para isso. Os responsáveis podem excluir qualquer espaço infantil e todos os seus dados a qualquer momento; a exclusão tem efeito imediato.",
+                "Seguimos a Lei de Proteção de Informações Pessoais da China e a regulamentação de proteção de informações pessoais de crianças on-line, alinhados aos princípios da COPPA e do GDPR: <b>minimização de dados, controle parental, não compartilhar, não vender, sem publicidade ou criação de perfis</b>.",
+                "Os responsáveis que desejarem consultar, corrigir ou excluir definitivamente informações relacionadas a uma criança podem fazê-lo no app ou escrever para {mail} para obter ajuda.",
+            ]),
+        ]),
+        ("5. Armazenamento, segurança e exclusão de dados", [
+            ("ul", [
+                "Todos os dados ficam na conta de iCloud do seu Apple ID, protegidos pela criptografia e pelos controles de acesso da Apple. Não mantemos nenhuma cópia em servidores.",
+                "<b>Excluir o app não remove automaticamente os dados do iCloud</b> (para permitir a restauração em um dispositivo novo). Para apagar tudo: no iPhone/iPad vá a <i>Ajustes → seu Apple ID → iCloud → Gerenciar Armazenamento da Conta → KidsLearn → Excluir Dados</i>; exclua o espaço infantil correspondente no app em <i>Eu → Espaços Infantis</i>; ou escreva para {mail} para solicitar ajuda com a exclusão.",
+                "Algumas preferências de interface (idioma, configurações de exibição) são armazenadas <b>localmente no dispositivo</b> (UserDefaults do sistema). Nunca saem do seu dispositivo e não são sincronizadas com o iCloud.",
+                "Mantenha seu Apple ID e o código do dispositivo em segurança: eles são a principal proteção desses dados.",
+            ]),
+        ]),
+        ("6. Compras e pagamentos", [
+            ("p", "O KidsLearn é gratuito para baixar e inclui um teste local de 7 dias. A versão completa é uma <b>compra única (não consumível, sem assinatura e sem renovação automática)</b>. Todos os pagamentos são processados pela App Store da Apple (StoreKit). <b>Nunca recebemos nem armazenamos os dados do seu cartão</b>, e não conseguimos ver as informações completas da sua conta. O Compartilhamento Familiar está ativado, de modo que os familiares não precisam comprar novamente."),
+        ]),
+        ("7. Alterações nesta política", [
+            ("p", "Se esta política mudar, atualizaremos esta página e revisaremos a «Data de vigência» exibida no topo. Alterações relevantes (por exemplo, a introdução de qualquer nova coleta de dados) também serão anunciadas de forma destacada dentro do app. Recomendamos revisar esta página periodicamente para conhecer a versão mais recente."),
+        ]),
+        ("8. Contato", [
+            ("p", "Para qualquer dúvida, reclamação ou pedido de exclusão relativo a esta política ou aos seus dados, escreva para <b>{mail}</b>. Normalmente respondemos em até <b>3 dias úteis</b>."),
+        ]),
+    ],
+    "support_title": "Suporte e Perguntas Frequentes",
+    "support_rows": [
+        ("Dispositivo novo / sincronização em vários dispositivos", "Entre com o <b>mesmo Apple ID</b> em cada dispositivo com o iCloud Drive ativado; os dados sincronizam automaticamente. Se a sincronização travar, verifique <i>Ajustes → Apple ID → iCloud</i>."),
+        ("Compartilhamento familiar / espaço infantil", "Use «Compartilhar espaço infantil» no app (CKShare do Apple CloudKit); o destinatário aceita com o próprio Apple ID. São necessários dois Apple IDs diferentes para testar."),
+        ("Restaurar compras", "Toque em «Restaurar Compras» na parte inferior da tela de compra: não há cobrança adicional."),
+        ("Excluir todos os dados", "Veja a seção 5 acima. Excluir o app não remove os dados do iCloud."),
+        ("Ler texto (OCR)", "Executado inteiramente no dispositivo com o Apple Vision; sem envio e sem necessidade de rede."),
+        ("Idiomas suportados", "10 idiomas: chinês simplificado e tradicional, inglês, japonês, espanhol, português (Brasil), francês, alemão, coreano e russo."),
+        ("Requisitos do sistema", "iOS / iPadOS 17.0 ou posterior (iPhone e iPad, incluindo widgets na tela de início)."),
+        ("Contato", "E-mail: <b>{mail}</b> (resposta em até 3 dias úteis)."),
+    ],
+    "footer": "© 2026 {dev} · KidsLearn",
+}
+
+CONTENT["fr"] = {
+    "html_lang": "fr",
+    "title": "Politique de confidentialité et assistance KidsLearn",
+    "desc": "Politique de confidentialité et assistance de KidsLearn : nous ne collectons aucune information personnelle ; toutes les données restent dans votre propre iCloud.",
+    "h1": "🎓 Politique de confidentialité et assistance KidsLearn",
+    "meta_line": "Date d'entrée en vigueur : {d} ｜ Développeur : {dev} ｜ Contact : {mail}",
+    "nav": ["Politique de confidentialité", "Assistance et FAQ"],
+    "nav_id": ["privacy", "support"],
+    "summary": "<b>En résumé :</b> KidsLearn <b>ne collecte aucune information personnelle</b>. Pas de système de compte, pas de serveur, aucun SDK tiers d'analyse ou de publicité. Les emplois du temps, devoirs, habitudes, rappels et points que vous saisissez sont <b>stockés uniquement dans votre propre base de données privée iCloud</b> (Apple CloudKit) ; le développeur ne peut ni les lire ni les exporter. Un <b>verrouillage enfant de l'appareil (code PIN)</b> est fourni comme contrôle parental, et tout le contenu relatif aux enfants est créé et géré par un parent.",
+    "privacy_title": "Politique de confidentialité",
+    "sections": [
+        ("1. Présentation", [
+            ("p", "KidsLearn est un outil de gestion des études destiné aux <b>parents</b>, offrant emplois du temps, suivi des devoirs, validation d'habitudes, rappels d'étude et un système de points et de récompenses. Il est développé par un développeur indépendant ({dev}) et ne dispose <b>d'aucun serveur propre ni de base de données d'arrière-plan</b>. La présente politique explique comment nous traitons — en réalité, comment nous ne traitons pas — vos informations."),
+        ]),
+        ("2. Ce que nous collectons : rien", [
+            ("p", "KidsLearn <b>ne collecte aucune information personnelle</b>. Plus précisément :"),
+            ("ul", [
+                "<b>Aucune inscription, aucune connexion.</b> Nous ne demandons ni ne recevons votre nom, e-mail, numéro de téléphone, contacts, position, photos ou tout autre identifiant.",
+                "<b>Vos données restent dans votre propre iCloud.</b> Les emplois du temps, devoirs, habitudes, rappels, points et récompenses que vous créez sont stockés dans la base de données privée iCloud de votre propre identifiant Apple (Apple CloudKit, conteneur <code>iCloud.com.frankzhou.KidLearn</code>). Les données vous appartiennent et sont conservées par Apple ; <b>le développeur ne peut y accéder, les lire ni les exporter</b>.",
+                "<b>Partage familial et « espaces enfants ».</b> Reposant sur CKShare d'Apple CloudKit. Les données ne sont partagées qu'avec les identifiants Apple que vous invitez explicitement (généralement des membres de la famille) ; vous contrôlez le partage et pouvez le révoquer à tout moment.",
+            ]),
+            ("p", "<b>Fonctions de l'appareil et autorisations système :</b>"),
+            ("ul", [
+                "<b>Notifications</b> : utilisées uniquement pour afficher les rappels d'étude que vous définissez vous-même ; aucune publicité ni contenu marketing. Les « notifications distantes » servent uniquement de <b>déclencheur silencieux pour la synchronisation iCloud</b> et n'affichent jamais d'alerte visible.",
+                "<b>Photos (sélecteur de photos système)</b> : la fonction « numériser du texte (OCR) » des devoirs sélectionne une image via le sélecteur de photos système d'Apple (PhotosPicker). L'app reçoit <b>uniquement l'image que vous sélectionnez</b>, ne peut ni parcourir ni accéder au reste de votre bibliothèque et <b>ne requiert aucune autorisation d'accès à la photothèque</b>. La reconnaissance est effectuée <b>entièrement sur l'appareil</b> via le framework Vision d'Apple ; ni l'image ni le résultat ne sont <b>jamais téléversés</b>, et l'image d'origine n'est pas conservée. <b>L'app n'utilise pas l'appareil photo et ne demande pas d'autorisation d'appareil photo.</b>",
+                "<b>Face ID / Touch ID / code de l'appareil</b> : utilisé uniquement pour authentifier sur cet appareil lorsqu'un parent modifie ou réinitialise le code PIN du verrouillage enfant, ou désactive le mode enfant. L'authentification est effectuée par iOS ; <b>l'app ne reçoit, ne lit ni ne stocke jamais de donnée biométrique</b>.",
+                "<b>Presse-papiers</b> : lu une seule fois, uniquement lorsque vous touchez activement « Coller », pour constituer une liste de devoirs. Le texte est traité <b>sur l'appareil</b> ; il n'est <b>jamais téléversé ni conservé</b>. L'app n'accède au presse-papiers à aucun autre moment.",
+                "<b>Autorisations que nous ne demandons jamais</b> : localisation, contacts, calendriers, rappels, microphone, appareil photo ou autorisation de suivi d'apps. En dehors des éléments ci-dessus, l'app ne déclare aucune autre autorisation.",
+            ]),
+        ]),
+        ("3. Tiers, suivi et publicité : aucun", [
+            ("ul", [
+                "<b>Aucun code tiers</b> : le projet ne dépend d'aucun paquet Swift, d'aucun CocoaPods ni d'aucune bibliothèque tierce. Il n'y a aucun SDK publicitaire, aucun SDK d'analyse (ni Firebase ni équivalent), aucun composant de rapport d'incident, d'attribution ou de marketing push.",
+                "<b>Aucun suivi</b> : pas d'IDFA, pas de demande d'autorisation App Tracking Transparency, pas de suivi inter-applications ou inter-sites, pas de cookie de suivi, d'empreinte d'appareil ou d'identifiant local.",
+                "<b>Nous ne vendons, ne partageons ni n'échangeons jamais les données des utilisateurs</b>, et nous ne participons à aucune forme de monétisation des données. Aucune donnée n'est utilisée à des fins publicitaires ou de profilage.",
+                "<b>Toutes les requêtes réseau sont destinées uniquement aux services Apple</b> : synchronisation iCloud (CloudKit) et achats intégrés App Store (StoreKit). Les deux sont régis par la politique de confidentialité d'Apple : voir la <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">politique de confidentialité d'Apple</a>. (Les entrées « Politique de confidentialité » et « Assistance » dans l'app s'ouvrent dans le navigateur intégré du système. La page est rendue par le moteur de Safari dans un processus séparé ; l'app ne peut lire ni le contenu de la page, ni les cookies, ni l'historique de navigation, et n'injecte aucun script.)",
+            ]),
+        ]),
+        ("4. Confidentialité des mineurs", [
+            ("p", "KidsLearn est un <b>outil de gestion destiné aux parents</b>, et non une application conçue pour les enfants : tout le contenu est créé et géré par les parents. L'app ne propose <b>ni</b> messagerie, ni commentaires, ni profils publics, ni découverte ou recommandation de contenu, ni interaction avec des inconnus, ni partage public de contenu généré par les utilisateurs."),
+            ("ul", [
+                "<b>Nous ne collectons, ne vendons ni ne divulguons à des tiers les informations personnelles des mineurs.</b> Les relevés d'études des mineurs (surnom, avatar, matières, devoirs, habitudes, points, etc.) sont saisis par les parents et <b>stockés uniquement dans le compte iCloud du parent</b> ; le développeur n'y a pas accès.",
+                "<b>Aucun contenu public généré par les utilisateurs.</b> Le texte saisi par les parents n'est visible que pour les membres de la famille que le parent <b>invite individuellement</b> via le partage privé iCloud (CKShare). Il n'y a ni audience publique, ni visibilité pour des inconnus, ni mécanisme de recherche ou de recommandation : l'app ne présente donc aucun des risques sociaux liés au contenu public généré par les utilisateurs.",
+                "<b>Contrôles parentaux.</b> L'app propose un « verrouillage enfant de l'appareil (PIN) » : une fois activé, les fonctions de configuration sont masquées et la sortie exige le code PIN ; la modification ou la réinitialisation du PIN requiert l'authentification biométrique du système ou le code de l'appareil. Les parents peuvent l'utiliser pour restreindre l'accès des enfants aux réglages et aux achats.",
+                "<b>Identifiants Apple d'enfants.</b> Si un parent partage un espace enfant avec l'identifiant Apple d'un enfant, ce compte est créé et géré par le parent selon les règles d'Apple ; le partage reste sous son contrôle et peut être interrompu à tout moment.",
+                "<b>À propos du consentement parental.</b> Étant donné que l'app <b>ne collecte aucune information personnelle d'enfants</b>, les mécanismes de « consentement parental vérifiable » exigés par la COPPA (États-Unis), le RGPD (dispositions relatives aux enfants, UE) et la réglementation chinoise sur la protection des informations personnelles des enfants en ligne ne s'appliquent pas, et nous n'avons pas besoin de collecter d'informations d'identité parentale à cette fin. Les parents peuvent supprimer à tout moment un espace enfant et toutes ses données ; la suppression prend effet immédiatement.",
+                "Nous respectons la loi chinoise sur la protection des informations personnelles et la réglementation sur la protection des informations personnelles des enfants en ligne, et suivons les principes de la COPPA et du RGPD : <b>minimisation des données, contrôle parental, pas de partage, pas de vente, ni publicité ni profilage</b>.",
+                "Les parents souhaitant consulter, corriger ou supprimer définitivement des informations relatives à un enfant peuvent le faire depuis l'app ou écrire à {mail} pour obtenir de l'aide.",
+            ]),
+        ]),
+        ("5. Stockage, sécurité et suppression des données", [
+            ("ul", [
+                "Toutes les données résident dans le compte iCloud de votre identifiant Apple, protégées par le chiffrement et les contrôles d'accès d'Apple. Nous ne conservons aucune copie côté serveur.",
+                "<b>La suppression de l'app n'efface pas automatiquement les données iCloud</b> (afin de permettre la restauration sur un nouvel appareil). Pour tout effacer : sur iPhone/iPad, allez dans <i>Réglages → votre identifiant Apple → iCloud → Gérer le stockage du compte → KidsLearn → Supprimer les données</i> ; supprimez l'espace enfant correspondant dans l'app sous <i>Moi → Espaces enfants</i> ; ou écrivez à {mail} pour demander une assistance à la suppression.",
+                "Un petit nombre de préférences d'interface (langue, paramètres d'affichage) sont stockées <b>localement sur l'appareil</b> (UserDefaults système). Elles ne quittent jamais votre appareil et ne sont pas synchronisées avec iCloud.",
+                "Conservez votre identifiant Apple et le code de votre appareil en sécurité : ils constituent la protection principale de ces données.",
+            ]),
+        ]),
+        ("6. Achats et paiements", [
+            ("p", "KidsLearn est téléchargeable gratuitement avec un essai local de 7 jours. La version complète est un <b>achat unique (non consommable, sans abonnement ni renouvellement automatique)</b>. Tous les paiements sont traités par l'App Store d'Apple (StoreKit). <b>Nous ne recevons ni ne stockons jamais les informations de votre carte de paiement</b>, et nous ne pouvons pas voir les informations complètes de votre compte. Le partage familial est activé : les membres de la famille n'ont donc pas besoin de racheter."),
+        ]),
+        ("7. Modifications de cette politique", [
+            ("p", "Si cette politique change, nous mettrons cette page à jour et modifierons la « date d'entrée en vigueur » affichée en haut. Les modifications importantes (par exemple, l'introduction d'une nouvelle collecte de données) seront également annoncées de manière visible dans l'app. Nous vous invitons à consulter régulièrement cette page pour connaître la dernière version."),
+        ]),
+        ("8. Nous contacter", [
+            ("p", "Pour toute question, réclamation ou demande de suppression concernant cette politique ou vos données, écrivez à <b>{mail}</b>. Nous répondons généralement sous <b>3 jours ouvrés</b>."),
+        ]),
+    ],
+    "support_title": "Assistance et FAQ",
+    "support_rows": [
+        ("Nouvel appareil / synchronisation multi-appareils", "Connectez-vous avec le <b>même identifiant Apple</b> sur chaque appareil avec iCloud Drive activé ; les données se synchronisent automatiquement. Si la synchronisation s'arrête, vérifiez <i>Réglages → identifiant Apple → iCloud</i>."),
+        ("Partage familial / espace enfant", "Utilisez « Partager l'espace enfant » dans l'app (CKShare d'Apple CloudKit) ; le destinataire accepte avec son propre identifiant Apple. Deux identifiants Apple différents sont nécessaires pour tester."),
+        ("Restaurer les achats", "Touchez « Restaurer les achats » en bas de l'écran d'achat : aucun débit supplémentaire."),
+        ("Supprimer toutes les données", "Voir la section 5 ci-dessus. Supprimer l'app n'efface pas les données iCloud."),
+        ("Numériser du texte (OCR)", "Exécuté entièrement sur l'appareil via Apple Vision ; aucun téléversement ni connexion réseau."),
+        ("Langues prises en charge", "10 langues : chinois simplifié et traditionnel, anglais, japonais, espagnol, portugais (Brésil), français, allemand, coréen et russe."),
+        ("Configuration requise", "iOS / iPadOS 17.0 ou version ultérieure (iPhone et iPad, y compris les widgets de l'écran d'accueil)."),
+        ("Contact", "E-mail : <b>{mail}</b> (réponse sous 3 jours ouvrés)."),
+    ],
+    "footer": "© 2026 {dev} · KidsLearn",
+}
+
+CONTENT["de"] = {
+    "html_lang": "de",
+    "title": "KidsLearn Datenschutzerklärung und Support",
+    "desc": "Datenschutzerklärung und Support von KidsLearn: Wir erfassen keine personenbezogenen Daten; alle Daten bleiben in Ihrem eigenen iCloud-Speicher.",
+    "h1": "🎓 KidsLearn Datenschutzerklärung und Support",
+    "meta_line": "Inkrafttreten: {d} ｜ Entwickler: {dev} ｜ Kontakt: {mail}",
+    "nav": ["Datenschutzerklärung", "Support und Häufige Fragen"],
+    "nav_id": ["privacy", "support"],
+    "summary": "<b>Kurz gesagt:</b> KidsLearn <b>erfasst keine personenbezogenen Daten</b>. Es gibt kein Kontosystem, keinen Server und keine Analyse- oder Werbe-SDKs von Drittanbietern. Stundenpläne, Hausaufgaben, Gewohnheiten, Erinnerungen und Punkte, die Sie eingeben, werden <b>ausschließlich in Ihrer eigenen privaten iCloud-Datenbank</b> (Apple CloudKit) gespeichert; der Entwickler kann sie weder lesen noch exportieren. Eine <b>Kindersperre (PIN)</b> dient als Kindersicherung, und alle kinderbezogenen Inhalte werden von einem Elternteil erstellt und verwaltet.",
+    "privacy_title": "Datenschutzerklärung",
+    "sections": [
+        ("1. Überblick", [
+            ("p", "KidsLearn ist ein Lernverwaltungs-Werkzeug für <b>Eltern</b> mit Stundenplänen, Hausaufgabenverfolgung, Gewohnheits-Check-ins, Lernerinnerungen sowie einem Punkt- und Belohnungssystem. Es wird von einem unabhängigen Entwickler ({dev}) entwickelt und hat <b>keinen eigenen Server und keine Backend-Datenbank</b>. Diese Erklärung beschreibt, wie wir mit Ihren Informationen umgehen – genau genommen: nicht umgehen."),
+        ]),
+        ("2. Was wir erfassen: nichts", [
+            ("p", "KidsLearn <b>erfasst keine personenbezogenen Daten</b>. Im Einzelnen:"),
+            ("ul", [
+                "<b>Keine Registrierung, keine Anmeldung.</b> Wir fragen Ihren Namen, Ihre E-Mail-Adresse, Telefonnummer, Kontakte, Ihren Standort, Fotos oder Kennungen weder ab noch erhalten wir sie.",
+                "<b>Ihre Daten bleiben in Ihrem eigenen iCloud-Speicher.</b> Stundenpläne, Hausaufgaben, Gewohnheiten, Erinnerungen, Punkte und Belohnungen, die Sie anlegen, werden in der privaten iCloud-Datenbank Ihrer eigenen Apple-ID gespeichert (Apple CloudKit, Container <code>iCloud.com.frankzhou.KidLearn</code>). Die Daten gehören Ihnen und werden von Apple verwahrt; <b>der Entwickler kann nicht darauf zugreifen, sie lesen oder exportieren</b>.",
+                "<b>Familienfreigabe und „Kinderbereiche“.</b> Basiert auf CKShare von Apple CloudKit. Daten werden nur mit Apple-IDs geteilt, die Sie ausdrücklich einladen (in der Regel Familienmitglieder); Sie behalten die Kontrolle und können die Freigabe jederzeit widerrufen.",
+            ]),
+            ("p", "<b>Gerätefunktionen und Systemberechtigungen:</b>"),
+            ("ul", [
+                "<b>Benachrichtigungen</b> – dienen ausschließlich der Anzeige der Lernerinnerungen, die Sie selbst festlegen; keine Werbung oder Marketinginhalte. „Remote-Benachrichtigungen“ werden nur als <b>stiller Auslöser für die iCloud-Synchronisierung</b> verwendet und zeigen niemals eine sichtbare Meldung an.",
+                "<b>Fotos (System-Fotoauswahl)</b> – die Funktion „Text scannen (OCR)“ für Hausaufgaben wählt ein Bild über die System-Fotoauswahl von Apple (PhotosPicker). Die App erhält <b>nur das von Ihnen ausgewählte Bild</b>, kann die übrige Mediathek weder durchsuchen noch darauf zugreifen und <b>benötigt keine Fotobibliothek-Berechtigung</b>. Die Texterkennung erfolgt <b>vollständig auf dem Gerät</b> über das Vision-Framework von Apple; weder Bild noch Ergebnis werden <b>jemals hochgeladen</b>, und das Originalbild wird nicht aufbewahrt. <b>Die App verwendet die Kamera nicht und fordert keine Kameraberechtigung an.</b>",
+                "<b>Face ID / Touch ID / Gerätecode</b> – wird nur zur Authentifizierung auf diesem Gerät verwendet, wenn ein Elternteil die PIN der Kindersperre ändert oder zurücksetzt oder den Kindermodus ausschaltet. Die Authentifizierung erfolgt durch iOS; <b>die App erhält, liest oder speichert niemals biometrische Daten</b>.",
+                "<b>Zwischenablage</b> – wird einmalig gelesen, und zwar nur wenn Sie aktiv auf „Einsetzen“ tippen, um eine Hausaufgabenliste zu erstellen. Der Text wird <b>auf dem Gerät</b> verarbeitet und <b>weder hochgeladen noch gespeichert</b>. Zu keinem anderen Zeitpunkt greift die App auf die Zwischenablage zu.",
+                "<b>Berechtigungen, die wir nie anfordern</b> – Standort, Kontakte, Kalender, Erinnerungen, Mikrofon, Kamera oder App-Tracking-Berechtigung. Außer den oben genannten Punkten deklariert die App keine weiteren Berechtigungen.",
+            ]),
+        ]),
+        ("3. Drittanbieter, Tracking und Werbung: keine", [
+            ("ul", [
+                "<b>Kein einziger Drittanbieter-Code</b> – das Projekt nutzt kein Swift-Paket, kein CocoaPods und keine Drittanbieter-Bibliothek. Es gibt kein Werbe-SDK, kein Analyse-SDK (kein Firebase o. Ä.), keine Absturzberichte, Attribution oder Push-Marketing-Komponenten.",
+                "<b>Kein Tracking</b> – keine IDFA, keine Abfrage der App-Tracking-Berechtigung, kein app- oder websiteübergreifendes Tracking, keine Tracking-Cookies, Geräte-Fingerprints oder lokalen Kennungen.",
+                "<b>Wir verkaufen, teilen oder handeln niemals Nutzerdaten</b> und betreiben keinerlei Datenmonetarisierung. Keine Daten werden für Werbung oder Nutzerprofile verwendet.",
+                "<b>Alle Netzwerkzugriffe gehen ausschließlich an Apple-Dienste</b> – iCloud-Synchronisierung (CloudKit) und In-App-Käufe (StoreKit). Beide unterliegen der Datenschutzerklärung von Apple: siehe <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Apple Datenschutzerklärung</a>. (Die Einträge „Datenschutzerklärung“ und „Support“ in der App öffnen sich im systemeigenen In-App-Browser. Die Seite wird von der Safari-Engine in einem separaten Prozess dargestellt; die App kann weder Seiteninhalt, Cookies noch Browserverlauf lesen und injiziert keine Skripte.)",
+            ]),
+        ]),
+        ("4. Schutz von Kindern und Jugendlichen", [
+            ("p", "KidsLearn ist ein <b>Verwaltungswerkzeug für Eltern</b> und keine App für Kinder: Sämtliche Inhalte werden von Eltern erstellt und verwaltet. Die App bietet <b>keine</b> Chat-, Kommentar-, öffentlichen Profil-, Entdeckungs- oder Empfehlungsfunktionen, keinen Kontakt mit Fremden und keine öffentliche Veröffentlichung nutzergenerierter Inhalte."),
+            ("ul", [
+                "<b>Wir erfassen, verkaufen oder offenbaren keine personenbezogenen Daten von Kindern an Dritte.</b> Lerndaten von Kindern (Spitzname, Avatar, Fächer, Hausaufgaben, Gewohnheiten, Punkte usw.) werden von Eltern eingegeben und <b>ausschließlich im iCloud-Konto des Elternteils</b> gespeichert; der Entwickler hat keinen Zugriff darauf.",
+                "<b>Keine öffentlichen nutzergenerierten Inhalte.</b> Von Eltern eingegebene Texte sind nur für Familienmitglieder sichtbar, die der Elternteil <b>einzeln</b> über die private iCloud-Freigabe (CKShare) einlädt. Es gibt keine öffentliche Sichtbarkeit, keine Sichtbarkeit für Fremde sowie keine Such- oder Empfehlungsmechanismen – die App birgt daher keines der mit öffentlichen nutzergenerierten Inhalten verbundenen sozialen Risiken.",
+                "<b>Kindersicherung.</b> Die App bietet eine „Kindersperre (PIN)“: Ist sie aktiviert, werden Konfigurationsfunktionen ausgeblendet und zum Verlassen ist die PIN erforderlich; zum Ändern oder Zurücksetzen der PIN ist eine biometrische Authentifizierung oder der Gerätecode nötig. Eltern können so den Zugriff von Kindern auf Einstellungen und Käufe beschränken.",
+                "<b>Apple-IDs von Kindern.</b> Wenn ein Elternteil einen Kinderbereich mit der Apple-ID eines Kindes teilt, wird dieses Konto vom Elternteil gemäß den Apple-Regeln erstellt und verwaltet; die Freigabe bleibt unter seiner Kontrolle und kann jederzeit beendet werden.",
+                "<b>Zur elterlichen Einwilligung.</b> Da die App <b>keinerlei personenbezogene Daten von Kindern erfasst</b>, sind die Mechaniken zur „überprüfbaren elterlichen Einwilligung“ nach COPPA (USA), DSGVO (Kinderbestimmungen, EU) und der chinesischen Verordnung zum Schutz personenbezogener Daten von Kindern im Netz nicht anwendbar, und wir müssen hierfür keine Identitätsdaten der Eltern erheben. Eltern können jeden Kinderbereich samt aller Daten jederzeit löschen; die Löschung wirkt sofort.",
+                "Wir beachten das chinesische Gesetz zum Schutz personenbezogener Daten sowie die Verordnung zum Schutz personenbezogener Daten von Kindern im Netz und richten uns nach den Grundsätzen von COPPA und DSGVO: <b>Datenminimierung, elterliche Kontrolle, kein Teilen, kein Verkauf, keine Werbung und kein Profiling</b>.",
+                "Eltern, die kinderbezogene Informationen einsehen, berichtigen oder endgültig löschen möchten, können dies in der App tun oder sich per E-Mail an {mail} wenden.",
+            ]),
+        ]),
+        ("5. Datenspeicherung, Sicherheit und Löschung", [
+            ("ul", [
+                "Alle Daten liegen im iCloud-Konto Ihrer Apple-ID und sind durch Verschlüsselung und Zugriffskontrollen von Apple geschützt. Wir halten keine serverseitige Kopie vor.",
+                "<b>Das Löschen der App entfernt die iCloud-Daten nicht automatisch</b> (damit eine Wiederherstellung auf einem neuen Gerät möglich ist). Um alles zu löschen: auf iPhone/iPad zu <i>Einstellungen → Ihre Apple-ID → iCloud → Account-Speicher verwalten → KidsLearn → Daten löschen</i>; oder löschen Sie den betreffenden Kinderbereich in der App unter <i>Ich → Kinderbereiche</i>; oder schreiben Sie an {mail}, um Unterstützung bei der Löschung zu erhalten.",
+                "Einige wenige Anzeigeeinstellungen (Sprache, Darstellung) werden <b>lokal auf dem Gerät</b> (System-UserDefaults) gespeichert. Sie verlassen Ihr Gerät niemals und werden nicht mit iCloud synchronisiert.",
+                "Bewahren Sie Ihre Apple-ID und den Gerätecode sicher auf – sie sind der wichtigste Schutz dieser Daten.",
+            ]),
+        ]),
+        ("6. Käufe und Zahlungen", [
+            ("p", "KidsLearn ist kostenlos erhältlich und bietet eine lokale 7-Tage-Testphase. Die Vollversion ist ein <b>einmaliger Kauf (nicht verbrauchbar, kein Abonnement, keine automatische Verlängerung)</b>. Alle Zahlungen werden über den Apple App Store (StoreKit) abgewickelt. <b>Wir erhalten oder speichern niemals Ihre Kartendaten</b> und können Ihre vollständigen Kontoinformationen nicht einsehen. Die Familienfreigabe ist aktiviert, sodass Familienmitglieder nicht erneut kaufen müssen."),
+        ]),
+        ("7. Änderungen dieser Erklärung", [
+            ("p", "Bei Änderungen aktualisieren wir diese Seite und passen das oben angezeigte Datum des „Inkrafttretens“ an. Wesentliche Änderungen (etwa die Aufnahme einer neuen Datenerhebung) werden zusätzlich deutlich sichtbar in der App angekündigt. Bitte prüfen Sie diese Seite regelmäßig, um die aktuelle Version zu kennen."),
+        ]),
+        ("8. Kontakt", [
+            ("p", "Bei Fragen, Beschwerden oder Löschanfragen zu dieser Erklärung oder Ihren Daten schreiben Sie bitte an <b>{mail}</b>. Wir antworten in der Regel innerhalb von <b>3 Werktagen</b>."),
+        ]),
+    ],
+    "support_title": "Support und Häufige Fragen",
+    "support_rows": [
+        ("Neues Gerät / Synchronisierung mehrerer Geräte", "Melden Sie sich auf jedem Gerät mit <b>derselben Apple-ID</b> an und aktivieren Sie iCloud Drive; die Daten werden automatisch synchronisiert. Stockt die Synchronisierung, prüfen Sie <i>Einstellungen → Apple-ID → iCloud</i>."),
+        ("Familienfreigabe / Kinderbereich teilen", "Nutzen Sie „Kinderbereich teilen“ in der App (Apple CloudKit CKShare); die empfangende Person nimmt mit ihrer eigenen Apple-ID an. Zum Testen sind zwei verschiedene Apple-IDs erforderlich."),
+        ("Käufe wiederherstellen", "Tippen Sie unten auf der Kaufseite auf „Käufe wiederherstellen“ – es werden keine zusätzlichen Kosten berechnet."),
+        ("Alle Daten löschen", "Siehe Abschnitt 5. Das Löschen der App entfernt die iCloud-Daten nicht."),
+        ("Text scannen (OCR)", "Läuft vollständig auf dem Gerät über Apple Vision; kein Upload, keine Netzwerkverbindung erforderlich."),
+        ("Unterstützte Sprachen", "10 Sprachen: vereinfachtes und traditionelles Chinesisch, Englisch, Japanisch, Spanisch, Portugiesisch (Brasilien), Französisch, Deutsch, Koreanisch und Russisch."),
+        ("Systemvoraussetzungen", "iOS / iPadOS 17.0 oder neuer (iPhone und iPad, einschließlich Home-Bildschirm-Widgets)."),
+        ("Kontakt", "E-Mail: <b>{mail}</b> (Antwort in der Regel innerhalb von 3 Werktagen)."),
+    ],
+    "footer": "© 2026 {dev} · KidsLearn",
+}
+
+CONTENT["ko"] = {
+    "html_lang": "ko",
+    "title": "KidsLearn 개인정보 처리방침 및 지원",
+    "desc": "KidsLearn 개인정보 처리방침 및 지원: 어떤 개인정보도 수집하지 않으며, 모든 데이터는 사용자 본인의 iCloud에만 저장됩니다.",
+    "h1": "🎓 KidsLearn 개인정보 처리방침 및 지원",
+    "meta_line": "시행일: {d} ｜ 개발자: {dev} ｜ 문의: {mail}",
+    "nav": ["개인정보 처리방침", "지원 및 자주 묻는 질문"],
+    "nav_id": ["privacy", "support"],
+    "summary": "<b>요약:</b> KidsLearn은 <b>어떠한 개인정보도 수집하지 않습니다</b>. 계정 시스템, 서버, 제3자 분석·광고 SDK가 없습니다. 입력하신 시간표, 숙제, 습관, 알림, 포인트 데이터는 <b>오직 본인의 개인 iCloud 데이터베이스</b>(Apple CloudKit)에만 저장되며, 개발자는 이를 읽거나 내보낼 수 없습니다. 보호자 관리를 위한 <b>어린이 기기 잠금(PIN)</b>을 제공하며, 아동 관련 모든 콘텐츠는 보호자가 생성하고 관리합니다.",
+    "privacy_title": "개인정보 처리방침",
+    "sections": [
+        ("1. 개요", [
+            ("p", "KidsLearn은 시간표, 숙제 기록, 습관 체크, 학습 알림, 포인트·보상 기능을 제공하는 <b>학부모용</b> 학습 관리 도구입니다. 개인 개발자({dev})가 개발했으며, <b>자체 서버와 백엔드 데이터베이스가 없습니다</b>. 본 방침은 저희가 회원님의 정보를 어떻게 처리하는지(정확히는 처리하지 않는지)를 설명합니다."),
+        ]),
+        ("2. 수집하는 정보: 없음", [
+            ("p", "KidsLearn은 <b>어떠한 개인정보도 수집하지 않습니다</b>. 구체적으로:"),
+            ("ul", [
+                "<b>가입 없음, 로그인 없음.</b> 이름, 이메일, 전화번호, 연락처, 위치, 사진, 식별자 등을 요청하거나 받지 않습니다.",
+                "<b>데이터는 본인의 iCloud에만 보관됩니다.</b> 시간표, 숙제, 습관, 알림, 포인트, 보상 등은 본인 Apple ID의 개인 iCloud 데이터베이스(Apple CloudKit, 컨테이너 <code>iCloud.com.frankzhou.KidLearn</code>)에 저장됩니다. 데이터는 회원님의 소유이며 Apple이 보관합니다. <b>개발자는 접근·열람·내보내기를 할 수 없습니다</b>.",
+                "<b>가족 공유 및 ‘아이 공간’.</b> Apple CloudKit의 CKShare를 기반으로 하며, 회원님이 명시적으로 초대한 Apple ID(통상 가족)하고만 공유됩니다. 공유 범위는 회원님이 관리하며 언제든 취소할 수 있습니다.",
+            ]),
+            ("p", "<b>기기 기능 및 시스템 권한:</b>"),
+            ("ul", [
+                "<b>알림</b>: 회원님이 직접 설정한 학습 알림을 표시하는 데만 사용되며 광고나 마케팅 내용이 포함되지 않습니다. ‘원격 알림’은 iCloud 동기화를 위한 <b>무음 트리거</b>로만 사용되며 눈에 보이는 알림을 표시하지 않습니다.",
+                "<b>사진(시스템 사진 선택기)</b>: 숙제의 ‘텍스트 스캔(OCR)’ 기능은 Apple 시스템 사진 선택기(PhotosPicker)로 이미지를 선택합니다. 앱은 <b>선택한 한 장만</b> 받으며 보관함 전체를 훑어보거나 접근할 수 없고, <b>사진 보관함 권한도 필요하지 않습니다</b>. 인식은 Apple Vision 프레임워크로 <b>전적으로 기기 내에서</b> 수행되며 이미지와 결과는 <b>어떤 서버로도 전송되지 않고</b> 원본 이미지도 보관하지 않습니다. <b>본 앱은 카메라를 사용하지 않으며 카메라 권한도 요청하지 않습니다.</b>",
+                "<b>Face ID / Touch ID / 기기 암호</b>: 보호자가 ‘어린이 모드 PIN’을 변경·재설정하거나 어린이 모드를 해제할 때 기기 본인 확인에만 사용됩니다. 인증은 iOS가 수행하며, <b>앱은 어떤 생체 정보도 수신·읽기·저장하지 않습니다</b>.",
+                "<b>클립보드</b>: 회원님이 직접 ‘붙여넣기’를 탭했을 때 한 번만 읽어 숙제 목록을 만드는 데 사용합니다. 텍스트는 <b>기기 내에서</b> 처리되며 <b>전송되거나 보관되지 않습니다</b>. 그 외에는 클립보드에 접근하지 않습니다.",
+                "<b>절대 요청하지 않는 권한</b>: 위치, 연락처, 캘린더, 미리 알림, 마이크, 카메라, 앱 추적 권한. 위 항목 외에 앱이 선언한 권한은 없습니다.",
+            ]),
+        ]),
+        ("3. 제3자 서비스, 추적, 광고: 없음", [
+            ("ul", [
+                "<b>제3자 코드 없음</b>: 프로젝트는 어떤 Swift 패키지, CocoaPods, 제3자 라이브러리에도 의존하지 않습니다. 광고 SDK, 분석 SDK(Firebase 등), 크래시 수집, 어트리뷰션, 푸시 마케팅 구성요소가 없습니다.",
+                "<b>추적 없음</b>: IDFA를 사용하지 않고 앱 추적 투명성 권한을 요청하지 않으며, 앱 간·사이트 간 추적, 추적용 쿠키, 기기 지문, 로컬 식별자를 사용하지 않습니다.",
+                "<b>사용자 데이터를 판매·공유·거래하지 않습니다.</b> 어떤 형태의 데이터 수익화에도 참여하지 않으며 광고나 사용자 프로파일링에 사용하지 않습니다.",
+                "<b>모든 네트워크 요청은 Apple 서비스로만 향합니다</b>: iCloud(CloudKit) 동기화와 App Store 인앱 구매(StoreKit)입니다. 두 서비스는 Apple의 개인정보 처리방침에 따릅니다. <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Apple 개인정보 처리방침</a>을 참조하세요. (앱 내 ‘개인정보 처리방침’과 ‘지원’ 항목은 시스템 인앱 브라우저에서 열립니다. 페이지는 Safari 엔진으로 별도 프로세스에서 렌더링되며, 앱은 페이지 내용·쿠키·방문 기록을 읽을 수 없고 스크립트도 주입하지 않습니다.)",
+            ]),
+        ]),
+        ("4. 아동(미성년자) 정보 보호", [
+            ("p", "KidsLearn은 아동용 앱이 아닌 <b>보호자용 관리 도구</b>이며, 모든 콘텐츠는 보호자가 생성하고 관리합니다. 앱은 채팅, 댓글, 공개 프로필, 콘텐츠 탐색·추천, 낯선 이와의 상호작용, 사용자 생성 콘텐츠의 공개 공유 기능을 <b>제공하지 않습니다</b>."),
+            ("ul", [
+                "<b>아동의 개인정보를 수집·판매하거나 제3자에게 공개하지 않습니다.</b> 아동의 학습 기록(별명, 아바타, 과목, 숙제, 습관, 포인트 등)은 보호자가 입력하며 <b>보호자 본인의 iCloud 계정에만</b> 저장됩니다. 개발자는 접근할 수 없습니다.",
+                "<b>공개되는 사용자 생성 콘텐츠 없음.</b> 보호자가 입력한 텍스트는 보호자가 iCloud 개인 공유(CKShare)로 <b>일대일 초대한</b> 가족에게만 표시됩니다. 공개 대상도, 낯선 이에 대한 공개도, 검색·추천 기능도 없어 공개 UGC와 관련된 사회적 위험이 없습니다.",
+                "<b>보호자 관리 기능.</b> ‘어린이 기기 잠금(PIN)’을 켜면 설정 기능이 숨겨지고 해제하려면 PIN이 필요합니다. PIN 변경·재설정에는 시스템 생체 인증 또는 기기 암호가 필요합니다.",
+                "<b>아동용 Apple ID.</b> 보호자가 아동용 Apple ID에 아이 공간을 공유하는 경우, 해당 계정은 Apple 규정에 따라 보호자가 생성·관리하며 공유는 항상 보호자가 관리하고 언제든 중단할 수 있습니다.",
+                "<b>보호자 동의에 관하여.</b> 본 앱은 <b>아동의 개인정보를 전혀 수집하지 않으므로</b>, 미국 COPPA, EU GDPR(아동 관련 조항), 중국 ‘아동 개인정보 네트워크 보호 규정’이 요구하는 ‘확인 가능한 보호자 동의’ 절차가 적용되지 않으며, 이를 위해 보호자의 신원 정보를 수집할 필요도 없습니다. 보호자는 언제든 아이 공간과 그 모든 데이터를 삭제할 수 있으며 삭제는 즉시 반영됩니다.",
+                "중국 「개인정보 보호법」과 「아동 개인정보 네트워크 보호 규정」을 준수하고 COPPA / GDPR 원칙에 맞춥니다: <b>최소 수집, 보호자 통제, 미공유, 미판매, 광고·프로파일링 미사용</b>.",
+                "아동 관련 정보를 열람·정정·완전 삭제하려는 보호자는 앱 내에서 직접 처리하거나 {mail}로 문의하여 도움을 받을 수 있습니다.",
+            ]),
+        ]),
+        ("5. 데이터 저장, 보안 및 삭제", [
+            ("ul", [
+                "모든 데이터는 회원님 Apple ID의 iCloud 계정에 저장되며 Apple의 암호화 및 접근 제어로 보호됩니다. 서버 측 복사본은 보관하지 않습니다.",
+                "<b>앱을 삭제해도 iCloud 데이터는 자동으로 지워지지 않습니다</b>(새 기기 복원을 위해). 모두 지우려면 iPhone/iPad에서 <i>설정 → Apple ID → iCloud → 계정 저장 공간 관리 → KidsLearn → 데이터 삭제</i>로 이동하거나, 앱 내 <i>나 → 아이 공간</i>에서 해당 공간을 삭제하거나, {mail}로 삭제 지원을 요청하세요.",
+                "일부 화면 설정(언어, 표시 설정)은 <b>기기 로컬</b>(시스템 UserDefaults)에 저장됩니다. 기기를 떠나지 않으며 iCloud와 동기화되지 않습니다.",
+                "Apple ID와 기기 잠금 암호를 안전하게 보관하세요. 이 데이터를 보호하는 주된 수단입니다.",
+            ]),
+        ]),
+        ("6. 구매 및 결제", [
+            ("p", "KidsLearn은 무료로 다운로드할 수 있고 7일 로컬 체험판을 제공합니다. 전체 버전은 <b>1회 구매(비소모성, 구독 아님, 자동 갱신 없음)</b>입니다. 모든 결제는 Apple App Store(StoreKit)가 처리하며, <b>결제 카드 정보를 받거나 저장하지 않습니다</b>. 가족 공유가 활성화되어 있어 가족이 다시 구매할 필요가 없습니다."),
+        ]),
+        ("7. 본 방침의 변경", [
+            ("p", "본 방침이 변경되면 이 페이지를 갱신하고 상단의 ‘시행일’을 수정합니다. 중대한 변경(예: 새로운 데이터 수집 도입)은 앱 내에서도 눈에 띄는 방식으로 안내합니다. 최신 내용을 확인하려면 정기적으로 이 페이지를 방문해 주세요."),
+        ]),
+        ("8. 문의", [
+            ("p", "본 방침이나 데이터에 관한 질문, 불만, 삭제 요청은 <b>{mail}</b>로 보내주세요. 통상 <b>영업일 3일</b> 이내에 회신합니다."),
+        ]),
+    ],
+    "support_title": "지원 및 자주 묻는 질문",
+    "support_rows": [
+        ("새 기기 / 여러 기기 동기화", "각 기기에서 <b>동일한 Apple ID</b>로 로그인하고 iCloud 드라이브를 켜면 자동으로 동기화됩니다. 동기화가 멈추면 <i>설정 → Apple ID → iCloud</i>를 확인하세요."),
+        ("가족 / 아이 공간 공유", "앱에서 ‘아이 공간 공유’(Apple CloudKit CKShare)를 사용하고, 상대가 자신의 Apple ID로 수락합니다. 테스트에는 서로 다른 Apple ID 2개가 필요합니다."),
+        ("구매 복원", "결제 화면 하단의 ‘구매 복원’을 탭하세요. 추가 요금이 부과되지 않습니다."),
+        ("모든 데이터 삭제", "위 5항을 참조하세요. 앱 삭제는 iCloud 데이터를 지우지 않습니다."),
+        ("텍스트 스캔(OCR)", "Apple Vision으로 기기 내에서 전부 처리됩니다. 업로드도 네트워크 연결도 필요 없습니다."),
+        ("지원 언어", "간체·번체 중국어, 영어, 일본어, 스페인어, 포르투갈어(브라질), 프랑스어, 독일어, 한국어, 러시아어(총 10개)."),
+        ("시스템 요구 사항", "iOS / iPadOS 17.0 이상(iPhone·iPad 공용, 홈 화면 위젯 포함)."),
+        ("문의", "이메일: <b>{mail}</b>(통상 영업일 3일 이내 회신)."),
+    ],
+    "footer": "© 2026 {dev} · KidsLearn",
+}
+
+CONTENT["ru"] = {
+    "html_lang": "ru",
+    "title": "Политика конфиденциальности и поддержка KidsLearn",
+    "desc": "Политика конфиденциальности и поддержка KidsLearn: мы не собираем никаких персональных данных; все данные хранятся только в вашем собственном iCloud.",
+    "h1": "🎓 Политика конфиденциальности и поддержка KidsLearn",
+    "meta_line": "Дата вступления в силу: {d} ｜ Разработчик: {dev} ｜ Контакт: {mail}",
+    "nav": ["Политика конфиденциальности", "Поддержка и часто задаваемые вопросы"],
+    "nav_id": ["privacy", "support"],
+    "summary": "<b>Коротко:</b> KidsLearn <b>не собирает никаких персональных данных</b>. Нет системы учётных записей, нет сервера, нет сторонних SDK для аналитики или рекламы. Расписания, домашние задания, привычки, напоминания и баллы, которые вы вводите, <b>хранятся только в вашей собственной личной базе данных iCloud</b> (Apple CloudKit); разработчик не может прочитать или экспортировать их. В качестве родительского контроля предусмотрена <b>блокировка устройства ребёнка (PIN-код)</b>, а весь контент, связанный с детьми, создаётся и управляется родителем.",
+    "privacy_title": "Политика конфиденциальности",
+    "sections": [
+        ("1. Общие сведения", [
+            ("p", "KidsLearn — это инструмент управления учебой для <b>родителей</b>: расписания, учёт домашних заданий, отметки о привычках, напоминания о занятиях, а также система баллов и наград. Приложение разработано независимым разработчиком ({dev}) и <b>не имеет собственного сервера и серверной базы данных</b>. Настоящая политика объясняет, как мы обрабатываем — точнее, не обрабатываем — вашу информацию."),
+        ]),
+        ("2. Что мы собираем: ничего", [
+            ("p", "KidsLearn <b>не собирает никаких персональных данных</b>. В частности:"),
+            ("ul", [
+                "<b>Без регистрации и входа.</b> Мы не запрашиваем и не получаем ваше имя, электронную почту, телефон, контакты, местоположение, фотографии или какие-либо идентификаторы.",
+                "<b>Ваши данные остаются в вашем iCloud.</b> Расписания, домашние задания, привычки, напоминания, баллы и награды хранятся в личной базе данных iCloud вашего собственного Apple ID (Apple CloudKit, контейнер <code>iCloud.com.frankzhou.KidLearn</code>). Данные принадлежат вам и хранятся Apple; <b>разработчик не может получить к ним доступ, прочитать или экспортировать их</b>.",
+                "<b>Семейный доступ и «детские пространства».</b> Реализовано на основе CKShare из Apple CloudKit. Данные доступны только тем Apple ID, которых вы явно пригласили (как правило, членам семьи); вы управляете доступом и можете в любой момент его отозвать.",
+            ]),
+            ("p", "<b>Возможности устройства и системные разрешения:</b>"),
+            ("ul", [
+                "<b>Уведомления</b> — используются только для показа напоминаний о занятиях, которые вы настроили сами; никакой рекламы или маркетингового контента. «Удалённые уведомления» служат лишь <b>тихим сигналом для синхронизации iCloud</b> и никогда не показывают видимых оповещений.",
+                "<b>Фото (системный выбор фотографий)</b> — функция «распознать текст (OCR)» в домашних заданиях выбирает изображение через системный инструмент выбора фото Apple (PhotosPicker). Приложение получает <b>только выбранное вами изображение</b>, не может просматривать или получать доступ к остальной библиотеке и <b>не требует разрешения на доступ к фотографиям</b>. Распознавание выполняется <b>полностью на устройстве</b> средствами фреймворка Apple Vision; ни изображение, ни результат <b>никогда не загружаются</b> на сервер, а исходное изображение не сохраняется. <b>Приложение не использует камеру и не запрашивает разрешение на камеру.</b>",
+                "<b>Face ID / Touch ID / код-пароль устройства</b> — используется только для подтверждения личности на этом устройстве, когда родитель меняет или сбрасывает PIN-код блокировки ребёнка либо отключает детский режим. Проверку выполняет iOS; <b>приложение никогда не получает, не читает и не хранит биометрические данные</b>.",
+                "<b>Буфер обмена</b> — считывается один раз, только когда вы намеренно нажимаете «Вставить», чтобы составить список заданий. Текст обрабатывается <b>на устройстве</b> и <b>не загружается и не сохраняется</b>. В остальное время приложение не обращается к буферу обмена.",
+                "<b>Разрешения, которые мы никогда не запрашиваем</b> — местоположение, контакты, календари, напоминания, микрофон, камера и разрешение на отслеживание в приложениях. Кроме перечисленного, приложение не объявляет других разрешений.",
+            ]),
+        ]),
+        ("3. Сторонние сервисы, отслеживание и реклама: отсутствуют", [
+            ("ul", [
+                "<b>Никакого стороннего кода</b> — проект не зависит ни от одного Swift-пакета, CocoaPods или сторонней библиотеки. Нет рекламных SDK, аналитических SDK (ни Firebase, ни аналогичных), нет сбора отчётов о сбоях, атрибуции или push-маркетинга.",
+                "<b>Никакого отслеживания</b> — не используется IDFA, не запрашивается разрешение App Tracking Transparency, нет отслеживания между приложениями или сайтами, нет трекинговых cookie, отпечатков устройства или локальных идентификаторов.",
+                "<b>Мы никогда не продаём, не передаём и не обмениваем пользовательские данные</b> и не участвуем ни в какой форме монетизации данных. Данные не используются для рекламы или профилирования.",
+                "<b>Все сетевые запросы идут только к сервисам Apple</b> — синхронизация iCloud (CloudKit) и встроенные покупки App Store (StoreKit). Оба сервиса регулируются политикой конфиденциальности Apple: см. <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">политику конфиденциальности Apple</a>. (Разделы «Политика конфиденциальности» и «Поддержка» в приложении открываются в системном встроенном браузере. Страница отрисовывается движком Safari в отдельном процессе; приложение не может читать содержимое страницы, cookie или историю просмотров и не внедряет скрипты.)",
+            ]),
+        ]),
+        ("4. Защита информации несовершеннолетних", [
+            ("p", "KidsLearn — это <b>инструмент управления для родителей</b>, а не приложение для детей: весь контент создаётся и управляется родителями. В приложении <b>нет</b> чата, комментариев, публичных профилей, подборки или рекомендаций контента, общения с незнакомцами и публичного распространения пользовательского контента."),
+            ("ul", [
+                "<b>Мы не собираем, не продаём и не раскрываем персональные данные детей третьим лицам.</b> Учебные записи детей (псевдоним, аватар, предметы, домашние задания, привычки, баллы и т. д.) вводятся родителями и <b>хранятся только в собственном аккаунте iCloud родителя</b>; разработчик не имеет к ним доступа.",
+                "<b>Никакого публичного пользовательского контента.</b> Введённый родителем текст виден только тем членам семьи, которых родитель <b>пригласил индивидуально</b> через приватный общий доступ iCloud (CKShare). Нет публичной аудитории, нет видимости для незнакомцев, нет механизмов поиска или рекомендаций, поэтому приложение не несёт социальных рисков, связанных с публичным пользовательским контентом.",
+                "<b>Родительский контроль.</b> Приложение предлагает «блокировку устройства ребёнка (PIN)»: после включения функции настройки скрываются, а для выхода требуется PIN-код; изменение или сброс PIN-кода требует биометрической проверки системы или код-пароля устройства. Родители могут использовать это для ограничения доступа детей к настройкам и покупкам.",
+                "<b>Детские Apple ID.</b> Если родитель открывает доступ к детскому пространству для Apple ID ребёнка, этот аккаунт создаётся и управляется родителем по правилам Apple; доступ остаётся под его контролем и может быть прекращён в любой момент.",
+                "<b>О согласии родителей.</b> Поскольку приложение <b>вообще не собирает персональные данные детей</b>, механизмы «проверяемого согласия родителей», предусмотренные COPPA (США), GDPR (положения о детях, ЕС) и китайскими правилами защиты персональной информации детей в интернете, не применяются, и нам не требуется собирать данные о личности родителей для этой цели. Родители могут в любой момент удалить любое детское пространство вместе со всеми его данными; удаление вступает в силу немедленно.",
+                "Мы соблюдаем Закон КНР о защите персональной информации и правила защиты персональной информации детей в интернете, а также следуем принципам COPPA и GDPR: <b>минимизация данных, родительский контроль, отсутствие передачи и продажи, отсутствие рекламы и профилирования</b>.",
+                "Родители, которые хотят просмотреть, исправить или окончательно удалить информацию, связанную с ребёнком, могут сделать это в приложении или написать на {mail} для получения помощи.",
+            ]),
+        ]),
+        ("5. Хранение, безопасность и удаление данных", [
+            ("ul", [
+                "Все данные находятся в учётной записи iCloud вашего Apple ID и защищены шифрованием и средствами контроля доступа Apple. Мы не храним копий на сервере.",
+                "<b>Удаление приложения не приводит к автоматическому удалению данных из iCloud</b> (чтобы их можно было восстановить на новом устройстве). Чтобы стереть всё: на iPhone/iPad откройте <i>Настройки → ваш Apple ID → iCloud → Управление хранилищем учётной записи → KidsLearn → Удалить данные</i>; либо удалите нужное детское пространство в приложении в разделе <i>Я → Детские пространства</i>; либо напишите на {mail}, чтобы запросить помощь с удалением.",
+                "Небольшое число настроек интерфейса (язык, параметры отображения) хранится <b>локально на устройстве</b> (системные UserDefaults). Они никогда не покидают ваше устройство и не синхронизируются с iCloud.",
+                "Храните свой Apple ID и код-пароль устройства в безопасности — это основная защита этих данных.",
+            ]),
+        ]),
+        ("6. Покупки и платежи", [
+            ("p", "KidsLearn можно загрузить бесплатно; предусмотрена локальная пробная версия на 7 дней. Полная версия приобретается <b>разовой покупкой (нерасходуемый товар, без подписки и автопродления)</b>. Все платежи обрабатываются Apple App Store (StoreKit). <b>Мы никогда не получаем и не храним данные вашей банковской карты</b> и не видим полную информацию о вашей учётной записи. Включён семейный доступ, поэтому членам семьи не нужно покупать повторно."),
+        ]),
+        ("7. Изменения настоящей политики", [
+            ("p", "В случае изменений мы обновим эту страницу и изменим указанную выше «дату вступления в силу». Существенные изменения (например, появление нового сбора данных) также будут заметно объявлены в приложении. Рекомендуем периодически просматривать эту страницу, чтобы знать актуальную версию."),
+        ]),
+        ("8. Связаться с нами", [
+            ("p", "По любым вопросам, жалобам или запросам на удаление, касающимся настоящей политики или ваших данных, пишите на <b>{mail}</b>. Обычно мы отвечаем в течение <b>3 рабочих дней</b>."),
+        ]),
+    ],
+    "support_title": "Поддержка и часто задаваемые вопросы",
+    "support_rows": [
+        ("Новое устройство / синхронизация между устройствами", "Войдите с <b>одним и тем же Apple ID</b> на всех устройствах и включите iCloud Drive — данные синхронизируются автоматически. Если синхронизация прекратилась, проверьте <i>Настройки → Apple ID → iCloud</i>."),
+        ("Семейный доступ / общее детское пространство", "Используйте «Поделиться детским пространством» в приложении (CKShare из Apple CloudKit); получатель принимает приглашение своим Apple ID. Для проверки нужны два разных Apple ID."),
+        ("Восстановить покупки", "Нажмите «Восстановить покупки» в нижней части экрана покупки — повторного списания не будет."),
+        ("Удалить все данные", "См. раздел 5 выше. Удаление приложения не удаляет данные из iCloud."),
+        ("Распознавание текста (OCR)", "Полностью выполняется на устройстве средствами Apple Vision; без загрузки и без подключения к сети."),
+        ("Поддерживаемые языки", "10 языков: упрощённый и традиционный китайский, английский, японский, испанский, португальский (Бразилия), французский, немецкий, корейский и русский."),
+        ("Системные требования", "iOS / iPadOS 17.0 или новее (iPhone и iPad, включая виджеты домашнего экрана)."),
+        ("Контакт", "Электронная почта: <b>{mail}</b> (обычно отвечаем в течение 3 рабочих дней)."),
+    ],
+    "footer": "© 2026 {dev} · KidsLearn",
+}
+
 # 非英文页面底部声明：译本与英文版冲突时以英文版为准
 DISCLAIMER = {
     "zh-Hans": "本页为英文版的中文译本，如译文与英文版存在歧义，以 <a href=\"{en}\">英文版</a> 为准。",
     "zh-Hant": "本頁為英文版的中文譯本，如譯文與英文版有歧義，以 <a href=\"{en}\">英文版</a> 為準。",
     "ja": "本ページは英文版の日本語訳です。訳文と英文版に相違がある場合は <a href=\"{en}\">英文版</a> を正とします。",
+    "es": "Esta página es una traducción al español de la versión en inglés. En caso de discrepancia, prevalecerá la <a href=\"{en}\">versión en inglés</a>.",
+    "pt-BR": "Esta página é uma tradução para o português da versão em inglês. Em caso de divergência, prevalece a <a href=\"{en}\">versão em inglês</a>.",
+    "fr": "Cette page est une traduction française de la version anglaise. En cas de divergence, la <a href=\"{en}\">version anglaise</a> prévaut.",
+    "de": "Diese Seite ist eine deutsche Übersetzung der englischen Fassung. Bei Abweichungen gilt die <a href=\"{en}\">englische Fassung</a>.",
+    "ko": "본 페이지는 영문판을 한국어로 번역한 것입니다. 번역과 영문판이 다를 경우 <a href=\"{en}\">영문판</a>을 기준으로 합니다.",
+    "ru": "Эта страница — перевод англоязычной версии на русский язык. В случае расхождений преимущественную силу имеет <a href=\"{en}\">англоязычная версия</a>.",
 }
 
 CSS = """
