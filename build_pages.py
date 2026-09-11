@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SITE = "https://4gk5msrpwv-cpu.github.io/privacy-pages"
 EFFECTIVE = "2026-09-10"
 DEV = "Frank Zhou"
-MAIL = "fathyzhou@qq.com"
+MAIL = "Your.Kidslearn@outlook.com"
 
 LANGS = ["en", "zh-Hans", "zh-Hant", "ja", "es", "pt-BR", "fr", "de", "ko", "ru"]
 CANON = {l: ("" if l == "en" else "/" + l) for l in LANGS}   # 各语种路径
