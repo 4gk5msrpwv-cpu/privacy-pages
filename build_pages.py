@@ -907,11 +907,16 @@ TW_FIX = [("賬戶", "帳戶"), ("賬號", "帳號"), ("賬", "帳"),
 
 
 def to_traditional(text):
+    # 🔴 禁止静默降级：opencc 缺失时若返回原文，整页会以简体上线（2026-09-11 事故）。
+    # 必须 fail loud——转换失败就让构建立刻失败，而不是发出坏页面。
     try:
         import opencc
-        out = opencc.OpenCC("s2twp").convert(text)
-    except Exception:
-        return text
+    except ImportError as e:
+        raise RuntimeError(
+            "opencc 未安装（用带 opencc 的 Python 运行本脚本，"
+            "如 ~/.workbuddy/binaries/python/envs/default/bin/python）：繁体页将输出简体原文，禁止继续构建"
+        ) from e
+    out = opencc.OpenCC("s2twp").convert(text)
     for a, b in TW_FIX:
         out = out.replace(a, b)
     return out
