@@ -868,6 +868,16 @@ def render(lang, c):
         body.append('  <div class="disc">{}</div>'.format(fmt(DISCLAIMER[lang], EFFECTIVE)))
 
     url_self = SITE + ("/" if path == "" else path + "/")
+    # 页脚追加「产品主页」链接：同域（GitHub Pages 同主机），应用内阅读器域名白名单可直接通过；
+    # 产品页在 /product/（en 根 + zh-Hans/zh-Hant 子目录），其余语言产品页未建时落在 en 版
+    prod_labels = {"en": "Product Home", "zh-Hans": "产品主页", "zh-Hant": "產品主頁",
+                   "ja": "製品紹介", "es": "Página del producto", "pt-BR": "Página do produto",
+                   "fr": "Présentation du produit", "de": "Produktseite", "ko": "제품 소개",
+                   "ru": "О продукте"}
+    prod_path = {"en": "", "zh-Hans": "zh-Hans", "zh-Hant": "zh-Hant"}.get(lang, "")
+    prod_url = SITE + "/product/" + (prod_path + "/" if prod_path else "")
+    footer_html = fmt(c["footer"], EFFECTIVE) + \
+        '\n<div style="margin-top:8px"><a href="{u}" style="color:inherit">{l}</a></div>'.format(u=prod_url, l=prod_labels.get(lang, "Product Home"))
     html = """<!DOCTYPE html>
 <html lang="{hl}">
 <head>
@@ -896,7 +906,7 @@ def render(lang, c):
 </html>
 """.format(hl=c["html_lang"], title=c["title"], desc=c["desc"], self=url_self,
            alt=alternates, css=CSS, h1=c["h1"], meta=fmt(c["meta_line"], EFFECTIVE),
-           switch=switch, body="\n".join(body), footer=fmt(c["footer"], EFFECTIVE))
+           switch=switch, body="\n".join(body), footer=footer_html)
     return html
 
 
