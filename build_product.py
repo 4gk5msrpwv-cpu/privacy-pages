@@ -61,7 +61,9 @@ ICON = "data:image/svg+xml,"  # 占位：页头不放图，纯文字品牌，避
 
 
 def page(lang, t, hreflang_map):
-    shots = f"shots/{lang}" if lang != "en" else "shots/en"
+    # 截图目录相对路径：en 根页在 /product/ 下，语言子目录页在 /product/<lang>/ 下，
+    # 后者必须先回上一级，否则解析成 /product/<lang>/shots/... 404（2026-09-12 线上事故）
+    shots = "shots/en" if lang == "en" else f"../shots/{lang}"
     lang_nav = " · ".join(
         f'<a href="{u}"{" class=\"on\"" if k == lang else ""}>{label}</a>'
         for k, u, label in hreflang_map
