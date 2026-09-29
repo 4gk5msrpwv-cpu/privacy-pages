@@ -127,7 +127,7 @@ def page(lang, t, hreflang_map):
 
 <footer><div class="wrap">
   <div>© 2026 LearnNest · {t['made']}</div>
-  <div><a href="{t['privacy_url']}">{t['privacy_label']}</a> · {t['contact_label']} Your.Kidslearn@outlook.com</div>
+  <div><a href="{t['privacy_url']}">{t['privacy_label']}</a> · {t['contact_label']} Your.LearnNest@outlook.com</div>
 </div></footer>
 </body>
 </html>"""
