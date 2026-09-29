@@ -139,12 +139,12 @@ CONTENT["zh-Hans"] = {
             ("ul", [
                 "<b>无需注册、无需登录</b>：不要求也不获取姓名、邮箱、手机号、通讯录、位置、相册、身份标识等信息。",
                 "<b>学习数据仅存于你的 iCloud</b>：你创建的课程表、作业、习惯、提醒、积分与奖品等内容，保存在你本人 Apple ID 下的 iCloud 私人数据库（Apple CloudKit，容器 <code>iCloud.com.frankzhou.KidLearn</code>）。这些数据归你所有，由 Apple 保管，<b>开发者无法访问、读取或导出</b>。",
-                "<b>家庭共享与「孩子空间」</b>：基于 Apple CloudKit 的 CKShare 实现，数据仅在你主动邀请的 Apple ID（通常是家庭成员）之间共享，共享范围完全由你控制，可随时停止共享。",
+                "<b>家庭共享与「学习空间」</b>：基于 Apple CloudKit 的 CKShare 实现，数据仅在你主动邀请的 Apple ID（通常是家庭成员）之间共享，共享范围完全由你控制，可随时停止共享。",
             ]),
             ("p", "<b>设备能力与系统权限：</b>"),
             ("ul", [
                 "<b>通知</b>：用于展示你自行设定的学习提醒，仅在你开启后使用，不含任何广告或营销内容。其中「远程通知」仅用作 iCloud 数据同步的触发信号（静默通知），不会产生任何可见提示，也不承载任何内容。",
-                "<b>相册（系统照片选择器）</b>：作业清单的「图片识字」功能通过 Apple 系统照片选择器（PhotosPicker）挑选图片，<b>App 只会拿到你选中的那一张</b>，无法浏览或访问相册中的其他照片，<b>也无需你授予相册权限</b>。文字识别由 Apple Vision 框架<b>完全在设备端</b>完成，图片与识别结果<b>不上传</b>任何服务器，识别后不保留原图。<b>本应用不使用相机，也不申请相机权限。</b>为孩子设置头像照片也走同一机制：同样只拿你选中的那一张，压缩后<b>仅存于你自己的 iCloud 账户</b>，不上传任何服务器。",
+                "<b>相册（系统照片选择器）</b>：作业清单的「图片识字」功能通过 Apple 系统照片选择器（PhotosPicker）挑选图片，<b>App 只会拿到你选中的那一张</b>，无法浏览或访问相册中的其他照片，<b>也无需你授予相册权限</b>。文字识别由 Apple Vision 框架<b>完全在设备端</b>完成，图片与识别结果<b>不上传</b>任何服务器，识别后不保留原图。<b>本应用不使用相机，也不申请相机权限。</b>为小朋友设置头像照片也走同一机制：同样只拿你选中的那一张，压缩后<b>仅存于你自己的 iCloud 账户</b>，不上传任何服务器。",
                 "<b>面容 ID / 触控 ID / 设备密码</b>：仅在家长修改或重置「设备锁 PIN」、以及关闭设备锁时，用于本机身份验证。验证由 iOS 系统完成，<b>App 不会收到、也无法读取或存储任何生物特征信息</b>。",
                 "<b>剪贴板</b>：仅在你主动点击「粘贴」按钮时读取一次剪贴板中的文字，用于生成作业清单；读取后即在设备端处理，<b>不上传、不长期保存</b>。除此之外本应用不会访问剪贴板。",
                 "<b>不申请的权限</b>：本应用不申请、不使用定位、通讯录、日历、提醒事项、麦克风、相机、蓝牙跟踪（App 追踪透明度）等权限，工程内除上述项外无任何权限声明。",
@@ -158,22 +158,22 @@ CONTENT["zh-Hans"] = {
                 "除加载本隐私政策页面外，应用发起的<b>全部网络请求均指向 Apple 官方服务</b>：iCloud（CloudKit）数据同步，以及 App Store 内购（StoreKit）。二者均由 Apple 按其自身隐私政策处理，详见 <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Apple 隐私政策</a>。（应用内「隐私政策」「支持与反馈」通过内置阅读器打开，不显示地址栏，也不跳转到外部浏览器：仅加载本页面，已禁用 JavaScript，不写入 Cookie 或任何浏览数据，跳转到其他域名一律拦截。本页面托管于第三方静态托管服务（GitHub Pages），加载它是本应用唯一一次指向非 Apple 服务的网络请求，且该请求不携带任何账号或设备标识。）",
             ]),
         ]),
-        ("四、儿童（未成年人）信息保护", [
-            ("p", "LearnNest 定位为<b>面向家长的管理工具</b>，而非儿童向应用：所有内容由家长创建与管理。应用<b>不提供</b>聊天、评论、公开主页、内容推荐/发现、陌生人互动或用户生成内容的公开发布功能。"),
+        ("四、未成年人隐私", [
+            ("p", "LearnNest 定位为<b>面向家长的管理工具</b>，而非未成年人向应用：所有内容由家长创建与管理。应用<b>不提供</b>聊天、评论、公开主页、内容推荐/发现、陌生人互动或用户生成内容的公开发布功能。"),
             ("ul", [
-                "<b>我们不收集、不出售、不向第三方披露儿童个人信息</b>。儿童相关的学习记录（昵称、头像、课程、作业、习惯、积分等）全部由家长录入，<b>仅存储在家长自己的 iCloud 账户中</b>，开发者不接触、不可见。",
+                "<b>我们不收集、不出售、不向第三方披露未成年人个人信息</b>。未成年人相关的学习记录（昵称、头像、课程、作业、习惯、积分等）全部由家长录入，<b>仅存储在家长自己的 iCloud 账户中</b>，开发者不接触、不可见。",
                 "<b>无公开用户生成内容</b>：家长录入的文字内容仅在家长通过 iCloud 隐私共享（CKShare）<b>一对一邀请</b>的家庭成员之间可见，不向公众开放、无陌生人可见渠道、无搜索或推荐机制，因此本应用不涉及公开用户生成内容（UGC）相关的社交风险。",
                 "<b>家长控制工具</b>：应用提供「设备锁（PIN 保护）」——开启后配置类功能被隐藏，退出需输入 PIN；修改或重置 PIN 需通过系统生物识别或设备密码验证。家长可借此限制对设置与购买的访问。",
-                "<b>儿童 Apple ID</b>：若家长把孩子空间共享给儿童 Apple ID，该账号依法由家长创建与管理，共享范围始终由家长掌控，可随时停止共享。",
-                "<b>关于家长同意</b>：由于本应用<b>完全不收集儿童个人信息</b>，美国 COPPA、欧盟 GDPR（儿童条款）以及中国《儿童个人信息网络保护规定》所要求的「可验证家长同意」机制在本应用中不适用；我们也不需要为此收集家长身份信息。家长可随时删除任一「孩子空间」及其全部数据，删除即刻生效。",
-                "我们遵循中国《个人信息保护法》《儿童个人信息网络保护规定》，并参照 COPPA、GDPR 对儿童数据的保护原则：<b>最小必要、家长控制、不共享、不出售、不用于广告或画像</b>。",
-                "如家长希望查询、更正或彻底删除与儿童相关的信息，可在应用内直接操作，或发送邮件至 {mail}，我们将提供协助。",
+                "<b>未成年人 Apple ID</b>：若家长把学习空间共享给未成年人 Apple ID，该账号依法由家长创建与管理，共享范围始终由家长掌控，可随时停止共享。",
+                "<b>关于家长同意</b>：由于本应用<b>完全不收集未成年人个人信息</b>，美国 COPPA、欧盟 GDPR（未成年人相关条款）以及中国《儿童个人信息网络保护规定》所要求的「可验证家长同意」机制在本应用中不适用；我们也不需要为此收集家长身份信息。家长可随时删除任一「学习空间」及其全部数据，删除即刻生效。",
+                "我们遵循中国《个人信息保护法》《儿童个人信息网络保护规定》，并参照 COPPA、GDPR 对未成年人数据的保护原则：<b>最小必要、家长控制、不共享、不出售、不用于广告或画像</b>。",
+                "如家长希望查询、更正或彻底删除与未成年人相关的信息，可在应用内直接操作，或发送邮件至 {mail}，我们将提供协助。",
             ]),
         ]),
         ("五、数据存储、安全与删除", [
             ("ul", [
                 "全部数据保存在你的 Apple ID 对应的 iCloud 账户中，受 Apple 的加密与访问控制保护，我们没有任何服务端副本。",
-                "<b>卸载 App 不会自动删除 iCloud 中的数据</b>（便于换机恢复）。如需彻底删除：在 iPhone/iPad 进入「设置 → 顶部 Apple ID → iCloud → 管理账户储存空间 → LearnNest → 删除数据」；或在 App 内进入「我的 → 孩子空间」，删除对应空间；也可发邮件至 {mail} 请求删除协助。",
+                "<b>卸载 App 不会自动删除 iCloud 中的数据</b>（便于换机恢复）。如需彻底删除：在 iPhone/iPad 进入「设置 → 顶部 Apple ID → iCloud → 管理账户储存空间 → LearnNest → 删除数据」；或在 App 内进入「我的 → 学习空间」，删除对应空间；也可发邮件至 {mail} 请求删除协助。",
                 "少量界面偏好（如语言、展示设置）保存在<b>设备本地</b>（系统 UserDefaults），不会离开你的设备，也不与 iCloud 同步。",
                 "请妥善保管你的 Apple ID 与设备锁屏密码，这是保护这些数据的主要手段。",
             ]),
@@ -191,7 +191,7 @@ CONTENT["zh-Hans"] = {
     "support_title": "支持与常见问题",
     "support_rows": [
         ("换机 / 多设备同步", "在各设备上登录<b>同一个 Apple ID</b> 并开启 iCloud 云盘后打开 LearnNest，数据会自动同步。若长时间未同步，请检查系统「设置 → Apple ID → iCloud」是否已登录且网络正常。"),
-        ("家人 / 孩子空间共享", "在 App 内使用「孩子空间分享」（基于 Apple CloudKit CKShare）生成链接，对方用其 Apple ID 接受即可。需要两个不同的 Apple ID 才能完成测试。"),
+        ("家人 / 学习空间共享", "在 App 内使用「学习空间分享」（基于 Apple CloudKit CKShare）生成链接，对方用其 Apple ID 接受即可。需要两个不同的 Apple ID 才能完成测试。"),
         ("恢复购买", "打开付费页，点击底部「恢复购买」，按系统提示用购买时使用的 Apple ID 验证即可，不会重复扣费。"),
         ("彻底删除数据", "见上方「数据存储、安全与删除」章节。卸载 App 不会删除 iCloud 数据。"),
         ("拍照识字（OCR）", "使用 Apple Vision 在设备端识别，无需联网，图片不上传。"),
@@ -221,12 +221,12 @@ CONTENT["ja"] = {
             ("ul", [
                 "<b>登録不要・ログイン不要。</b>氏名、メールアドレス、電話番号、連絡先、位置情報、写真、識別子などを求めることも取得することもありません。",
                 "<b>データはお客様の iCloud にのみ。</b>作成された時間割・宿題・習慣・リマインダー・ポイント・ごほうびは、お客様ご自身の Apple ID のプライベート iCloud データベース（Apple CloudKit、コンテナ <code>iCloud.com.frankzhou.KidLearn</code>）に保存されます。データはお客様に帰属し Apple が保管します。<b>開発者がアクセス・閲覧・書き出しすることはできません</b>。",
-                "<b>ファミリー共有と「こどもスペース」。</b>Apple CloudKit の CKShare を使用し、お客様が明示的に招待した Apple ID（通常はご家族）とのみ共有されます。共有範囲はお客様が管理し、いつでも停止できます。",
+                "<b>ファミリー共有と「学習スペース」。</b>Apple CloudKit の CKShare を使用し、お客様が明示的に招待した Apple ID（通常はご家族）とのみ共有されます。共有範囲はお客様が管理し、いつでも停止できます。",
             ]),
             ("p", "<b>端末機能とシステム権限：</b>"),
             ("ul", [
                 "<b>通知</b>：お客様が設定した学習リマインダーの表示のみに使用し、広告やマーケティング内容は含まれません。「リモート通知」は iCloud 同期の<b>きっかけ（サイレント通知）</b>としてのみ使われ、画面に表示されることはありません。",
-                "<b>写真（システムの写真選択）</b>：宿題の「文字認識」機能は Apple のシステム写真選択（PhotosPicker）で画像を選びます。アプリが受け取るのは<b>選択された 1 枚のみ</b>で、ライブラリ全体を参照することはできず、<b>写真ライブラリの権限も不要</b>です。認識は Apple Vision により<b>すべて端末内</b>で行われ、画像も結果も<b>サーバーに送信されません</b>。認識後に元画像を保持することもありません。<b>カメラは使用せず、カメラ権限も要求しません。</b>こどものアバター写真の設定も同じ仕組みです：選択した 1 枚だけを読み取り、圧縮して<b>保護者自身の iCloud アカウントにのみ</b>保存し、サーバーへは一切送信しません。",
+                "<b>写真（システムの写真選択）</b>：宿題の「文字認識」機能は Apple のシステム写真選択（PhotosPicker）で画像を選びます。アプリが受け取るのは<b>選択された 1 枚のみ</b>で、ライブラリ全体を参照することはできず、<b>写真ライブラリの権限も不要</b>です。認識は Apple Vision により<b>すべて端末内</b>で行われ、画像も結果も<b>サーバーに送信されません</b>。認識後に元画像を保持することもありません。<b>カメラは使用せず、カメラ権限も要求しません。</b>お子さまのアバター写真の設定も同じ仕組みです：選択した 1 枚だけを読み取り、圧縮して<b>保護者自身の iCloud アカウントにのみ</b>保存し、サーバーへは一切送信しません。",
                 "<b>Face ID / Touch ID / 端末パスコード</b>：保護者が「デバイスロック PIN」を変更・再設定する場合や、デバイスロックを解除する場合の本人確認にのみ使用します。認証は iOS が行い、<b>アプリが生体情報を取得・読み取り・保存することはありません</b>。",
                 "<b>ペーストボード</b>：お客様が「貼り付け」をタップしたときに 1 度だけテキストを読み取り、宿題リストの作成に使います。<b>端末内</b>で処理し、<b>送信も保存もありません</b>。それ以外の場面でペーストボードにアクセスすることはありません。",
                 "<b>要求しない権限</b>：位置情報、連絡先、カレンダー、リマインダー、マイク、カメラ、App トラッキングなどの権限は要求も使用もしません。",
@@ -240,22 +240,22 @@ CONTENT["ja"] = {
                 "本ポリシーページの読み込みを除き、<b>すべての通信は Apple のサービス宛てのみ</b>：iCloud（CloudKit）同期と App Store のアプリ内課金（StoreKit）です。いずれも Apple のプライバシーポリシーに従い処理されます。<a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Apple のプライバシーポリシー</a>をご確認ください。（アプリ内の「プライバシーポリシー」「サポート」はアドレスバーを表示しない内蔵リーダーで開き、外部ブラウザへは移動しません。読み込むのは本ページのみで、JavaScript は無効化され、Cookie や閲覧データは一切書き込まれず、他ドメインへの遷移はブロックされます。本ページは第三者の静的ホスティング（GitHub Pages）でホストされており、この読み込みが本アプリから Apple 以外のサービスへの唯一の通信です。アカウントや端末の識別子は送信されません。）",
             ]),
         ]),
-        ("4. こども（未成年者）の情報保護", [
-            ("p", "LearnNest は<b>保護者向けの管理ツール</b>であり、こども向けアプリではありません。すべての内容は保護者が作成・管理します。チャット、コメント、公開プロフィール、コンテンツの発見・レコメンド、見知らぬ人との交流、ユーザー生成コンテンツの公開共有機能は<b>ありません</b>。"),
+        ("4. 未成年者のプライバシー", [
+            ("p", "LearnNest は<b>保護者向けの管理ツール</b>であり、未成年者向けアプリではありません。すべての内容は保護者が作成・管理します。チャット、コメント、公開プロフィール、コンテンツの発見・レコメンド、見知らぬ人との交流、ユーザー生成コンテンツの公開共有機能は<b>ありません</b>。"),
             ("ul", [
-                "<b>こどもの個人情報を収集・販売・第三者開示することはありません。</b>こどもの学習記録（ニックネーム、アバター、教科、宿題、習慣、ポイント等）は保護者が入力し、<b>保護者自身の iCloud アカウントにのみ</b>保存されます。開発者はアクセスできません。",
+                "<b>未成年者の個人情報を収集・販売・第三者開示することはありません。</b>未成年者の学習記録（ニックネーム、アバター、教科、宿題、習慣、ポイント等）は保護者が入力し、<b>保護者自身の iCloud アカウントにのみ</b>保存されます。開発者はアクセスできません。",
                 "<b>公開されるユーザー生成コンテンツはありません。</b>保護者が入力したテキストは、保護者が iCloud プライベート共有（CKShare）で<b>1 対 1 で招待した</b>家族にのみ表示されます。一般公開も、見知らぬ人への公開も、検索・レコメンドもありません。",
                 "<b>保護者による管理機能。</b>「デバイスロック（PIN）」をオンにすると設定機能が隠され、解除には PIN が必要です。PIN の変更・再設定には生体認証または端末パスコードが必要です。",
-                "<b>こども用 Apple ID。</b>保護者がこども用 Apple ID にスペースを共有した場合、そのアカウントは Apple の規約に従い保護者が作成・管理するものであり、共有は常に保護者が管理し、いつでも停止できます。",
-                "<b>保護者の同意について。</b>本アプリは<b>こどもの個人情報を一切収集しない</b>ため、米国 COPPA、EU GDPR（こどもに関する規定）、中国「児童個人情報ネットワーク保護規定」が定める「検証可能な保護者の同意」の仕組みは適用されず、そのために保護者の身元情報を収集することもありません。保護者はいつでもこどもスペースとその全データを削除でき、即時に反映されます。",
+                "<b>未成年者の Apple ID。</b>保護者が未成年者の Apple ID に学習スペースを共有した場合、そのアカウントは Apple の規約に従い保護者が作成・管理するものであり、共有は常に保護者が管理し、いつでも停止できます。",
+                "<b>保護者の同意について。</b>本アプリは<b>未成年者の個人情報を一切収集しない</b>ため、米国 COPPA、EU GDPR（未成年者に関する規定）、中国「児童個人情報ネットワーク保護規定」が定める「検証可能な保護者の同意」の仕組みは適用されず、そのために保護者の身元情報を収集することもありません。保護者はいつでも学習スペースとその全データを削除でき、即時に反映されます。",
                 "中国「個人情報保護法」「児童個人情報ネットワーク保護規定」に従い、COPPA / GDPR の原則にも準拠します：<b>最小限の収集、保護者による管理、共有しない、販売しない、広告やプロファイリングに利用しない</b>。",
-                "こどもに関する情報の閲覧・訂正・完全削除をご希望の場合は、アプリ内で操作いただくか、{mail} までご連絡ください。",
+                "未成年者に関する情報の閲覧・訂正・完全削除をご希望の場合は、アプリ内で操作いただくか、{mail} までご連絡ください。",
             ]),
         ]),
         ("5. データの保存・保護・削除", [
             ("ul", [
                 "すべてのデータはお客様の Apple ID の iCloud アカウントに保存され、Apple の暗号化とアクセス制御で保護されます。サーバー側にコピーは保持しません。",
-                "<b>アプリを削除しても iCloud のデータは自動的には消えません</b>（機種変更時の復元のため）。完全に消去する場合は、iPhone / iPad の「設定 → Apple ID → iCloud → アカウントのストレージを管理 → LearnNest → データを削除」、またはアプリ内の「マイページ → こどもスペース」から該当スペースを削除してください。{mail} までご連絡いただいても対応します。",
+                "<b>アプリを削除しても iCloud のデータは自動的には消えません</b>（機種変更時の復元のため）。完全に消去する場合は、iPhone / iPad の「設定 → Apple ID → iCloud → アカウントのストレージを管理 → LearnNest → データを削除」、またはアプリ内の「マイページ → 学習スペース」から該当スペースを削除してください。{mail} までご連絡いただいても対応します。",
                 "一部の表示設定（言語など）は<b>端末内の</b>システム UserDefaults に保存されます。端末外に出ることはなく、iCloud とも同期しません。",
                 "Apple ID と端末のロック解除パスコードを適切に管理してください。これらがデータを守る主な手段です。",
             ]),
@@ -273,7 +273,7 @@ CONTENT["ja"] = {
     "support_title": "サポート・よくあるご質問",
     "support_rows": [
         ("機種変更・複数端末での同期", "各端末で<b>同じ Apple ID</b> でサインインし、iCloud ドライブを有効にすると自動的に同期されます。同期しない場合は「設定 → Apple ID → iCloud」をご確認ください。"),
-        ("家族・こどもスペースの共有", "アプリ内の「こどもスペースを共有」（Apple CloudKit CKShare）を使用し、相手が自分の Apple ID で受け入れます。テストには 2 つの異なる Apple ID が必要です。"),
+        ("家族・学習スペースの共有", "アプリ内の「学習スペースを共有」（Apple CloudKit CKShare）を使用し、相手が自分の Apple ID で受け入れます。テストには 2 つの異なる Apple ID が必要です。"),
         ("購入の復元", "購入画面下部の「購入を復元」をタップしてください。重複して課金されることはありません。"),
         ("データの完全削除", "上記「5. データの保存・保護・削除」をご覧ください。アプリの削除では iCloud のデータは消えません。"),
         ("文字認識（OCR）", "Apple Vision により端末内で処理します。アップロードもネットワーク接続も不要です。"),
@@ -303,7 +303,7 @@ CONTENT["es"] = {
             ("ul", [
                 "<b>Sin registro, sin inicio de sesión.</b> No solicitamos ni recibimos tu nombre, correo electrónico, teléfono, contactos, ubicación, fotos ni ningún identificador.",
                 "<b>Tus datos permanecen en tu propio iCloud.</b> Los horarios, tareas, hábitos, recordatorios, puntos y recompensas que creas se guardan en la base de datos privada de iCloud de tu propio Apple ID (Apple CloudKit, contenedor <code>iCloud.com.frankzhou.KidLearn</code>). Los datos te pertenecen y los custodia Apple; <b>el desarrollador no puede acceder a ellos, leerlos ni exportarlos</b>.",
-                "<b>Compartir en familia y «espacios infantiles».</b> Basado en CKShare de Apple CloudKit. Los datos solo se comparten con los Apple ID que invites explícitamente (normalmente familiares); tú controlas el uso compartido y puedes revocarlo en cualquier momento.",
+                "<b>Compartir en familia y «espacios de estudio».</b> Basado en CKShare de Apple CloudKit. Los datos solo se comparten con los Apple ID que invites explícitamente (normalmente familiares); tú controlas el uso compartido y puedes revocarlo en cualquier momento.",
             ]),
             ("p", "<b>Funciones del dispositivo y permisos del sistema:</b>"),
             ("ul", [
@@ -328,8 +328,8 @@ CONTENT["es"] = {
                 "<b>No recopilamos, vendemos ni divulgamos a terceros información personal de menores.</b> Los registros de estudio de los menores (apodo, avatar, asignaturas, tareas, hábitos, puntos, etc.) los introducen los progenitores y se <b>guardan únicamente en la cuenta de iCloud del progenitor</b>; el desarrollador no tiene acceso a ellos.",
                 "<b>Sin contenido público generado por usuarios.</b> El texto introducido por los progenitores solo es visible para los familiares que el progenitor <b>invita individualmente</b> mediante el uso compartido privado de iCloud (CKShare). No hay audiencia pública, ni visibilidad para desconocidos, ni mecanismos de búsqueda o recomendación, por lo que la app no presenta ninguno de los riesgos sociales asociados al contenido público generado por usuarios.",
                 "<b>Controles parentales.</b> La app ofrece un «Bloqueo del dispositivo (PIN)»: una vez activado, las funciones de configuración se ocultan y salir requiere el PIN; cambiar o restablecer el PIN exige autenticación biométrica del sistema o el código del dispositivo. Los progenitores pueden usarlo para restringir el acceso a los ajustes y a las compras.",
-                "<b>Apple ID de menores.</b> Si un progenitor comparte un espacio infantil con el Apple ID de un menor, esa cuenta la crea y gestiona el progenitor conforme a las normas de Apple; el uso compartido permanece bajo su control y puede detenerse en cualquier momento.",
-                "<b>Sobre el consentimiento parental.</b> Dado que la app <b>no recopila ninguna información personal de menores</b>, los mecanismos de «consentimiento parental verificable» exigidos por la COPPA (EE. UU.), el RGPD (disposiciones sobre menores, UE) y la normativa china sobre protección de la información personal de menores en línea no resultan de aplicación, y no necesitamos recopilar información de identidad de los progenitores para ello. Los progenitores pueden eliminar cualquier espacio infantil y todos sus datos en cualquier momento; la eliminación surte efecto inmediato.",
+                "<b>Apple ID de menores.</b> Si un progenitor comparte un espacio de estudio con el Apple ID de un menor, esa cuenta la crea y gestiona el progenitor conforme a las normas de Apple; el uso compartido permanece bajo su control y puede detenerse en cualquier momento.",
+                "<b>Sobre el consentimiento parental.</b> Dado que la app <b>no recopila ninguna información personal de menores</b>, los mecanismos de «consentimiento parental verificable» exigidos por la COPPA (EE. UU.), el RGPD (disposiciones sobre menores, UE) y la normativa china sobre protección de la información personal de menores en línea no resultan de aplicación, y no necesitamos recopilar información de identidad de los progenitores para ello. Los progenitores pueden eliminar cualquier espacio de estudio y todos sus datos en cualquier momento; la eliminación surte efecto inmediato.",
                 "Cumplimos la Ley de Protección de la Información Personal de China y la normativa sobre protección de la información personal de menores en línea, y seguimos los principios de la COPPA y el RGPD: <b>minimización de datos, control parental, no compartir, no vender, sin publicidad ni elaboración de perfiles</b>.",
                 "Los progenitores que deseen consultar, corregir o eliminar definitivamente la información relativa a un menor pueden hacerlo desde la app o escribir a {mail} para solicitar ayuda.",
             ]),
@@ -337,7 +337,7 @@ CONTENT["es"] = {
         ("5. Almacenamiento, seguridad y eliminación de datos", [
             ("ul", [
                 "Todos los datos residen en la cuenta de iCloud de tu Apple ID, protegidos por el cifrado y los controles de acceso de Apple. No conservamos ninguna copia en servidores.",
-                "<b>Eliminar la app no borra automáticamente los datos de iCloud</b> (para que puedas restaurarlos en un dispositivo nuevo). Para borrar todo: en iPhone/iPad ve a <i>Ajustes → tu Apple ID → iCloud → Gestionar el almacenamiento de la cuenta → LearnNest → Eliminar datos</i>; elimina el espacio infantil correspondiente dentro de la app en <i>Yo → Espacios infantiles</i>; o escribe a {mail} para solicitar ayuda con la eliminación.",
+                "<b>Eliminar la app no borra automáticamente los datos de iCloud</b> (para que puedas restaurarlos en un dispositivo nuevo). Para borrar todo: en iPhone/iPad ve a <i>Ajustes → tu Apple ID → iCloud → Gestionar el almacenamiento de la cuenta → LearnNest → Eliminar datos</i>; elimina el espacio de estudio correspondiente dentro de la app en <i>Yo → Espacios de estudio</i>; o escribe a {mail} para solicitar ayuda con la eliminación.",
                 "Un pequeño número de preferencias de interfaz (idioma, ajustes de visualización) se guarda <b>localmente en el dispositivo</b> (UserDefaults del sistema). Nunca salen de tu dispositivo y no se sincronizan con iCloud.",
                 "Mantén seguros tu Apple ID y el código del dispositivo: son la protección principal de estos datos.",
             ]),
@@ -355,7 +355,7 @@ CONTENT["es"] = {
     "support_title": "Soporte y preguntas frecuentes",
     "support_rows": [
         ("Dispositivo nuevo / sincronización en varios dispositivos", "Inicia sesión con el <b>mismo Apple ID</b> en cada dispositivo con iCloud Drive activado; los datos se sincronizan automáticamente. Si la sincronización se detiene, revisa <i>Ajustes → Apple ID → iCloud</i>."),
-        ("Compartir en familia / espacio infantil", "Usa «Compartir espacio infantil» en la app (CKShare de Apple CloudKit); el destinatario acepta con su propio Apple ID. Se necesitan dos Apple ID distintos para probarlo."),
+        ("Compartir en familia / espacio de estudio", "Usa «Compartir espacio de estudio» en la app (CKShare de Apple CloudKit); el destinatario acepta con su propio Apple ID. Se necesitan dos Apple ID distintos para probarlo."),
         ("Restaurar compras", "Toca «Restaurar compras» en la parte inferior de la pantalla de compra: no se realiza ningún cargo adicional."),
         ("Eliminar todos los datos", "Consulta la sección 5. Eliminar la app no borra los datos de iCloud."),
         ("Escanear texto (OCR)", "Se ejecuta íntegramente en el dispositivo con Apple Vision; sin subidas ni conexión de red."),
@@ -385,12 +385,12 @@ CONTENT["pt-BR"] = {
             ("ul", [
                 "<b>Sem cadastro, sem login.</b> Não solicitamos nem recebemos seu nome, e-mail, telefone, contatos, localização, fotos ou qualquer identificador.",
                 "<b>Seus dados ficam no seu próprio iCloud.</b> Os horários, tarefas, hábitos, lembretes, pontos e recompensas que você cria são armazenados no banco de dados privado do iCloud do seu próprio Apple ID (Apple CloudKit, contêiner <code>iCloud.com.frankzhou.KidLearn</code>). Os dados pertencem a você e são mantidos pela Apple; <b>o desenvolvedor não pode acessá-los, lê-los nem exportá-los</b>.",
-                "<b>Compartilhamento familiar e «espaços infantis».</b> Baseado no CKShare do Apple CloudKit. Os dados são compartilhados apenas com os Apple IDs que você convidar explicitamente (normalmente familiares); você controla o compartilhamento e pode revogá-lo a qualquer momento.",
+                "<b>Compartilhamento familiar e «espaços de estudo».</b> Baseado no CKShare do Apple CloudKit. Os dados são compartilhados apenas com os Apple IDs que você convidar explicitamente (normalmente familiares); você controla o compartilhamento e pode revogá-lo a qualquer momento.",
             ]),
             ("p", "<b>Recursos do dispositivo e permissões do sistema:</b>"),
             ("ul", [
                 "<b>Notificações</b>: usadas apenas para exibir os lembretes de estudo que você mesmo define; sem publicidade ou conteúdo de marketing. As «notificações remotas» são usadas somente como <b>gatilho silencioso para a sincronização com o iCloud</b> e nunca exibem um alerta visível.",
-                "<b>Fotos (seletor de fotos do sistema)</b>: a função «ler texto (OCR)» das tarefas escolhe uma imagem pelo seletor de fotos do sistema da Apple (PhotosPicker). O app recebe <b>apenas a imagem que você seleciona</b>, não pode navegar nem acessar o restante da sua biblioteca e <b>não exige permissão da biblioteca de fotos</b>. O reconhecimento é feito <b>inteiramente no dispositivo</b> com o framework Vision da Apple; nem a imagem nem o resultado são <b>enviados</b> a qualquer servidor, e a imagem original não é mantida. <b>O app não usa a câmera e não solicita permissão de câmera.</b> Definir a foto de avatar da criança segue o mesmo mecanismo: apenas a imagem selecionada é lida, comprimida e armazenada <b>unicamente na sua própria conta do iCloud</b>; nada é enviado a servidores.",
+                "<b>Fotos (seletor de fotos do sistema)</b>: a função «ler texto (OCR)» das tarefas escolhe uma imagem pelo seletor de fotos do sistema da Apple (PhotosPicker). O app recebe <b>apenas a imagem que você seleciona</b>, não pode navegar nem acessar o restante da sua biblioteca e <b>não exige permissão da biblioteca de fotos</b>. O reconhecimento é feito <b>inteiramente no dispositivo</b> com o framework Vision da Apple; nem a imagem nem o resultado são <b>enviados</b> a qualquer servidor, e a imagem original não é mantida. <b>O app não usa a câmera e não solicita permissão de câmera.</b> Definir a foto de avatar do espaço de estudo segue o mesmo mecanismo: apenas a imagem selecionada é lida, comprimida e armazenada <b>unicamente na sua própria conta do iCloud</b>; nada é enviado a servidores.",
                 "<b>Face ID / Touch ID / código do dispositivo</b>: usado apenas para autenticar neste dispositivo quando um responsável altera ou redefine o PIN do Bloqueio do Dispositivo, ou desativa o bloqueio. A autenticação é feita pelo iOS; <b>o app nunca recebe, lê nem armazena qualquer dado biométrico</b>.",
                 "<b>Área de transferência</b>: lida uma única vez, apenas quando você toca ativamente em «Colar», para montar uma lista de tarefas. O texto é processado <b>no dispositivo</b>; <b>nunca é enviado nem retido</b>. O app não acessa a área de transferência em nenhum outro momento.",
                 "<b>Permissões que nunca solicitamos</b>: localização, contatos, calendários, lembretes, microfone, câmera e autorização de rastreamento de apps. Além dos itens acima, o app não declara nenhuma outra permissão.",
@@ -404,22 +404,22 @@ CONTENT["pt-BR"] = {
                 "<b>Exceto o carregamento desta página, todas as requisições de rede vão apenas para serviços da Apple</b>: sincronização com o iCloud (CloudKit) e compras integradas da App Store (StoreKit). Ambas são regidas pela política de privacidade da Apple: veja a <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Política de Privacidade da Apple</a>. (As entradas «Política de Privacidade» e «Suporte» abrem em um leitor integrado, sem barra de endereço, e não saem do app: apenas esta página é carregada, o JavaScript está desativado, nenhum cookie ou dado de navegação é gravado e a navegação para qualquer outro domínio é bloqueada. Esta página está hospedada em um serviço de hospedagem estática de terceiros (GitHub Pages); carregá-la é a única requisição de rede do app a um serviço fora da Apple e não contém nenhum identificador de conta ou de dispositivo.)",
             ]),
         ]),
-        ("4. Privacidade de crianças e adolescentes", [
-            ("p", "O LearnNest é uma <b>ferramenta de gestão para pais e responsáveis</b>, não um app voltado a crianças: todo o conteúdo é criado e gerenciado pelos pais ou responsável. O app <b>não</b> oferece chat, comentários, perfis públicos, descoberta ou recomendação de conteúdo, interação com desconhecidos, nem publicação pública de conteúdo gerado por usuários."),
+        ("4. Privacidade de menores", [
+            ("p", "O LearnNest é uma <b>ferramenta de gestão para pais e responsáveis</b>, não um app voltado a menores: todo o conteúdo é criado e gerenciado pelos pais ou responsável. O app <b>não</b> oferece chat, comentários, perfis públicos, descoberta ou recomendação de conteúdo, interação com desconhecidos, nem publicação pública de conteúdo gerado por usuários."),
             ("ul", [
-                "<b>Não coletamos, vendemos nem divulgamos a terceiros informações pessoais de crianças.</b> Os registros de estudo das crianças (apelido, avatar, matérias, tarefas, hábitos, pontos etc.) são inseridos pelos responsáveis e <b>armazenados apenas na conta de iCloud do responsável</b>; o desenvolvedor não tem acesso a eles.",
+                "<b>Não coletamos, vendemos nem divulgamos a terceiros informações pessoais de menores.</b> Os registros de estudo dos menores (apelido, avatar, matérias, tarefas, hábitos, pontos etc.) são inseridos pelos responsáveis e <b>armazenados apenas na conta de iCloud do responsável</b>; o desenvolvedor não tem acesso a eles.",
                 "<b>Sem conteúdo público gerado por usuários.</b> O texto inserido pelos responsáveis é visível apenas para os familiares que o responsável <b>convidar individualmente</b> pelo compartilhamento privado do iCloud (CKShare). Não há público aberto, nem visibilidade para desconhecidos, nem mecanismos de busca ou recomendação, de modo que o app não apresenta os riscos sociais associados ao conteúdo público gerado por usuários.",
                 "<b>Controles parentais.</b> O app oferece o «Bloqueio do Dispositivo (PIN)»: quando ativado, as funções de configuração ficam ocultas e sair exige o PIN; alterar ou redefinir o PIN exige autenticação biométrica do sistema ou o código do dispositivo. Os responsáveis podem usá-lo para restringir o acesso a ajustes e compras.",
-                "<b>Apple IDs de crianças.</b> Se um responsável compartilhar um espaço infantil com o Apple ID de uma criança, essa conta é criada e gerenciada pelo responsável segundo as regras da Apple; o compartilhamento permanece sob seu controle e pode ser encerrado a qualquer momento.",
-                "<b>Sobre o consentimento dos pais.</b> Como o app <b>não coleta nenhuma informação pessoal de crianças</b>, os mecanismos de «consentimento parental verificável» exigidos pela COPPA (EUA), pelo GDPR (disposições sobre crianças, UE) e pela regulamentação chinesa de proteção de informações pessoais de crianças on-line não se aplicam, e não precisamos coletar informações de identidade dos pais para isso. Os responsáveis podem excluir qualquer espaço infantil e todos os seus dados a qualquer momento; a exclusão tem efeito imediato.",
-                "Seguimos a Lei de Proteção de Informações Pessoais da China e a regulamentação de proteção de informações pessoais de crianças on-line, alinhados aos princípios da COPPA e do GDPR: <b>minimização de dados, controle parental, não compartilhar, não vender, sem publicidade ou criação de perfis</b>.",
-                "Os responsáveis que desejarem consultar, corrigir ou excluir definitivamente informações relacionadas a uma criança podem fazê-lo no app ou escrever para {mail} para obter ajuda.",
+                "<b>Apple IDs de menores.</b> Se um responsável compartilhar um espaço de estudo com o Apple ID de um menor, essa conta é criada e gerenciada pelo responsável segundo as regras da Apple; o compartilhamento permanece sob seu controle e pode ser encerrado a qualquer momento.",
+                "<b>Sobre o consentimento dos pais.</b> Como o app <b>não coleta nenhuma informação pessoal de menores</b>, os mecanismos de «consentimento parental verificável» exigidos pela COPPA (EUA), pelo GDPR (disposições sobre menores, UE) e pela regulamentação chinesa de proteção de informações pessoais de menores on-line não se aplicam, e não precisamos coletar informações de identidade dos pais para isso. Os responsáveis podem excluir qualquer espaço de estudo e todos os seus dados a qualquer momento; a exclusão tem efeito imediato.",
+                "Seguimos a Lei de Proteção de Informações Pessoais da China e a regulamentação de proteção de informações pessoais de menores on-line, alinhados aos princípios da COPPA e do GDPR: <b>minimização de dados, controle parental, não compartilhar, não vender, sem publicidade ou criação de perfis</b>.",
+                "Os responsáveis que desejarem consultar, corrigir ou excluir definitivamente informações relacionadas a um menor podem fazê-lo no app ou escrever para {mail} para obter ajuda.",
             ]),
         ]),
         ("5. Armazenamento, segurança e exclusão de dados", [
             ("ul", [
                 "Todos os dados ficam na conta de iCloud do seu Apple ID, protegidos pela criptografia e pelos controles de acesso da Apple. Não mantemos nenhuma cópia em servidores.",
-                "<b>Excluir o app não remove automaticamente os dados do iCloud</b> (para permitir a restauração em um dispositivo novo). Para apagar tudo: no iPhone/iPad vá a <i>Ajustes → seu Apple ID → iCloud → Gerenciar Armazenamento da Conta → LearnNest → Excluir Dados</i>; exclua o espaço infantil correspondente no app em <i>Eu → Espaços Infantis</i>; ou escreva para {mail} para solicitar ajuda com a exclusão.",
+                "<b>Excluir o app não remove automaticamente os dados do iCloud</b> (para permitir a restauração em um dispositivo novo). Para apagar tudo: no iPhone/iPad vá a <i>Ajustes → seu Apple ID → iCloud → Gerenciar Armazenamento da Conta → LearnNest → Excluir Dados</i>; exclua o espaço de estudo correspondente no app em <i>Eu → Espaços de estudo</i>; ou escreva para {mail} para solicitar ajuda com a exclusão.",
                 "Algumas preferências de interface (idioma, configurações de exibição) são armazenadas <b>localmente no dispositivo</b> (UserDefaults do sistema). Nunca saem do seu dispositivo e não são sincronizadas com o iCloud.",
                 "Mantenha seu Apple ID e o código do dispositivo em segurança: eles são a principal proteção desses dados.",
             ]),
@@ -437,7 +437,7 @@ CONTENT["pt-BR"] = {
     "support_title": "Suporte e Perguntas Frequentes",
     "support_rows": [
         ("Dispositivo novo / sincronização em vários dispositivos", "Entre com o <b>mesmo Apple ID</b> em cada dispositivo com o iCloud Drive ativado; os dados sincronizam automaticamente. Se a sincronização travar, verifique <i>Ajustes → Apple ID → iCloud</i>."),
-        ("Compartilhamento familiar / espaço infantil", "Use «Compartilhar espaço infantil» no app (CKShare do Apple CloudKit); o destinatário aceita com o próprio Apple ID. São necessários dois Apple IDs diferentes para testar."),
+        ("Compartilhamento familiar / espaço de estudo", "Use «Compartilhar espaço de estudo» no app (CKShare do Apple CloudKit); o destinatário aceita com o próprio Apple ID. São necessários dois Apple IDs diferentes para testar."),
         ("Restaurar compras", "Toque em «Restaurar Compras» na parte inferior da tela de compra: não há cobrança adicional."),
         ("Excluir todos os dados", "Veja a seção 5 acima. Excluir o app não remove os dados do iCloud."),
         ("Ler texto (OCR)", "Executado inteiramente no dispositivo com o Apple Vision; sem envio e sem necessidade de rede."),
@@ -467,12 +467,12 @@ CONTENT["fr"] = {
             ("ul", [
                 "<b>Aucune inscription, aucune connexion.</b> Nous ne demandons ni ne recevons votre nom, e-mail, numéro de téléphone, contacts, position, photos ou tout autre identifiant.",
                 "<b>Vos données restent dans votre propre iCloud.</b> Les emplois du temps, devoirs, habitudes, rappels, points et récompenses que vous créez sont stockés dans la base de données privée iCloud de votre propre identifiant Apple (Apple CloudKit, conteneur <code>iCloud.com.frankzhou.KidLearn</code>). Les données vous appartiennent et sont conservées par Apple ; <b>le développeur ne peut y accéder, les lire ni les exporter</b>.",
-                "<b>Partage familial et « espaces enfants ».</b> Reposant sur CKShare d'Apple CloudKit. Les données ne sont partagées qu'avec les identifiants Apple que vous invitez explicitement (généralement des membres de la famille) ; vous contrôlez le partage et pouvez le révoquer à tout moment.",
+                "<b>Partage familial et « espaces d'étude ».</b> Reposant sur CKShare d'Apple CloudKit. Les données ne sont partagées qu'avec les identifiants Apple que vous invitez explicitement (généralement des membres de la famille) ; vous contrôlez le partage et pouvez le révoquer à tout moment.",
             ]),
             ("p", "<b>Fonctions de l'appareil et autorisations système :</b>"),
             ("ul", [
                 "<b>Notifications</b> : utilisées uniquement pour afficher les rappels d'étude que vous définissez vous-même ; aucune publicité ni contenu marketing. Les « notifications distantes » servent uniquement de <b>déclencheur silencieux pour la synchronisation iCloud</b> et n'affichent jamais d'alerte visible.",
-                "<b>Photos (sélecteur de photos système)</b> : la fonction « numériser du texte (OCR) » des devoirs sélectionne une image via le sélecteur de photos système d'Apple (PhotosPicker). L'app reçoit <b>uniquement l'image que vous sélectionnez</b>, ne peut ni parcourir ni accéder au reste de votre bibliothèque et <b>ne requiert aucune autorisation d'accès à la photothèque</b>. La reconnaissance est effectuée <b>entièrement sur l'appareil</b> via le framework Vision d'Apple ; ni l'image ni le résultat ne sont <b>jamais téléversés</b>, et l'image d'origine n'est pas conservée. <b>L'app n'utilise pas l'appareil photo et ne demande pas d'autorisation d'appareil photo.</b> Définir la photo d'avatar d'un enfant suit le même mécanisme : seule l'image sélectionnée est lue, compressée et stockée <b>uniquement dans votre propre compte iCloud</b> ; rien n'est envoyé à un serveur.",
+                "<b>Photos (sélecteur de photos système)</b> : la fonction « numériser du texte (OCR) » des devoirs sélectionne une image via le sélecteur de photos système d'Apple (PhotosPicker). L'app reçoit <b>uniquement l'image que vous sélectionnez</b>, ne peut ni parcourir ni accéder au reste de votre bibliothèque et <b>ne requiert aucune autorisation d'accès à la photothèque</b>. La reconnaissance est effectuée <b>entièrement sur l'appareil</b> via le framework Vision d'Apple ; ni l'image ni le résultat ne sont <b>jamais téléversés</b>, et l'image d'origine n'est pas conservée. <b>L'app n'utilise pas l'appareil photo et ne demande pas d'autorisation d'appareil photo.</b> Définir la photo d'avatar de l'espace d'étude suit le même mécanisme : seule l'image sélectionnée est lue, compressée et stockée <b>uniquement dans votre propre compte iCloud</b> ; rien n'est envoyé à un serveur.",
                 "<b>Face ID / Touch ID / code de l'appareil</b> : utilisé uniquement pour authentifier sur cet appareil lorsqu'un parent modifie ou réinitialise le code PIN du verrouillage de l'appareil, ou désactive le verrouillage. L'authentification est effectuée par iOS ; <b>l'app ne reçoit, ne lit ni ne stocke jamais de donnée biométrique</b>.",
                 "<b>Presse-papiers</b> : lu une seule fois, uniquement lorsque vous touchez activement « Coller », pour constituer une liste de devoirs. Le texte est traité <b>sur l'appareil</b> ; il n'est <b>jamais téléversé ni conservé</b>. L'app n'accède au presse-papiers à aucun autre moment.",
                 "<b>Autorisations que nous ne demandons jamais</b> : localisation, contacts, calendriers, rappels, microphone, appareil photo ou autorisation de suivi d'apps. En dehors des éléments ci-dessus, l'app ne déclare aucune autre autorisation.",
@@ -487,21 +487,21 @@ CONTENT["fr"] = {
             ]),
         ]),
         ("4. Confidentialité des mineurs", [
-            ("p", "LearnNest est un <b>outil de gestion destiné aux parents</b>, et non une application conçue pour les enfants : tout le contenu est créé et géré par les parents. L'app ne propose <b>ni</b> messagerie, ni commentaires, ni profils publics, ni découverte ou recommandation de contenu, ni interaction avec des inconnus, ni partage public de contenu généré par les utilisateurs."),
+            ("p", "LearnNest est un <b>outil de gestion destiné aux parents</b>, et non une application conçue pour les mineurs : tout le contenu est créé et géré par les parents. L'app ne propose <b>ni</b> messagerie, ni commentaires, ni profils publics, ni découverte ou recommandation de contenu, ni interaction avec des inconnus, ni partage public de contenu généré par les utilisateurs."),
             ("ul", [
                 "<b>Nous ne collectons, ne vendons ni ne divulguons à des tiers les informations personnelles des mineurs.</b> Les relevés d'études des mineurs (surnom, avatar, matières, devoirs, habitudes, points, etc.) sont saisis par les parents et <b>stockés uniquement dans le compte iCloud du parent</b> ; le développeur n'y a pas accès.",
                 "<b>Aucun contenu public généré par les utilisateurs.</b> Le texte saisi par les parents n'est visible que pour les membres de la famille que le parent <b>invite individuellement</b> via le partage privé iCloud (CKShare). Il n'y a ni audience publique, ni visibilité pour des inconnus, ni mécanisme de recherche ou de recommandation : l'app ne présente donc aucun des risques sociaux liés au contenu public généré par les utilisateurs.",
                 "<b>Contrôles parentaux.</b> L'app propose un « verrouillage de l'appareil (PIN) » : une fois activé, les fonctions de configuration sont masquées et la sortie exige le code PIN ; la modification ou la réinitialisation du PIN requiert l'authentification biométrique du système ou le code de l'appareil. Les parents peuvent l'utiliser pour restreindre l'accès aux réglages et aux achats.",
-                "<b>Identifiants Apple d'enfants.</b> Si un parent partage un espace enfant avec l'identifiant Apple d'un enfant, ce compte est créé et géré par le parent selon les règles d'Apple ; le partage reste sous son contrôle et peut être interrompu à tout moment.",
-                "<b>À propos du consentement parental.</b> Étant donné que l'app <b>ne collecte aucune information personnelle d'enfants</b>, les mécanismes de « consentement parental vérifiable » exigés par la COPPA (États-Unis), le RGPD (dispositions relatives aux enfants, UE) et la réglementation chinoise sur la protection des informations personnelles des enfants en ligne ne s'appliquent pas, et nous n'avons pas besoin de collecter d'informations d'identité parentale à cette fin. Les parents peuvent supprimer à tout moment un espace enfant et toutes ses données ; la suppression prend effet immédiatement.",
-                "Nous respectons la loi chinoise sur la protection des informations personnelles et la réglementation sur la protection des informations personnelles des enfants en ligne, et suivons les principes de la COPPA et du RGPD : <b>minimisation des données, contrôle parental, pas de partage, pas de vente, ni publicité ni profilage</b>.",
-                "Les parents souhaitant consulter, corriger ou supprimer définitivement des informations relatives à un enfant peuvent le faire depuis l'app ou écrire à {mail} pour obtenir de l'aide.",
+                "<b>Identifiants Apple de mineurs.</b> Si un parent partage un espace d'étude avec l'identifiant Apple d'un mineur, ce compte est créé et géré par le parent selon les règles d'Apple ; le partage reste sous son contrôle et peut être interrompu à tout moment.",
+                "<b>À propos du consentement parental.</b> Étant donné que l'app <b>ne collecte aucune information personnelle de mineurs</b>, les mécanismes de « consentement parental vérifiable » exigés par la COPPA (États-Unis), le RGPD (dispositions relatives aux mineurs, UE) et la réglementation chinoise sur la protection des informations personnelles des mineurs en ligne ne s'appliquent pas, et nous n'avons pas besoin de collecter d'informations d'identité parentale à cette fin. Les parents peuvent supprimer à tout moment un espace d'étude et toutes ses données ; la suppression prend effet immédiatement.",
+                "Nous respectons la loi chinoise sur la protection des informations personnelles et la réglementation sur la protection des informations personnelles des mineurs en ligne, et suivons les principes de la COPPA et du RGPD : <b>minimisation des données, contrôle parental, pas de partage, pas de vente, ni publicité ni profilage</b>.",
+                "Les parents souhaitant consulter, corriger ou supprimer définitivement des informations relatives à un mineur peuvent le faire depuis l'app ou écrire à {mail} pour obtenir de l'aide.",
             ]),
         ]),
         ("5. Stockage, sécurité et suppression des données", [
             ("ul", [
                 "Toutes les données résident dans le compte iCloud de votre identifiant Apple, protégées par le chiffrement et les contrôles d'accès d'Apple. Nous ne conservons aucune copie côté serveur.",
-                "<b>La suppression de l'app n'efface pas automatiquement les données iCloud</b> (afin de permettre la restauration sur un nouvel appareil). Pour tout effacer : sur iPhone/iPad, allez dans <i>Réglages → votre identifiant Apple → iCloud → Gérer le stockage du compte → LearnNest → Supprimer les données</i> ; supprimez l'espace enfant correspondant dans l'app sous <i>Moi → Espaces enfants</i> ; ou écrivez à {mail} pour demander une assistance à la suppression.",
+                "<b>La suppression de l'app n'efface pas automatiquement les données iCloud</b> (afin de permettre la restauration sur un nouvel appareil). Pour tout effacer : sur iPhone/iPad, allez dans <i>Réglages → votre identifiant Apple → iCloud → Gérer le stockage du compte → LearnNest → Supprimer les données</i> ; supprimez l'espace d'étude correspondant dans l'app sous <i>Moi → Espaces d'étude</i> ; ou écrivez à {mail} pour demander une assistance à la suppression.",
                 "Un petit nombre de préférences d'interface (langue, paramètres d'affichage) sont stockées <b>localement sur l'appareil</b> (UserDefaults système). Elles ne quittent jamais votre appareil et ne sont pas synchronisées avec iCloud.",
                 "Conservez votre identifiant Apple et le code de votre appareil en sécurité : ils constituent la protection principale de ces données.",
             ]),
@@ -519,7 +519,7 @@ CONTENT["fr"] = {
     "support_title": "Assistance et FAQ",
     "support_rows": [
         ("Nouvel appareil / synchronisation multi-appareils", "Connectez-vous avec le <b>même identifiant Apple</b> sur chaque appareil avec iCloud Drive activé ; les données se synchronisent automatiquement. Si la synchronisation s'arrête, vérifiez <i>Réglages → identifiant Apple → iCloud</i>."),
-        ("Partage familial / espace enfant", "Utilisez « Partager l'espace enfant » dans l'app (CKShare d'Apple CloudKit) ; le destinataire accepte avec son propre identifiant Apple. Deux identifiants Apple différents sont nécessaires pour tester."),
+        ("Partage familial / espace d'étude", "Utilisez « Partager l'espace d'étude » dans l'app (CKShare d'Apple CloudKit) ; le destinataire accepte avec son propre identifiant Apple. Deux identifiants Apple différents sont nécessaires pour tester."),
         ("Restaurer les achats", "Touchez « Restaurer les achats » en bas de l'écran d'achat : aucun débit supplémentaire."),
         ("Supprimer toutes les données", "Voir la section 5 ci-dessus. Supprimer l'app n'efface pas les données iCloud."),
         ("Numériser du texte (OCR)", "Exécuté entièrement sur l'appareil via Apple Vision ; aucun téléversement ni connexion réseau."),
@@ -538,7 +538,7 @@ CONTENT["de"] = {
     "meta_line": "Inkrafttreten: {d} ｜ Entwickler: {dev} ｜ Kontakt: {mail}",
     "nav": ["Datenschutzerklärung", "Support und Häufige Fragen"],
     "nav_id": ["privacy", "support"],
-    "summary": "<b>Kurz gesagt:</b> LearnNest <b>erfasst keine personenbezogenen Daten</b>. Es gibt kein Kontosystem, keinen Server und keine Analyse- oder Werbe-SDKs von Drittanbietern. Stundenpläne, Hausaufgaben, Gewohnheiten, Erinnerungen und Punkte, die Sie eingeben, werden <b>ausschließlich in Ihrer eigenen privaten iCloud-Datenbank</b> (Apple CloudKit) gespeichert; der Entwickler kann sie weder lesen noch exportieren. Eine <b>Gerätesperre (PIN)</b> dient als Kindersicherung, und alle Lerninhalte werden von einem Elternteil erstellt und verwaltet.",
+    "summary": "<b>Kurz gesagt:</b> LearnNest <b>erfasst keine personenbezogenen Daten</b>. Es gibt kein Kontosystem, keinen Server und keine Analyse- oder Werbe-SDKs von Drittanbietern. Stundenpläne, Hausaufgaben, Gewohnheiten, Erinnerungen und Punkte, die Sie eingeben, werden <b>ausschließlich in Ihrer eigenen privaten iCloud-Datenbank</b> (Apple CloudKit) gespeichert; der Entwickler kann sie weder lesen noch exportieren. Eine <b>Gerätesperre (PIN)</b> dient als Elternkontrolle, und alle Lerninhalte werden von einem Elternteil erstellt und verwaltet.",
     "privacy_title": "Datenschutzerklärung",
     "sections": [
         ("1. Überblick", [
@@ -549,12 +549,12 @@ CONTENT["de"] = {
             ("ul", [
                 "<b>Keine Registrierung, keine Anmeldung.</b> Wir fragen Ihren Namen, Ihre E-Mail-Adresse, Telefonnummer, Kontakte, Ihren Standort, Fotos oder Kennungen weder ab noch erhalten wir sie.",
                 "<b>Ihre Daten bleiben in Ihrem eigenen iCloud-Speicher.</b> Stundenpläne, Hausaufgaben, Gewohnheiten, Erinnerungen, Punkte und Belohnungen, die Sie anlegen, werden in der privaten iCloud-Datenbank Ihrer eigenen Apple-ID gespeichert (Apple CloudKit, Container <code>iCloud.com.frankzhou.KidLearn</code>). Die Daten gehören Ihnen und werden von Apple verwahrt; <b>der Entwickler kann nicht darauf zugreifen, sie lesen oder exportieren</b>.",
-                "<b>Familienfreigabe und „Kinderbereiche“.</b> Basiert auf CKShare von Apple CloudKit. Daten werden nur mit Apple-IDs geteilt, die Sie ausdrücklich einladen (in der Regel Familienmitglieder); Sie behalten die Kontrolle und können die Freigabe jederzeit widerrufen.",
+                "<b>Familienfreigabe und „Lernbereiche“.</b> Basiert auf CKShare von Apple CloudKit. Daten werden nur mit Apple-IDs geteilt, die Sie ausdrücklich einladen (in der Regel Familienmitglieder); Sie behalten die Kontrolle und können die Freigabe jederzeit widerrufen.",
             ]),
             ("p", "<b>Gerätefunktionen und Systemberechtigungen:</b>"),
             ("ul", [
                 "<b>Benachrichtigungen</b> – dienen ausschließlich der Anzeige der Lernerinnerungen, die Sie selbst festlegen; keine Werbung oder Marketinginhalte. „Remote-Benachrichtigungen“ werden nur als <b>stiller Auslöser für die iCloud-Synchronisierung</b> verwendet und zeigen niemals eine sichtbare Meldung an.",
-                "<b>Fotos (System-Fotoauswahl)</b> – die Funktion „Text scannen (OCR)“ für Hausaufgaben wählt ein Bild über die System-Fotoauswahl von Apple (PhotosPicker). Die App erhält <b>nur das von Ihnen ausgewählte Bild</b>, kann die übrige Mediathek weder durchsuchen noch darauf zugreifen und <b>benötigt keine Fotobibliothek-Berechtigung</b>. Die Texterkennung erfolgt <b>vollständig auf dem Gerät</b> über das Vision-Framework von Apple; weder Bild noch Ergebnis werden <b>jemals hochgeladen</b>, und das Originalbild wird nicht aufbewahrt. <b>Die App verwendet die Kamera nicht und fordert keine Kameraberechtigung an.</b> Auch das Festlegen eines Kinder-Avatarfotos nutzt denselben Mechanismus: Nur das ausgewählte Bild wird gelesen, komprimiert und <b>ausschließlich in Ihrem eigenen iCloud-Konto gespeichert</b> – nie auf einen Server hochgeladen.",
+                "<b>Fotos (System-Fotoauswahl)</b> – die Funktion „Text scannen (OCR)“ für Hausaufgaben wählt ein Bild über die System-Fotoauswahl von Apple (PhotosPicker). Die App erhält <b>nur das von Ihnen ausgewählte Bild</b>, kann die übrige Mediathek weder durchsuchen noch darauf zugreifen und <b>benötigt keine Fotobibliothek-Berechtigung</b>. Die Texterkennung erfolgt <b>vollständig auf dem Gerät</b> über das Vision-Framework von Apple; weder Bild noch Ergebnis werden <b>jemals hochgeladen</b>, und das Originalbild wird nicht aufbewahrt. <b>Die App verwendet die Kamera nicht und fordert keine Kameraberechtigung an.</b> Auch das Festlegen eines Lernbereich-Avatarfotos nutzt denselben Mechanismus: Nur das ausgewählte Bild wird gelesen, komprimiert und <b>ausschließlich in Ihrem eigenen iCloud-Konto gespeichert</b> – nie auf einen Server hochgeladen.",
                 "<b>Face ID / Touch ID / Gerätecode</b> – wird nur zur Authentifizierung auf diesem Gerät verwendet, wenn ein Elternteil die PIN der Gerätesperre ändert oder zurücksetzt oder die Sperre ausschaltet. Die Authentifizierung erfolgt durch iOS; <b>die App erhält, liest oder speichert niemals biometrische Daten</b>.",
                 "<b>Zwischenablage</b> – wird einmalig gelesen, und zwar nur wenn Sie aktiv auf „Einsetzen“ tippen, um eine Hausaufgabenliste zu erstellen. Der Text wird <b>auf dem Gerät</b> verarbeitet und <b>weder hochgeladen noch gespeichert</b>. Zu keinem anderen Zeitpunkt greift die App auf die Zwischenablage zu.",
                 "<b>Berechtigungen, die wir nie anfordern</b> – Standort, Kontakte, Kalender, Erinnerungen, Mikrofon, Kamera oder App-Tracking-Berechtigung. Außer den oben genannten Punkten deklariert die App keine weiteren Berechtigungen.",
@@ -568,22 +568,22 @@ CONTENT["de"] = {
                 "<b>Mit Ausnahme des Ladens dieser Seite gehen alle Netzwerkzugriffe ausschließlich an Apple-Dienste</b> – iCloud-Synchronisierung (CloudKit) und In-App-Käufe (StoreKit). Beide unterliegen der Datenschutzerklärung von Apple: siehe <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Apple Datenschutzerklärung</a>. (Die Einträge „Datenschutzerklärung“ und „Support“ öffnen sich in einem integrierten Reader ohne Adressleiste und verlassen die App nicht: Es wird nur diese Seite geladen, JavaScript ist deaktiviert, es werden weder Cookies noch Browserdaten geschrieben und die Navigation zu anderen Domains wird blockiert. Diese Seite wird bei einem statischen Hosting-Dienst eines Drittanbieters (GitHub Pages) gehostet; ihr Laden ist die einzige Netzwerkanfrage der App an einen Nicht-Apple-Dienst und enthält keine Konto- oder Gerätekennung.)",
             ]),
         ]),
-        ("4. Schutz von Kindern und Jugendlichen", [
-            ("p", "LearnNest ist ein <b>Verwaltungswerkzeug für Eltern</b> und keine App für Kinder: Sämtliche Inhalte werden von Eltern erstellt und verwaltet. Die App bietet <b>keine</b> Chat-, Kommentar-, öffentlichen Profil-, Entdeckungs- oder Empfehlungsfunktionen, keinen Kontakt mit Fremden und keine öffentliche Veröffentlichung nutzergenerierter Inhalte."),
+        ("4. Schutz von Minderjährigen", [
+            ("p", "LearnNest ist ein <b>Verwaltungswerkzeug für Eltern</b> und keine App für Minderjährige: Sämtliche Inhalte werden von Eltern erstellt und verwaltet. Die App bietet <b>keine</b> Chat-, Kommentar-, öffentlichen Profil-, Entdeckungs- oder Empfehlungsfunktionen, keinen Kontakt mit Fremden und keine öffentliche Veröffentlichung nutzergenerierter Inhalte."),
             ("ul", [
-                "<b>Wir erfassen, verkaufen oder offenbaren keine personenbezogenen Daten von Kindern an Dritte.</b> Lerndaten von Kindern (Spitzname, Avatar, Fächer, Hausaufgaben, Gewohnheiten, Punkte usw.) werden von Eltern eingegeben und <b>ausschließlich im iCloud-Konto des Elternteils</b> gespeichert; der Entwickler hat keinen Zugriff darauf.",
+                "<b>Wir erfassen, verkaufen oder offenbaren keine personenbezogenen Daten von Minderjährigen an Dritte.</b> Lerndaten von Minderjährigen (Spitzname, Avatar, Fächer, Hausaufgaben, Gewohnheiten, Punkte usw.) werden von Eltern eingegeben und <b>ausschließlich im iCloud-Konto des Elternteils</b> gespeichert; der Entwickler hat keinen Zugriff darauf.",
                 "<b>Keine öffentlichen nutzergenerierten Inhalte.</b> Von Eltern eingegebene Texte sind nur für Familienmitglieder sichtbar, die der Elternteil <b>einzeln</b> über die private iCloud-Freigabe (CKShare) einlädt. Es gibt keine öffentliche Sichtbarkeit, keine Sichtbarkeit für Fremde sowie keine Such- oder Empfehlungsmechanismen – die App birgt daher keines der mit öffentlichen nutzergenerierten Inhalten verbundenen sozialen Risiken.",
-                "<b>Kindersicherung.</b> Die App bietet eine „Gerätesperre (PIN)“: Ist sie aktiviert, werden Konfigurationsfunktionen ausgeblendet und zum Verlassen ist die PIN erforderlich; zum Ändern oder Zurücksetzen der PIN ist eine biometrische Authentifizierung oder der Gerätecode nötig. Eltern können so den Zugriff auf Einstellungen und Käufe beschränken.",
-                "<b>Apple-IDs von Kindern.</b> Wenn ein Elternteil einen Kinderbereich mit der Apple-ID eines Kindes teilt, wird dieses Konto vom Elternteil gemäß den Apple-Regeln erstellt und verwaltet; die Freigabe bleibt unter seiner Kontrolle und kann jederzeit beendet werden.",
-                "<b>Zur elterlichen Einwilligung.</b> Da die App <b>keinerlei personenbezogene Daten von Kindern erfasst</b>, sind die Mechaniken zur „überprüfbaren elterlichen Einwilligung“ nach COPPA (USA), DSGVO (Kinderbestimmungen, EU) und der chinesischen Verordnung zum Schutz personenbezogener Daten von Kindern im Netz nicht anwendbar, und wir müssen hierfür keine Identitätsdaten der Eltern erheben. Eltern können jeden Kinderbereich samt aller Daten jederzeit löschen; die Löschung wirkt sofort.",
-                "Wir beachten das chinesische Gesetz zum Schutz personenbezogener Daten sowie die Verordnung zum Schutz personenbezogener Daten von Kindern im Netz und richten uns nach den Grundsätzen von COPPA und DSGVO: <b>Datenminimierung, elterliche Kontrolle, kein Teilen, kein Verkauf, keine Werbung und kein Profiling</b>.",
-                "Eltern, die kinderbezogene Informationen einsehen, berichtigen oder endgültig löschen möchten, können dies in der App tun oder sich per E-Mail an {mail} wenden.",
+                "<b>Gerätesperre (PIN).</b> Ist sie aktiviert, werden Konfigurationsfunktionen ausgeblendet und zum Verlassen ist die PIN erforderlich; zum Ändern oder Zurücksetzen der PIN ist eine biometrische Authentifizierung oder der Gerätecode nötig. Eltern können so den Zugriff auf Einstellungen und Käufe beschränken.",
+                "<b>Apple-IDs von Minderjährigen.</b> Wenn ein Elternteil einen Lernbereich mit der Apple-ID eines Minderjährigen teilt, wird dieses Konto vom Elternteil gemäß den Apple-Regeln erstellt und verwaltet; die Freigabe bleibt unter seiner Kontrolle und kann jederzeit beendet werden.",
+                "<b>Zur elterlichen Einwilligung.</b> Da die App <b>keinerlei personenbezogene Daten von Minderjährigen erfasst</b>, sind die Mechaniken zur „überprüfbaren elterlichen Einwilligung“ nach COPPA (USA), DSGVO (Bestimmungen zu Minderjährigen, EU) und der chinesischen Verordnung zum Schutz personenbezogener Daten von Minderjährigen im Netz nicht anwendbar, und wir müssen hierfür keine Identitätsdaten der Eltern erheben. Eltern können jeden Lernbereich samt aller Daten jederzeit löschen; die Löschung wirkt sofort.",
+                "Wir beachten das chinesische Gesetz zum Schutz personenbezogener Daten sowie die Verordnung zum Schutz personenbezogener Daten von Minderjährigen im Netz und richten uns nach den Grundsätzen von COPPA und DSGVO: <b>Datenminimierung, elterliche Kontrolle, kein Teilen, kein Verkauf, keine Werbung und kein Profiling</b>.",
+                "Eltern, die die Informationen der Lernbereiche einsehen, berichtigen oder endgültig löschen möchten, können dies in der App tun oder sich per E-Mail an {mail} wenden.",
             ]),
         ]),
         ("5. Datenspeicherung, Sicherheit und Löschung", [
             ("ul", [
                 "Alle Daten liegen im iCloud-Konto Ihrer Apple-ID und sind durch Verschlüsselung und Zugriffskontrollen von Apple geschützt. Wir halten keine serverseitige Kopie vor.",
-                "<b>Das Löschen der App entfernt die iCloud-Daten nicht automatisch</b> (damit eine Wiederherstellung auf einem neuen Gerät möglich ist). Um alles zu löschen: auf iPhone/iPad zu <i>Einstellungen → Ihre Apple-ID → iCloud → Account-Speicher verwalten → LearnNest → Daten löschen</i>; oder löschen Sie den betreffenden Kinderbereich in der App unter <i>Ich → Kinderbereiche</i>; oder schreiben Sie an {mail}, um Unterstützung bei der Löschung zu erhalten.",
+                "<b>Das Löschen der App entfernt die iCloud-Daten nicht automatisch</b> (damit eine Wiederherstellung auf einem neuen Gerät möglich ist). Um alles zu löschen: auf iPhone/iPad zu <i>Einstellungen → Ihre Apple-ID → iCloud → Account-Speicher verwalten → LearnNest → Daten löschen</i>; oder löschen Sie den betreffenden Lernbereich in der App unter <i>Ich → Lernbereiche</i>; oder schreiben Sie an {mail}, um Unterstützung bei der Löschung zu erhalten.",
                 "Einige wenige Anzeigeeinstellungen (Sprache, Darstellung) werden <b>lokal auf dem Gerät</b> (System-UserDefaults) gespeichert. Sie verlassen Ihr Gerät niemals und werden nicht mit iCloud synchronisiert.",
                 "Bewahren Sie Ihre Apple-ID und den Gerätecode sicher auf – sie sind der wichtigste Schutz dieser Daten.",
             ]),
@@ -601,7 +601,7 @@ CONTENT["de"] = {
     "support_title": "Support und Häufige Fragen",
     "support_rows": [
         ("Neues Gerät / Synchronisierung mehrerer Geräte", "Melden Sie sich auf jedem Gerät mit <b>derselben Apple-ID</b> an und aktivieren Sie iCloud Drive; die Daten werden automatisch synchronisiert. Stockt die Synchronisierung, prüfen Sie <i>Einstellungen → Apple-ID → iCloud</i>."),
-        ("Familienfreigabe / Kinderbereich teilen", "Nutzen Sie „Kinderbereich teilen“ in der App (Apple CloudKit CKShare); die empfangende Person nimmt mit ihrer eigenen Apple-ID an. Zum Testen sind zwei verschiedene Apple-IDs erforderlich."),
+        ("Familienfreigabe / Lernbereich teilen", "Nutzen Sie „Lernbereich teilen“ in der App (Apple CloudKit CKShare); die empfangende Person nimmt mit ihrer eigenen Apple-ID an. Zum Testen sind zwei verschiedene Apple-IDs erforderlich."),
         ("Käufe wiederherstellen", "Tippen Sie unten auf der Kaufseite auf „Käufe wiederherstellen“ – es werden keine zusätzlichen Kosten berechnet."),
         ("Alle Daten löschen", "Siehe Abschnitt 5. Das Löschen der App entfernt die iCloud-Daten nicht."),
         ("Text scannen (OCR)", "Läuft vollständig auf dem Gerät über Apple Vision; kein Upload, keine Netzwerkverbindung erforderlich."),
@@ -631,13 +631,13 @@ CONTENT["ko"] = {
             ("ul", [
                 "<b>가입 없음, 로그인 없음.</b> 이름, 이메일, 전화번호, 연락처, 위치, 사진, 식별자 등을 요청하거나 받지 않습니다.",
                 "<b>데이터는 본인의 iCloud에만 보관됩니다.</b> 시간표, 숙제, 습관, 알림, 포인트, 보상 등은 본인 Apple ID의 개인 iCloud 데이터베이스(Apple CloudKit, 컨테이너 <code>iCloud.com.frankzhou.KidLearn</code>)에 저장됩니다. 데이터는 회원님의 소유이며 Apple이 보관합니다. <b>개발자는 접근·열람·내보내기를 할 수 없습니다</b>.",
-                "<b>가족 공유 및 ‘아이 공간’.</b> Apple CloudKit의 CKShare를 기반으로 하며, 회원님이 명시적으로 초대한 Apple ID(통상 가족)하고만 공유됩니다. 공유 범위는 회원님이 관리하며 언제든 취소할 수 있습니다.",
+                "<b>가족 공유 및 ‘학습 공간’.</b> Apple CloudKit의 CKShare를 기반으로 하며, 회원님이 명시적으로 초대한 Apple ID(통상 가족)하고만 공유됩니다. 공유 범위는 회원님이 관리하며 언제든 취소할 수 있습니다.",
             ]),
             ("p", "<b>기기 기능 및 시스템 권한:</b>"),
             ("ul", [
                 "<b>알림</b>: 회원님이 직접 설정한 학습 알림을 표시하는 데만 사용되며 광고나 마케팅 내용이 포함되지 않습니다. ‘원격 알림’은 iCloud 동기화를 위한 <b>무음 트리거</b>로만 사용되며 눈에 보이는 알림을 표시하지 않습니다.",
-                "<b>사진(시스템 사진 선택기)</b>: 숙제의 ‘텍스트 스캔(OCR)’ 기능은 Apple 시스템 사진 선택기(PhotosPicker)로 이미지를 선택합니다. 앱은 <b>선택한 한 장만</b> 받으며 보관함 전체를 훑어보거나 접근할 수 없고, <b>사진 보관함 권한도 필요하지 않습니다</b>. 인식은 Apple Vision 프레임워크로 <b>전적으로 기기 내에서</b> 수행되며 이미지와 결과는 <b>어떤 서버로도 전송되지 않고</b> 원본 이미지도 보관하지 않습니다. <b>본 앱은 카메라를 사용하지 않으며 카메라 권한도 요청하지 않습니다.</b> 아동 아바타 사진 설정도 같은 방식입니다: 선택한 한 장만 읽어 압축한 뒤 <b>보호자 본인의 iCloud 계정에만</b> 저장되며, 어떤 서버로도 전송되지 않습니다.",
-                "<b>Face ID / Touch ID / 기기 암호</b>: 보호자가 ‘어린이 모드 PIN’을 변경·재설정하거나 어린이 모드를 해제할 때 기기 본인 확인에만 사용됩니다. 인증은 iOS가 수행하며, <b>앱은 어떤 생체 정보도 수신·읽기·저장하지 않습니다</b>.",
+                "<b>사진(시스템 사진 선택기)</b>: 숙제의 ‘텍스트 스캔(OCR)’ 기능은 Apple 시스템 사진 선택기(PhotosPicker)로 이미지를 선택합니다. 앱은 <b>선택한 한 장만</b> 받으며 보관함 전체를 훑어보거나 접근할 수 없고, <b>사진 보관함 권한도 필요하지 않습니다</b>. 인식은 Apple Vision 프레임워크로 <b>전적으로 기기 내에서</b> 수행되며 이미지와 결과는 <b>어떤 서버로도 전송되지 않고</b> 원본 이미지도 보관하지 않습니다. <b>본 앱은 카메라를 사용하지 않으며 카메라 권한도 요청하지 않습니다.</b> 꼬마 아바타 사진 설정도 같은 방식입니다: 선택한 한 장만 읽어 압축한 뒤 <b>보호자 본인의 iCloud 계정에만</b> 저장되며, 어떤 서버로도 전송되지 않습니다.",
+                "<b>Face ID / Touch ID / 기기 암호</b>: 보호자가 ‘기기 잠금 PIN’을 변경·재설정하거나 기기 잠금을 해제할 때 기기 본인 확인에만 사용됩니다. 인증은 iOS가 수행하며, <b>앱은 어떤 생체 정보도 수신·읽기·저장하지 않습니다</b>.",
                 "<b>클립보드</b>: 회원님이 직접 ‘붙여넣기’를 탭했을 때 한 번만 읽어 숙제 목록을 만드는 데 사용합니다. 텍스트는 <b>기기 내에서</b> 처리되며 <b>전송되거나 보관되지 않습니다</b>. 그 외에는 클립보드에 접근하지 않습니다.",
                 "<b>절대 요청하지 않는 권한</b>: 위치, 연락처, 캘린더, 미리 알림, 마이크, 카메라, 앱 추적 권한. 위 항목 외에 앱이 선언한 권한은 없습니다.",
             ]),
@@ -650,22 +650,22 @@ CONTENT["ko"] = {
                 "<b>이 정책 페이지를 불러오는 경우를 제외한 모든 네트워크 요청은 Apple 서비스로만 향합니다</b>: iCloud(CloudKit) 동기화와 App Store 인앱 구매(StoreKit)입니다. 두 서비스는 Apple의 개인정보 처리방침에 따릅니다. <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Apple 개인정보 처리방침</a>을 참조하세요. (앱 내 ‘개인정보 처리방침’과 ‘지원’ 항목은 주소 표시줄이 없는 내장 리더에서 열리며 외부 브라우저로 이동하지 않습니다. 이 페이지만 불러오고 JavaScript는 비활성화되며, 쿠키나 브라우징 데이터를 저장하지 않고 다른 도메인으로의 이동은 차단됩니다. 이 페이지는 제3자 정적 호스팅(GitHub Pages)에서 호스팅되며, 이를 불러오는 것이 앱에서 Apple 외 서비스로 향하는 유일한 네트워크 요청이고 계정·기기 식별자를 포함하지 않습니다.)",
             ]),
         ]),
-        ("4. 아동(미성년자) 정보 보호", [
-            ("p", "LearnNest은 아동용 앱이 아닌 <b>보호자용 관리 도구</b>이며, 모든 콘텐츠는 보호자가 생성하고 관리합니다. 앱은 채팅, 댓글, 공개 프로필, 콘텐츠 탐색·추천, 낯선 이와의 상호작용, 사용자 생성 콘텐츠의 공개 공유 기능을 <b>제공하지 않습니다</b>."),
+        ("4. 미성년자 개인정보 보호", [
+            ("p", "LearnNest은 미성년자용 앱이 아닌 <b>보호자용 관리 도구</b>이며, 모든 콘텐츠는 보호자가 생성하고 관리합니다. 앱은 채팅, 댓글, 공개 프로필, 콘텐츠 탐색·추천, 낯선 이와의 상호작용, 사용자 생성 콘텐츠의 공개 공유 기능을 <b>제공하지 않습니다</b>."),
             ("ul", [
-                "<b>아동의 개인정보를 수집·판매하거나 제3자에게 공개하지 않습니다.</b> 아동의 학습 기록(별명, 아바타, 과목, 숙제, 습관, 포인트 등)은 보호자가 입력하며 <b>보호자 본인의 iCloud 계정에만</b> 저장됩니다. 개발자는 접근할 수 없습니다.",
+                "<b>미성년자의 개인정보를 수집·판매하거나 제3자에게 공개하지 않습니다.</b> 미성년자의 학습 기록(별명, 아바타, 과목, 숙제, 습관, 포인트 등)은 보호자가 입력하며 <b>보호자 본인의 iCloud 계정에만</b> 저장됩니다. 개발자는 접근할 수 없습니다.",
                 "<b>공개되는 사용자 생성 콘텐츠 없음.</b> 보호자가 입력한 텍스트는 보호자가 iCloud 개인 공유(CKShare)로 <b>일대일 초대한</b> 가족에게만 표시됩니다. 공개 대상도, 낯선 이에 대한 공개도, 검색·추천 기능도 없어 공개 UGC와 관련된 사회적 위험이 없습니다.",
                 "<b>보호자 관리 기능.</b> ‘기기 잠금(PIN)’을 켜면 설정 기능이 숨겨지고 해제하려면 PIN이 필요합니다. PIN 변경·재설정에는 시스템 생체 인증 또는 기기 암호가 필요합니다.",
-                "<b>아동용 Apple ID.</b> 보호자가 아동용 Apple ID에 아이 공간을 공유하는 경우, 해당 계정은 Apple 규정에 따라 보호자가 생성·관리하며 공유는 항상 보호자가 관리하고 언제든 중단할 수 있습니다.",
-                "<b>보호자 동의에 관하여.</b> 본 앱은 <b>아동의 개인정보를 전혀 수집하지 않으므로</b>, 미국 COPPA, EU GDPR(아동 관련 조항), 중국 ‘아동 개인정보 네트워크 보호 규정’이 요구하는 ‘확인 가능한 보호자 동의’ 절차가 적용되지 않으며, 이를 위해 보호자의 신원 정보를 수집할 필요도 없습니다. 보호자는 언제든 아이 공간과 그 모든 데이터를 삭제할 수 있으며 삭제는 즉시 반영됩니다.",
+                "<b>미성년자 Apple ID.</b> 보호자가 미성년자 Apple ID에 학습 공간을 공유하는 경우, 해당 계정은 Apple 규정에 따라 보호자가 생성·관리하며 공유는 항상 보호자가 관리하고 언제든 중단할 수 있습니다.",
+                "<b>보호자 동의에 관하여.</b> 본 앱은 <b>미성년자의 개인정보를 전혀 수집하지 않으므로</b>, 미국 COPPA, EU GDPR(미성년자 관련 조항), 중국 ‘아동 개인정보 네트워크 보호 규정’이 요구하는 ‘확인 가능한 보호자 동의’ 절차가 적용되지 않으며, 이를 위해 보호자의 신원 정보를 수집할 필요도 없습니다. 보호자는 언제든 학습 공간과 그 모든 데이터를 삭제할 수 있으며 삭제는 즉시 반영됩니다.",
                 "중국 「개인정보 보호법」과 「아동 개인정보 네트워크 보호 규정」을 준수하고 COPPA / GDPR 원칙에 맞춥니다: <b>최소 수집, 보호자 통제, 미공유, 미판매, 광고·프로파일링 미사용</b>.",
-                "아동 관련 정보를 열람·정정·완전 삭제하려는 보호자는 앱 내에서 직접 처리하거나 {mail}로 문의하여 도움을 받을 수 있습니다.",
+                "미성년자 관련 정보를 열람·정정·완전 삭제하려는 보호자는 앱 내에서 직접 처리하거나 {mail}로 문의하여 도움을 받을 수 있습니다.",
             ]),
         ]),
         ("5. 데이터 저장, 보안 및 삭제", [
             ("ul", [
                 "모든 데이터는 회원님 Apple ID의 iCloud 계정에 저장되며 Apple의 암호화 및 접근 제어로 보호됩니다. 서버 측 복사본은 보관하지 않습니다.",
-                "<b>앱을 삭제해도 iCloud 데이터는 자동으로 지워지지 않습니다</b>(새 기기 복원을 위해). 모두 지우려면 iPhone/iPad에서 <i>설정 → Apple ID → iCloud → 계정 저장 공간 관리 → LearnNest → 데이터 삭제</i>로 이동하거나, 앱 내 <i>나 → 아이 공간</i>에서 해당 공간을 삭제하거나, {mail}로 삭제 지원을 요청하세요.",
+                "<b>앱을 삭제해도 iCloud 데이터는 자동으로 지워지지 않습니다</b>(새 기기 복원을 위해). 모두 지우려면 iPhone/iPad에서 <i>설정 → Apple ID → iCloud → 계정 저장 공간 관리 → LearnNest → 데이터 삭제</i>로 이동하거나, 앱 내 <i>나 → 학습 공간</i>에서 해당 공간을 삭제하거나, {mail}로 삭제 지원을 요청하세요.",
                 "일부 화면 설정(언어, 표시 설정)은 <b>기기 로컬</b>(시스템 UserDefaults)에 저장됩니다. 기기를 떠나지 않으며 iCloud와 동기화되지 않습니다.",
                 "Apple ID와 기기 잠금 암호를 안전하게 보관하세요. 이 데이터를 보호하는 주된 수단입니다.",
             ]),
@@ -683,7 +683,7 @@ CONTENT["ko"] = {
     "support_title": "지원 및 자주 묻는 질문",
     "support_rows": [
         ("새 기기 / 여러 기기 동기화", "각 기기에서 <b>동일한 Apple ID</b>로 로그인하고 iCloud 드라이브를 켜면 자동으로 동기화됩니다. 동기화가 멈추면 <i>설정 → Apple ID → iCloud</i>를 확인하세요."),
-        ("가족 / 아이 공간 공유", "앱에서 ‘아이 공간 공유’(Apple CloudKit CKShare)를 사용하고, 상대가 자신의 Apple ID로 수락합니다. 테스트에는 서로 다른 Apple ID 2개가 필요합니다."),
+        ("가족 / 학습 공간 공유", "앱에서 ‘학습 공간 공유’(Apple CloudKit CKShare)를 사용하고, 상대가 자신의 Apple ID로 수락합니다. 테스트에는 서로 다른 Apple ID 2개가 필요합니다."),
         ("구매 복원", "결제 화면 하단의 ‘구매 복원’을 탭하세요. 추가 요금이 부과되지 않습니다."),
         ("모든 데이터 삭제", "위 5항을 참조하세요. 앱 삭제는 iCloud 데이터를 지우지 않습니다."),
         ("텍스트 스캔(OCR)", "Apple Vision으로 기기 내에서 전부 처리됩니다. 업로드도 네트워크 연결도 필요 없습니다."),
@@ -713,12 +713,12 @@ CONTENT["ru"] = {
             ("ul", [
                 "<b>Без регистрации и входа.</b> Мы не запрашиваем и не получаем ваше имя, электронную почту, телефон, контакты, местоположение, фотографии или какие-либо идентификаторы.",
                 "<b>Ваши данные остаются в вашем iCloud.</b> Расписания, домашние задания, привычки, напоминания, баллы и награды хранятся в личной базе данных iCloud вашего собственного Apple ID (Apple CloudKit, контейнер <code>iCloud.com.frankzhou.KidLearn</code>). Данные принадлежат вам и хранятся Apple; <b>разработчик не может получить к ним доступ, прочитать или экспортировать их</b>.",
-                "<b>Семейный доступ и «детские пространства».</b> Реализовано на основе CKShare из Apple CloudKit. Данные доступны только тем Apple ID, которых вы явно пригласили (как правило, членам семьи); вы управляете доступом и можете в любой момент его отозвать.",
+                "<b>Семейный доступ и «учебные пространства».</b> Реализовано на основе CKShare из Apple CloudKit. Данные доступны только тем Apple ID, которых вы явно пригласили (как правило, членам семьи); вы управляете доступом и можете в любой момент его отозвать.",
             ]),
             ("p", "<b>Возможности устройства и системные разрешения:</b>"),
             ("ul", [
                 "<b>Уведомления</b> — используются только для показа напоминаний о занятиях, которые вы настроили сами; никакой рекламы или маркетингового контента. «Удалённые уведомления» служат лишь <b>тихим сигналом для синхронизации iCloud</b> и никогда не показывают видимых оповещений.",
-                "<b>Фото (системный выбор фотографий)</b> — функция «распознать текст (OCR)» в домашних заданиях выбирает изображение через системный инструмент выбора фото Apple (PhotosPicker). Приложение получает <b>только выбранное вами изображение</b>, не может просматривать или получать доступ к остальной библиотеке и <b>не требует разрешения на доступ к фотографиям</b>. Распознавание выполняется <b>полностью на устройстве</b> средствами фреймворка Apple Vision; ни изображение, ни результат <b>никогда не загружаются</b> на сервер, а исходное изображение не сохраняется. <b>Приложение не использует камеру и не запрашивает разрешение на камеру.</b> Установка фото-аватара ребёнка работает так же: читается только выбранное изображение, оно сжимается и хранится <b>исключительно в вашем собственном аккаунте iCloud</b> — ни на какой сервер не загружается.",
+                "<b>Фото (системный выбор фотографий)</b> — функция «распознать текст (OCR)» в домашних заданиях выбирает изображение через системный инструмент выбора фото Apple (PhotosPicker). Приложение получает <b>только выбранное вами изображение</b>, не может просматривать или получать доступ к остальной библиотеке и <b>не требует разрешения на доступ к фотографиям</b>. Распознавание выполняется <b>полностью на устройстве</b> средствами фреймворка Apple Vision; ни изображение, ни результат <b>никогда не загружаются</b> на сервер, а исходное изображение не сохраняется. <b>Приложение не использует камеру и не запрашивает разрешение на камеру.</b> Установка фото-аватара малыша работает так же: читается только выбранное изображение, оно сжимается и хранится <b>исключительно в вашем собственном аккаунте iCloud</b> — ни на какой сервер не загружается.",
                 "<b>Face ID / Touch ID / код-пароль устройства</b> — используется только для подтверждения личности на этом устройстве, когда родитель меняет или сбрасывает PIN-код блокировки устройства либо отключает блокировку. Проверку выполняет iOS; <b>приложение никогда не получает, не читает и не хранит биометрические данные</b>.",
                 "<b>Буфер обмена</b> — считывается один раз, только когда вы намеренно нажимаете «Вставить», чтобы составить список заданий. Текст обрабатывается <b>на устройстве</b> и <b>не загружается и не сохраняется</b>. В остальное время приложение не обращается к буферу обмена.",
                 "<b>Разрешения, которые мы никогда не запрашиваем</b> — местоположение, контакты, календари, напоминания, микрофон, камера и разрешение на отслеживание в приложениях. Кроме перечисленного, приложение не объявляет других разрешений.",
@@ -733,21 +733,21 @@ CONTENT["ru"] = {
             ]),
         ]),
         ("4. Защита информации несовершеннолетних", [
-            ("p", "LearnNest — это <b>инструмент управления для родителей</b>, а не приложение для детей: весь контент создаётся и управляется родителями. В приложении <b>нет</b> чата, комментариев, публичных профилей, подборки или рекомендаций контента, общения с незнакомцами и публичного распространения пользовательского контента."),
+            ("p", "LearnNest — это <b>инструмент управления для родителей</b>, а не приложение для несовершеннолетних: весь контент создаётся и управляется родителями. В приложении <b>нет</b> чата, комментариев, публичных профилей, подборки или рекомендаций контента, общения с незнакомцами и публичного распространения пользовательского контента."),
             ("ul", [
-                "<b>Мы не собираем, не продаём и не раскрываем персональные данные детей третьим лицам.</b> Учебные записи детей (псевдоним, аватар, предметы, домашние задания, привычки, баллы и т. д.) вводятся родителями и <b>хранятся только в собственном аккаунте iCloud родителя</b>; разработчик не имеет к ним доступа.",
+                "<b>Мы не собираем, не продаём и не раскрываем персональные данные несовершеннолетних третьим лицам.</b> Учебные записи несовершеннолетних (псевдоним, аватар, предметы, домашние задания, привычки, баллы и т. д.) вводятся родителями и <b>хранятся только в собственном аккаунте iCloud родителя</b>; разработчик не имеет к ним доступа.",
                 "<b>Никакого публичного пользовательского контента.</b> Введённый родителем текст виден только тем членам семьи, которых родитель <b>пригласил индивидуально</b> через приватный общий доступ iCloud (CKShare). Нет публичной аудитории, нет видимости для незнакомцев, нет механизмов поиска или рекомендаций, поэтому приложение не несёт социальных рисков, связанных с публичным пользовательским контентом.",
                 "<b>Родительский контроль.</b> Приложение предлагает «блокировку устройства (PIN)»: после включения функции настройки скрываются, а для выхода требуется PIN-код; изменение или сброс PIN-кода требует биометрической проверки системы или код-пароля устройства. Родители могут использовать это для ограничения доступа к настройкам и покупкам.",
-                "<b>Детские Apple ID.</b> Если родитель открывает доступ к детскому пространству для Apple ID ребёнка, этот аккаунт создаётся и управляется родителем по правилам Apple; доступ остаётся под его контролем и может быть прекращён в любой момент.",
-                "<b>О согласии родителей.</b> Поскольку приложение <b>вообще не собирает персональные данные детей</b>, механизмы «проверяемого согласия родителей», предусмотренные COPPA (США), GDPR (положения о детях, ЕС) и китайскими правилами защиты персональной информации детей в интернете, не применяются, и нам не требуется собирать данные о личности родителей для этой цели. Родители могут в любой момент удалить любое детское пространство вместе со всеми его данными; удаление вступает в силу немедленно.",
-                "Мы соблюдаем Закон КНР о защите персональной информации и правила защиты персональной информации детей в интернете, а также следуем принципам COPPA и GDPR: <b>минимизация данных, родительский контроль, отсутствие передачи и продажи, отсутствие рекламы и профилирования</b>.",
-                "Родители, которые хотят просмотреть, исправить или окончательно удалить информацию, связанную с ребёнком, могут сделать это в приложении или написать на {mail} для получения помощи.",
+                "<b>Apple ID несовершеннолетних.</b> Если родитель открывает доступ к учебному пространству для Apple ID малыша, этот аккаунт создаётся и управляется родителем по правилам Apple; доступ остаётся под его контролем и может быть прекращён в любой момент.",
+                "<b>О согласии родителей.</b> Поскольку приложение <b>вообще не собирает персональные данные несовершеннолетних</b>, механизмы «проверяемого согласия родителей», предусмотренные COPPA (США), GDPR (положениях о несовершеннолетних, ЕС) и китайскими правилами защиты персональной информации несовершеннолетних в интернете, не применяются, и нам не требуется собирать данные о личности родителей для этой цели. Родители могут в любой момент удалить любое учебное пространство вместе со всеми его данными; удаление вступает в силу немедленно.",
+                "Мы соблюдаем Закон КНР о защите персональной информации и правила защиты персональной информации несовершеннолетних в интернете, а также следуем принципам COPPA и GDPR: <b>минимизация данных, родительский контроль, отсутствие передачи и продажи, отсутствие рекламы и профилирования</b>.",
+                "Родители, которые хотят просмотреть, исправить или окончательно удалить информацию, связанную с малышом, могут сделать это в приложении или написать на {mail} для получения помощи.",
             ]),
         ]),
         ("5. Хранение, безопасность и удаление данных", [
             ("ul", [
                 "Все данные находятся в учётной записи iCloud вашего Apple ID и защищены шифрованием и средствами контроля доступа Apple. Мы не храним копий на сервере.",
-                "<b>Удаление приложения не приводит к автоматическому удалению данных из iCloud</b> (чтобы их можно было восстановить на новом устройстве). Чтобы стереть всё: на iPhone/iPad откройте <i>Настройки → ваш Apple ID → iCloud → Управление хранилищем учётной записи → LearnNest → Удалить данные</i>; либо удалите нужное детское пространство в приложении в разделе <i>Я → Детские пространства</i>; либо напишите на {mail}, чтобы запросить помощь с удалением.",
+                "<b>Удаление приложения не приводит к автоматическому удалению данных из iCloud</b> (чтобы их можно было восстановить на новом устройстве). Чтобы стереть всё: на iPhone/iPad откройте <i>Настройки → ваш Apple ID → iCloud → Управление хранилищем учётной записи → LearnNest → Удалить данные</i>; либо удалите нужное учебное пространство в приложении в разделе <i>Я → Учебные пространства</i>; либо напишите на {mail}, чтобы запросить помощь с удалением.",
                 "Небольшое число настроек интерфейса (язык, параметры отображения) хранится <b>локально на устройстве</b> (системные UserDefaults). Они никогда не покидают ваше устройство и не синхронизируются с iCloud.",
                 "Храните свой Apple ID и код-пароль устройства в безопасности — это основная защита этих данных.",
             ]),
@@ -765,7 +765,7 @@ CONTENT["ru"] = {
     "support_title": "Поддержка и часто задаваемые вопросы",
     "support_rows": [
         ("Новое устройство / синхронизация между устройствами", "Войдите с <b>одним и тем же Apple ID</b> на всех устройствах и включите iCloud Drive — данные синхронизируются автоматически. Если синхронизация прекратилась, проверьте <i>Настройки → Apple ID → iCloud</i>."),
-        ("Семейный доступ / общее детское пространство", "Используйте «Поделиться детским пространством» в приложении (CKShare из Apple CloudKit); получатель принимает приглашение своим Apple ID. Для проверки нужны два разных Apple ID."),
+        ("Семейный доступ / общее учебное пространство", "Используйте «Поделиться учебным пространством» в приложении (CKShare из Apple CloudKit); получатель принимает приглашение своим Apple ID. Для проверки нужны два разных Apple ID."),
         ("Восстановить покупки", "Нажмите «Восстановить покупки» в нижней части экрана покупки — повторного списания не будет."),
         ("Удалить все данные", "См. раздел 5 выше. Удаление приложения не удаляет данные из iCloud."),
         ("Распознавание текста (OCR)", "Полностью выполняется на устройстве средствами Apple Vision; без загрузки и без подключения к сети."),
