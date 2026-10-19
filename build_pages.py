@@ -806,10 +806,19 @@ CSS = """
   .head-inner{max-width:860px;margin:0 auto;padding:14px 20px 0}
   h1{font-size:19px}
   .head-meta{font-size:12.5px;color:var(--sub);margin:4px 0 8px}
-  .langbar{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:8px}
-  .langbar a{font-size:12.5px;text-decoration:none;color:var(--tab);border:1px solid var(--line);
-             border-radius:999px;padding:3px 11px;background:#fff}
-  .langbar a.on{color:#fff;background:var(--blue);border-color:var(--blue)}
+  .head-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+  .head-top h1{flex:1;min-width:0}
+  .langmenu{position:relative;flex-shrink:0;margin-top:2px}
+  .langmenu summary{list-style:none;cursor:pointer;border:1px solid var(--line);border-radius:999px;
+                    padding:4px 12px;font-size:12.5px;background:#fff;color:var(--tab);white-space:nowrap}
+  .langmenu summary::-webkit-details-marker{display:none}
+  .langmenu[open] summary{color:#fff;background:var(--blue);border-color:var(--blue)}
+  .langmenu-list{position:absolute;right:0;top:calc(100% + 6px);background:#fff;border:1px solid var(--line);
+                 border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;display:grid;
+                 grid-template-columns:1fr 1fr;gap:2px;min-width:230px;max-height:60vh;overflow:auto;z-index:20}
+  .langmenu-list a{font-size:12.5px;text-decoration:none;color:var(--tab);padding:5px 10px;border-radius:6px;white-space:nowrap}
+  .langmenu-list a:hover{background:var(--blue-bg)}
+  .langmenu-list a.on{color:var(--blue);font-weight:600;background:var(--blue-bg)}
   main{max-width:860px;margin:0 auto;padding:22px 20px 60px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:16px}
   .summary{background:var(--green-bg);border:1px solid #bbf7d0;border-radius:12px;padding:16px 20px;margin-bottom:18px;font-size:14.5px;color:#166534}
@@ -836,11 +845,16 @@ def fmt(s, d, mail=MAIL, dev=DEV, en_url=SITE + "/"):
 
 def render(lang, c):
     path = CANON[lang]
-    switch = "".join(
+    switch_items = "".join(
         '<a href="{u}" class="{cls}">{t}</a>'.format(
             u=(SITE + CANON[l] + "/") if l != "en" else (SITE + "/"),
             cls="on" if l == lang else "", t=SWITCH_LABEL[l])
         for l in LANGS)
+    # 右上角语言下拉菜单：纯 HTML <details>（应用内阅读器禁 JS，不能用 select+JS 跳转）
+    switch = ('<details class="langmenu">'
+              '<summary>🌐 {cur} ▾</summary>'
+              '<div class="langmenu-list">{items}</div>'
+              '</details>').format(cur=SWITCH_LABEL[lang], items=switch_items)
     alternates = "".join(
         '\n  <link rel="alternate" hreflang="{l}" href="{u}">'.format(
             l=l, u=(SITE + "/") if l == "en" else (SITE + "/" + l + "/"))
@@ -899,9 +913,11 @@ def render(lang, c):
 <body>
 <header>
   <div class="head-inner">
-    <h1>{h1}</h1>
+    <div class="head-top">
+      <h1>{h1}</h1>
+      {switch}
+    </div>
     <div class="head-meta">{meta}</div>
-    <div class="langbar">{switch}</div>
   </div>
 </header>
 <main>

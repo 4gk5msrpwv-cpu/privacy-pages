@@ -41,10 +41,19 @@
   .head-inner{max-width:860px;margin:0 auto;padding:14px 20px 0}
   h1{font-size:19px}
   .head-meta{font-size:12.5px;color:var(--sub);margin:4px 0 8px}
-  .langbar{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:8px}
-  .langbar a{font-size:12.5px;text-decoration:none;color:var(--tab);border:1px solid var(--line);
-             border-radius:999px;padding:3px 11px;background:#fff}
-  .langbar a.on{color:#fff;background:var(--blue);border-color:var(--blue)}
+  .head-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+  .head-top h1{flex:1;min-width:0}
+  .langmenu{position:relative;flex-shrink:0;margin-top:2px}
+  .langmenu summary{list-style:none;cursor:pointer;border:1px solid var(--line);border-radius:999px;
+                    padding:4px 12px;font-size:12.5px;background:#fff;color:var(--tab);white-space:nowrap}
+  .langmenu summary::-webkit-details-marker{display:none}
+  .langmenu[open] summary{color:#fff;background:var(--blue);border-color:var(--blue)}
+  .langmenu-list{position:absolute;right:0;top:calc(100% + 6px);background:#fff;border:1px solid var(--line);
+                 border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;display:grid;
+                 grid-template-columns:1fr 1fr;gap:2px;min-width:230px;max-height:60vh;overflow:auto;z-index:20}
+  .langmenu-list a{font-size:12.5px;text-decoration:none;color:var(--tab);padding:5px 10px;border-radius:6px;white-space:nowrap}
+  .langmenu-list a:hover{background:var(--blue-bg)}
+  .langmenu-list a.on{color:var(--blue);font-weight:600;background:var(--blue-bg)}
   main{max-width:860px;margin:0 auto;padding:22px 20px 60px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:16px}
   .summary{background:var(--green-bg);border:1px solid #bbf7d0;border-radius:12px;padding:16px 20px;margin-bottom:18px;font-size:14.5px;color:#166534}
@@ -67,9 +76,11 @@
 <body>
 <header>
   <div class="head-inner">
-    <h1>🎓 LearnNest Privatlivspolitik & Support</h1>
+    <div class="head-top">
+      <h1>🎓 LearnNest Privatlivspolitik & Support</h1>
+      <details class="langmenu"><summary>🌐 Dansk ▾</summary><div class="langmenu-list"><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/" class="">English</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/zh-Hans/" class="">简体中文</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/zh-Hant/" class="">繁體中文</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/ja/" class="">日本語</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/es/" class="">Español</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/pt-BR/" class="">Português (BR)</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/fr/" class="">Français</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/de/" class="">Deutsch</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/ko/" class="">한국어</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/ru/" class="">Русский</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/da/" class="on">Dansk</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/fil/" class="">Filipino</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/id/" class="">Bahasa Indonesia</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/it/" class="">Italiano</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/ms/" class="">Bahasa Melayu</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/nb/" class="">Norsk (bokmål)</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/nl/" class="">Nederlands</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/pl/" class="">Polski</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/sv/" class="">Svenska</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/tr/" class="">Türkçe</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/vi/" class="">Tiếng Việt</a></div></details>
+    </div>
     <div class="head-meta">Ikrafttrædelsesdato: 2026-09-10 ｜ Udvikler: Frank Zhou ｜ Kontakt: Your.LearnNest@outlook.com</div>
-    <div class="langbar"><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/" class="">English</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/zh-Hans/" class="">简体中文</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/zh-Hant/" class="">繁體中文</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/ja/" class="">日本語</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/es/" class="">Español</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/pt-BR/" class="">Português (BR)</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/fr/" class="">Français</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/de/" class="">Deutsch</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/ko/" class="">한국어</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/ru/" class="">Русский</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/da/" class="on">Dansk</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/fil/" class="">Filipino</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/id/" class="">Bahasa Indonesia</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/it/" class="">Italiano</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/ms/" class="">Bahasa Melayu</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/nb/" class="">Norsk (bokmål)</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/nl/" class="">Nederlands</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/pl/" class="">Polski</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/sv/" class="">Svenska</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/tr/" class="">Türkçe</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/vi/" class="">Tiếng Việt</a></div>
   </div>
 </header>
 <main>
