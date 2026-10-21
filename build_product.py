@@ -9,6 +9,8 @@ LearnNest 产品介绍页生成器（/product/ 路径）。
 """
 import os
 
+from content_product_18 import P18, LANGS21, LABELS21, LANG21_LIST
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # App Store 链接：上架后把整组替换为真实产品页 URL（各店面自动跳转可用 apps.apple.com 通用链接）
@@ -27,6 +29,18 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .brand img{width:30px;height:30px;border-radius:8px}
 nav.langs{display:flex;gap:14px;font-size:14px}
 nav.langs a.on{font-weight:700;color:var(--ink)}
+/* 右上角语言下拉（与隐私页同款，纯 HTML details，无 JS） */
+.langmenu{position:relative;flex-shrink:0}
+.langmenu summary{list-style:none;cursor:pointer;border:1px solid var(--line);border-radius:999px;
+                  padding:5px 14px;font-size:13px;background:#fff;color:var(--sub);white-space:nowrap}
+.langmenu summary::-webkit-details-marker{display:none}
+.langmenu[open] summary{color:#fff;background:var(--blue);border-color:var(--blue)}
+.langmenu-list{position:absolute;right:0;top:calc(100% + 6px);background:#fff;border:1px solid var(--line);
+               border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;display:grid;
+               grid-template-columns:1fr 1fr;gap:2px;min-width:230px;max-height:60vh;overflow:auto;z-index:20}
+.langmenu-list a{font-size:12.5px;text-decoration:none;color:var(--sub);padding:5px 10px;border-radius:6px;white-space:nowrap}
+.langmenu-list a:hover{background:#eef3fb}
+.langmenu-list a.on{color:var(--blue);font-weight:600;background:#eef3fb}
 .hero{text-align:center;padding:64px 0 40px}
 .hero h1{font-size:34px;line-height:1.25;letter-spacing:.2px}
 .hero p.sub{color:var(--sub);font-size:18px;margin:14px auto 6px;max-width:640px}
@@ -62,12 +76,23 @@ ICON = "data:image/svg+xml,"  # 占位：页头不放图，纯文字品牌，避
 
 def page(lang, t, hreflang_map):
     # 截图目录相对路径：en 根页在 /product/ 下，语言子目录页在 /product/<lang>/ 下，
-    # 后者必须先回上一级，否则解析成 /product/<lang>/shots/... 404（2026-09-12 线上事故）
-    shots = "shots/en" if lang == "en" else f"../shots/{lang}"
-    lang_nav = " · ".join(
+    # 后者必须先回上一级，否则解析成 /product/<lang>/shots/... 404（2026-09-12 线上事故）。
+    # 新增语言暂无自有截图时回退英文截图（shots/en）。
+    if lang == "en":
+        shots = "shots/en"
+    elif os.path.isdir(os.path.join(BASE_DIR, "product", "shots", lang)):
+        shots = f"../shots/{lang}"
+    else:
+        shots = "../shots/en"
+    # 右上角语言下拉菜单：纯 HTML <details>（应用内阅读器禁 JS，不能用 select+JS 跳转）
+    items = "".join(
         f'<a href="{u}"{" class=\"on\"" if k == lang else ""}>{label}</a>'
         for k, u, label in hreflang_map
     )
+    switch = ('<details class="langmenu">'
+              f'<summary>🌐 {t["switch_label"]} ▾</summary>'
+              f'<div class="langmenu-list">{items}</div>'
+              '</details>')
     feats = "".join(
         f'<div class="feat"><img src="{shots}/{s}" alt="{alt}"><div><h3>{h}</h3><p>{p}</p></div></div>'
         for s, alt, h, p in t["features"]
@@ -88,7 +113,7 @@ def page(lang, t, hreflang_map):
 <body>
 <header><div class="wrap">
   <div class="brand">LearnNest</div>
-  <nav class="langs">{lang_nav}</nav>
+  {switch}
 </div></header>
 
 <div class="hero"><div class="wrap">
@@ -145,7 +170,7 @@ def main():
     zh_highlights = [
         ("☁️ iCloud 家庭共享", "父母双方 App 实时同步，共同管理课表与奖励，还能邀请祖辈一起查看。"),
         ("👨‍👩‍👧‍👦 多个学习空间", "每个空间独立的课程表、作业、习惯和积分，切换即看，互不干扰。"),
-        ("🌍 10 种语言", "简体中文、繁體中文、English、日本語、Español、Français、Deutsch、한국어、Русский、Português。"),
+        ("🌍 21 种语言", LANG21_LIST),
         ("🔒 设备锁（PIN）", "PIN 码保护配置页面，设备交到别人手里也只能看不能改。"),
         ("🛡️ 隐私优先", "无账号、无服务器、无广告追踪。所有数据只存在你自己的 iCloud 私人数据库里。"),
         ("📴 离线可用", "没有网络也能正常查看课程表、记录作业与打卡，联网后自动同步。"),
@@ -157,6 +182,7 @@ def main():
         ("支持哪些设备？", "支持 iPhone 与 iPad，界面针对两种尺寸分别适配；数据通过 iCloud 在多台设备间同步。"),
     ]
     zh = dict(
+        switch_label="简体中文",
         html_lang="zh-Hans",
         title="LearnNest — 学习管理：课程表 · 作业 · 习惯 · 专注 · 积分奖励",
         desc="LearnNest 是为家长设计的学习管理 App：课程表、作业、习惯打卡、专注计时与积分奖励，iCloud 家庭共享同步，隐私优先，免费试用 7 天，一次性买断。",
@@ -182,7 +208,8 @@ def main():
     def zht_from_zh(zh):
         # 繁中（台湾用语）手写覆写：仅覆写与简中不同的字符串级字段
         t = dict(zh)
-        t.update(html_lang="zh-TW",
+        t.update(switch_label="繁體中文",
+                 html_lang="zh-TW",
                  title="LearnNest — 學習管理：課程表 · 作業 · 習慣 · 專注 · 點數獎勵",
                  desc="LearnNest 是為家長設計的學習管理 App：課程表、作業、習慣打卡、專注計時與點數獎勵，iCloud 家庭共享同步，隱私優先，免費試用 7 天，一次性買斷。",
                  hero_h1="讓每一天的學習，井井有條",
@@ -212,7 +239,7 @@ def main():
                  highlights=[
                      ("☁️ iCloud 家庭共享", "父母雙方 App 即時同步，共同管理課表與獎勵，還能邀請祖輩一起查看。"),
                      ("👨‍👩‍👧‍👦 多個學習空間", "每個空間獨立的課程表、作業、習慣和點數，切換即看，互不干擾。"),
-                     ("🌍 10 種語言", "簡體中文、繁體中文、English、日本語、Español、Français、Deutsch、한국어、Русский、Português。"),
+                     ("🌍 21 種語言", LANG21_LIST),
                      ("🔒 裝置鎖（PIN）", "PIN 碼保護設定頁面，裝置交到別人手裡也只能看不能改。"),
                      ("🛡️ 隱私優先", "無帳號、無伺服器、無廣告追蹤。所有資料只存在你自己的 iCloud 私人資料庫裡。"),
                      ("📴 離線可用", "沒有網路也能正常查看課程表、記錄作業與打卡，連網後自動同步。"),
@@ -226,6 +253,7 @@ def main():
         return t
 
     en = dict(
+        switch_label="English",
         html_lang="en",
         title="LearnNest — Study Manager for Parents: Timetable · Homework · Habits · Focus · Rewards",
         desc="LearnNest is a study manager built for parents: timetable, homework, habit tracking, focus timer and points rewards. Private by design — everything stays in your own iCloud. Free 7-day trial, one-time purchase.",
@@ -256,7 +284,7 @@ def main():
         highlights=[
             ("☁️ iCloud Family Sharing", "Syncs in real time between both parents — manage timetables and rewards together, and invite grandparents to view."),
             ("👨‍👩‍👧‍👦 Multiple spaces", "Each space gets an independent timetable, homework, habits and points. Switch with one tap."),
-            ("🌍 10 languages", "English, 简体中文, 繁體中文, 日本語, Español, Français, Deutsch, 한국어, Русский, Português."),
+            ("🌍 21 languages", LANG21_LIST),
             ("🔒 Device lock (PIN)", "A PIN protects the settings area — hand the device over without worry."),
             ("🛡️ Private by design", "No account, no server, no ad tracking. Everything lives only in your own private iCloud database."),
             ("📴 Works offline", "View the timetable, log homework and check in habits without network; changes sync when you're back online."),
@@ -269,12 +297,21 @@ def main():
         ],
     )
 
-    hreflang = [
-        ("en", f"{PRIV_BASE}/product/", "English"),
-        ("zh-Hans", f"{PRIV_BASE}/product/zh-Hans/", "简体中文"),
-        ("zh-Hant", f"{PRIV_BASE}/product/zh-Hant/", "繁體中文"),
-    ]
+    # 全部 21 语：既有 3 语 + content_product_18 的 18 语；隐私页链接与 canonical 自动生成
+    def with_urls(lang, t):
+        t = dict(t)
+        t["switch_label"] = LABELS21[lang]
+        t["privacy_url"] = f"{PRIV_BASE}/" if lang == "en" else f"{PRIV_BASE}/{lang}/"
+        t["canonical"] = f"{PRIV_BASE}/product/" if lang == "en" else f"{PRIV_BASE}/product/{lang}/"
+        return t
+
     pages = [("en", en), ("zh-Hans", zh), ("zh-Hant", zht_from_zh(zh))]
+    pages += [(l, P18[l]) for l in LANGS21 if l not in ("en", "zh-Hans", "zh-Hant")]
+    pages = [(l, with_urls(l, t)) for l, t in pages]
+    assert len(pages) == 21
+
+    hreflang = [(l, (f"{PRIV_BASE}/product/" if l == "en" else f"{PRIV_BASE}/product/{l}/"), LABELS21[l])
+                for l in LANGS21]
 
     refs = "".join(f'<link rel="alternate" hreflang="{k}" href="{u}">' for k, u, _ in hreflang)
     refs += f'<link rel="alternate" hreflang="x-default" href="{PRIV_BASE}/product/">'

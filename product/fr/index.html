@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LearnNest — Gestion des études pour parents : emploi du temps · devoirs · habitudes · concentration · récompenses</title>
+<meta name="description" content="LearnNest est un gestionnaire d'études conçu pour les parents : emploi du temps, devoirs, habitudes, minuteur de concentration et récompenses. Privé par conception — tout reste dans votre propre iCloud. Essai gratuit de 7 jours, achat unique.">
+<link rel="alternate" hreflang="en" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/"><link rel="alternate" hreflang="zh-Hans" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/zh-Hans/"><link rel="alternate" hreflang="zh-Hant" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/zh-Hant/"><link rel="alternate" hreflang="ja" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ja/"><link rel="alternate" hreflang="es" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/es/"><link rel="alternate" hreflang="pt-BR" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/pt-BR/"><link rel="alternate" hreflang="fr" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/fr/"><link rel="alternate" hreflang="de" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/de/"><link rel="alternate" hreflang="ko" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ko/"><link rel="alternate" hreflang="ru" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ru/"><link rel="alternate" hreflang="da" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/da/"><link rel="alternate" hreflang="fil" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/fil/"><link rel="alternate" hreflang="id" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/id/"><link rel="alternate" hreflang="it" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/it/"><link rel="alternate" hreflang="ms" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ms/"><link rel="alternate" hreflang="nb" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/nb/"><link rel="alternate" hreflang="nl" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/nl/"><link rel="alternate" hreflang="pl" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/pl/"><link rel="alternate" hreflang="sv" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/sv/"><link rel="alternate" hreflang="tr" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/tr/"><link rel="alternate" hreflang="vi" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/vi/"><link rel="alternate" hreflang="x-default" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/">
+<link rel="canonical" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/fr/">
+<style>
+:root{--blue:#0a7cff;--ink:#1c2330;--sub:#5b6472;--line:#e8ecf2;--bg:#f7f9fc;--card:#ffffff;--amber:#f59e0b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","PingFang TC","Helvetica Neue",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:var(--blue);text-decoration:none}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:0;background:rgba(247,249,252,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:10}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px}
+.brand img{width:30px;height:30px;border-radius:8px}
+nav.langs{display:flex;gap:14px;font-size:14px}
+nav.langs a.on{font-weight:700;color:var(--ink)}
+/* 右上角语言下拉（与隐私页同款，纯 HTML details，无 JS） */
+.langmenu{position:relative;flex-shrink:0}
+.langmenu summary{list-style:none;cursor:pointer;border:1px solid var(--line);border-radius:999px;
+                  padding:5px 14px;font-size:13px;background:#fff;color:var(--sub);white-space:nowrap}
+.langmenu summary::-webkit-details-marker{display:none}
+.langmenu[open] summary{color:#fff;background:var(--blue);border-color:var(--blue)}
+.langmenu-list{position:absolute;right:0;top:calc(100% + 6px);background:#fff;border:1px solid var(--line);
+               border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;display:grid;
+               grid-template-columns:1fr 1fr;gap:2px;min-width:230px;max-height:60vh;overflow:auto;z-index:20}
+.langmenu-list a{font-size:12.5px;text-decoration:none;color:var(--sub);padding:5px 10px;border-radius:6px;white-space:nowrap}
+.langmenu-list a:hover{background:#eef3fb}
+.langmenu-list a.on{color:var(--blue);font-weight:600;background:#eef3fb}
+.hero{text-align:center;padding:64px 0 40px}
+.hero h1{font-size:34px;line-height:1.25;letter-spacing:.2px}
+.hero p.sub{color:var(--sub);font-size:18px;margin:14px auto 6px;max-width:640px}
+.badges{margin-top:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--sub)}
+.cta{display:inline-block;margin-top:22px;background:var(--ink);color:#fff;font-weight:600;font-size:16px;padding:12px 26px;border-radius:12px}
+.cta:hover{opacity:.9}
+.shots-hero{margin-top:44px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+.shot{width:220px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:8px;box-shadow:0 12px 30px rgba(28,35,48,.08)}
+.shot img{width:100%;border-radius:18px;display:block}
+section{padding:52px 0}
+section h2{font-size:26px;text-align:center}
+section p.lead{color:var(--sub);text-align:center;margin:8px auto 30px;max-width:600px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;display:flex;gap:16px;align-items:flex-start}
+.feat img{width:118px;border-radius:14px;border:1px solid var(--line);flex:none}
+.feat h3{font-size:16px;margin-bottom:4px}
+.feat p{font-size:14px;color:var(--sub)}
+.hl{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px 22px}
+.hl h3{font-size:15.5px;margin-bottom:4px}
+.hl p{font-size:14px;color:var(--sub)}
+.hlgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+dl.faq{max-width:760px;margin:0 auto}
+dl.faq dt{font-weight:700;margin-top:18px;font-size:15.5px}
+dl.faq dd{color:var(--sub);font-size:14.5px;margin-top:4px}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--sub);font-size:13.5px}
+footer .wrap{display:flex;flex-direction:column;gap:6px}
+@media (max-width:640px){.hero h1{font-size:26px}.hero p.sub{font-size:16px}.feat{flex-direction:column}.feat img{width:100%}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand">LearnNest</div>
+  <details class="langmenu"><summary>🌐 Français ▾</summary><div class="langmenu-list"><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/">English</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/zh-Hans/">简体中文</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/zh-Hant/">繁體中文</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ja/">日本語</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/es/">Español</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/pt-BR/">Português (BR)</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/fr/" class="on">Français</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/de/">Deutsch</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ko/">한국어</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ru/">Русский</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/da/">Dansk</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/fil/">Filipino</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/id/">Bahasa Indonesia</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/it/">Italiano</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ms/">Bahasa Melayu</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/nb/">Norsk (bokmål)</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/nl/">Nederlands</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/pl/">Polski</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/sv/">Svenska</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/tr/">Türkçe</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/vi/">Tiếng Việt</a></div></details>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <h1>Chaque journée d'école, parfaitement organisée</h1>
+  <p class="sub">Emploi du temps · Devoirs · Habitudes · Concentration · Points et récompenses — un gestionnaire d'apprentissage pensé pour toute la famille.</p>
+  <div class="badges">
+    <span class="pill">Téléchargement gratuit · Essai complet de 7 jours</span>
+    <span class="pill">Achat unique · Sans abonnement</span>
+    <span class="pill">Vos données restent dans votre iCloud</span>
+  </div>
+  <a class="cta" href="https://apps.apple.com/">Télécharger sur l'App Store</a>
+  <div class="shots-hero">
+    <div class="shot"><img src="../shots/en/01_today.jpg" alt="Aujourd'hui en un coup d'œil"></div>
+    <div class="shot"><img src="../shots/en/02_timetable.jpg" alt="Emploi du temps"></div>
+    <div class="shot"><img src="../shots/en/06_rewards.jpg" alt="Points et récompenses"></div>
+  </div>
+</div></div>
+
+<section><div class="wrap">
+  <h2>Une seule app pour toute la journée d'école</h2>
+  <p class="lead">Six fonctions qui s'articulent : planifier les cours, noter les devoirs, bâtir des habitudes, rester concentré — et entretenir la motivation avec des récompenses.</p>
+  <div class="grid"><div class="feat"><img src="../shots/en/01_today.jpg" alt="Aujourd'hui en un coup d'œil"><div><h3>Aujourd'hui en un coup d'œil</h3><p>Cours du jour, devoirs à faire, habitudes à cocher et récompenses à échanger — tout sur un seul écran.</p></div></div><div class="feat"><img src="../shots/en/02_timetable.jpg" alt="Emploi du temps"><div><h3>Emploi du temps</h3><p>Planning du lundi au dimanche avec matin, après-midi et pause déjeuner ; les horaires de chaque créneau sont entièrement personnalisables.</p></div></div><div class="feat"><img src="../shots/en/03_homework.jpg" alt="Devoirs"><div><h3>Devoirs</h3><p>Notez les devoirs par matière avec échéance ; cochez quand c'est fait, rien ne vous échappe.</p></div></div><div class="feat"><img src="../shots/en/04_habits.jpg" alt="Créer des habitudes"><div><h3>Créer des habitudes</h3><p>Check-ins quotidiens, séries et badges rendent les bonnes habitudes visibles.</p></div></div><div class="feat"><img src="../shots/en/05_focus.jpg" alt="Minuteur de concentration"><div><h3>Minuteur de concentration</h3><p>25/35/45 minutes ou durée personnalisée ; les sessions terminées sont enregistrées automatiquement.</p></div></div><div class="feat"><img src="../shots/en/06_rewards.jpg" alt="Points et récompenses"><div><h3>Points et récompenses</h3><p>Gagnez des points pour les tâches accomplies et échangez-les contre les récompenses définies par les parents — une motivation positive qui dure.</p></div></div></div>
+</div></section>
+
+<section style="background:#eef3fb"><div class="wrap">
+  <h2>Conçu pour les familles</h2>
+  <p class="lead">Pas qu'un carnet de suivi — un tableau de bord pour les parents.</p>
+  <div class="hlgrid"><div class="hl"><h3>☁️ Partage familial iCloud</h3><p>Synchronisation en temps réel entre les deux parents — gérez emploi du temps et récompenses ensemble, et invitez les grands-parents à consulter.</p></div><div class="hl"><h3>👨‍👩‍👧‍👦 Plusieurs espaces</h3><p>Chaque espace a son emploi du temps, ses devoirs, habitudes et points. Basculez en un geste.</p></div><div class="hl"><h3>🌍 21 langues</h3><p>English · 简体中文 · 繁體中文 · 日本語 · 한국어 · Español · Português (BR) · Français · Deutsch · Italiano · Nederlands · Polski · Svenska · Norsk (bokmål) · Dansk · Bahasa Indonesia · Bahasa Melayu · Filipino · Türkçe · Tiếng Việt · Русский</p></div><div class="hl"><h3>🔒 Verrouillage (PIN)</h3><p>Un code PIN protège les réglages — confiez l'appareil l'esprit tranquille.</p></div><div class="hl"><h3>🛡️ Privé par conception</h3><p>Sans compte, sans serveur, sans pistage publicitaire. Tout ne vit que dans votre propre base iCloud privée.</p></div><div class="hl"><h3>📴 Fonctionne hors ligne</h3><p>Consultez l'emploi du temps, notez les devoirs et cochez les habitudes sans réseau ; synchronisation au retour de la connexion.</p></div></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>FAQ</h2>
+  <p class="lead">Tout ce que vous voulez savoir sur les données, les comptes et les achats.</p>
+  <dl class="faq"><dt>Où sont stockées mes données ? Sont-elles sûres ?</dt><dd>Toutes les données ne vivent que dans votre propre base iCloud privée (Apple CloudKit). Le développeur ne peut ni les lire ni les exporter. Aucun système de compte, aucun SDK d'analyse ou de publicité tiers.</dd><dt>Faut-il créer un compte ?</dt><dd>Non. Téléchargez et c'est parti — connectez-vous à iCloud, la synchronisation et le partage familial fonctionnent automatiquement.</dd><dt>Comment fonctionne l'essai gratuit ?</dt><dd>Toutes les fonctions sont gratuites pendant 7 jours. Ensuite, un achat unique débloque tout — sans abonnement, sans surprise.</dd><dt>Quels appareils sont pris en charge ?</dt><dd>iPhone et iPad, chacun avec une interface adaptée. Les données se synchronisent via iCloud.</dd></dl>
+</div></section>
+
+<footer><div class="wrap">
+  <div>© 2026 LearnNest · Un gestionnaire d'apprentissage fait avec soin</div>
+  <div><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/fr/">Politique de confidentialité et assistance</a> · Nous contacter : Your.LearnNest@outlook.com</div>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LearnNest — Quản lý học tập cho phụ huynh: thời khóa biểu · bài tập · thói quen · tập trung · phần thưởng</title>
+<meta name="description" content="LearnNest là ứng dụng quản lý học tập cho phụ huynh: thời khóa biểu, bài tập, thói quen, hẹn giờ tập trung và phần thưởng điểm. Riêng tư ngay từ thiết kế — mọi thứ chỉ nằm trong iCloud của bạn. Dùng thử miễn phí 7 ngày, mua một lần.">
+<link rel="alternate" hreflang="en" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/"><link rel="alternate" hreflang="zh-Hans" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/zh-Hans/"><link rel="alternate" hreflang="zh-Hant" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/zh-Hant/"><link rel="alternate" hreflang="ja" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ja/"><link rel="alternate" hreflang="es" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/es/"><link rel="alternate" hreflang="pt-BR" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/pt-BR/"><link rel="alternate" hreflang="fr" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/fr/"><link rel="alternate" hreflang="de" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/de/"><link rel="alternate" hreflang="ko" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ko/"><link rel="alternate" hreflang="ru" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ru/"><link rel="alternate" hreflang="da" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/da/"><link rel="alternate" hreflang="fil" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/fil/"><link rel="alternate" hreflang="id" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/id/"><link rel="alternate" hreflang="it" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/it/"><link rel="alternate" hreflang="ms" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ms/"><link rel="alternate" hreflang="nb" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/nb/"><link rel="alternate" hreflang="nl" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/nl/"><link rel="alternate" hreflang="pl" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/pl/"><link rel="alternate" hreflang="sv" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/sv/"><link rel="alternate" hreflang="tr" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/tr/"><link rel="alternate" hreflang="vi" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/vi/"><link rel="alternate" hreflang="x-default" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/">
+<link rel="canonical" href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/vi/">
+<style>
+:root{--blue:#0a7cff;--ink:#1c2330;--sub:#5b6472;--line:#e8ecf2;--bg:#f7f9fc;--card:#ffffff;--amber:#f59e0b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","PingFang TC","Helvetica Neue",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:var(--blue);text-decoration:none}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:0;background:rgba(247,249,252,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:10}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px}
+.brand img{width:30px;height:30px;border-radius:8px}
+nav.langs{display:flex;gap:14px;font-size:14px}
+nav.langs a.on{font-weight:700;color:var(--ink)}
+/* 右上角语言下拉（与隐私页同款，纯 HTML details，无 JS） */
+.langmenu{position:relative;flex-shrink:0}
+.langmenu summary{list-style:none;cursor:pointer;border:1px solid var(--line);border-radius:999px;
+                  padding:5px 14px;font-size:13px;background:#fff;color:var(--sub);white-space:nowrap}
+.langmenu summary::-webkit-details-marker{display:none}
+.langmenu[open] summary{color:#fff;background:var(--blue);border-color:var(--blue)}
+.langmenu-list{position:absolute;right:0;top:calc(100% + 6px);background:#fff;border:1px solid var(--line);
+               border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;display:grid;
+               grid-template-columns:1fr 1fr;gap:2px;min-width:230px;max-height:60vh;overflow:auto;z-index:20}
+.langmenu-list a{font-size:12.5px;text-decoration:none;color:var(--sub);padding:5px 10px;border-radius:6px;white-space:nowrap}
+.langmenu-list a:hover{background:#eef3fb}
+.langmenu-list a.on{color:var(--blue);font-weight:600;background:#eef3fb}
+.hero{text-align:center;padding:64px 0 40px}
+.hero h1{font-size:34px;line-height:1.25;letter-spacing:.2px}
+.hero p.sub{color:var(--sub);font-size:18px;margin:14px auto 6px;max-width:640px}
+.badges{margin-top:18px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--sub)}
+.cta{display:inline-block;margin-top:22px;background:var(--ink);color:#fff;font-weight:600;font-size:16px;padding:12px 26px;border-radius:12px}
+.cta:hover{opacity:.9}
+.shots-hero{margin-top:44px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+.shot{width:220px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:8px;box-shadow:0 12px 30px rgba(28,35,48,.08)}
+.shot img{width:100%;border-radius:18px;display:block}
+section{padding:52px 0}
+section h2{font-size:26px;text-align:center}
+section p.lead{color:var(--sub);text-align:center;margin:8px auto 30px;max-width:600px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;display:flex;gap:16px;align-items:flex-start}
+.feat img{width:118px;border-radius:14px;border:1px solid var(--line);flex:none}
+.feat h3{font-size:16px;margin-bottom:4px}
+.feat p{font-size:14px;color:var(--sub)}
+.hl{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px 22px}
+.hl h3{font-size:15.5px;margin-bottom:4px}
+.hl p{font-size:14px;color:var(--sub)}
+.hlgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+dl.faq{max-width:760px;margin:0 auto}
+dl.faq dt{font-weight:700;margin-top:18px;font-size:15.5px}
+dl.faq dd{color:var(--sub);font-size:14.5px;margin-top:4px}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--sub);font-size:13.5px}
+footer .wrap{display:flex;flex-direction:column;gap:6px}
+@media (max-width:640px){.hero h1{font-size:26px}.hero p.sub{font-size:16px}.feat{flex-direction:column}.feat img{width:100%}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand">LearnNest</div>
+  <details class="langmenu"><summary>🌐 Tiếng Việt ▾</summary><div class="langmenu-list"><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/">English</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/zh-Hans/">简体中文</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/zh-Hant/">繁體中文</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ja/">日本語</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/es/">Español</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/pt-BR/">Português (BR)</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/fr/">Français</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/de/">Deutsch</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ko/">한국어</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ru/">Русский</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/da/">Dansk</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/fil/">Filipino</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/id/">Bahasa Indonesia</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/it/">Italiano</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/ms/">Bahasa Melayu</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/nb/">Norsk (bokmål)</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/nl/">Nederlands</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/pl/">Polski</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/sv/">Svenska</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/tr/">Türkçe</a><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/product/vi/" class="on">Tiếng Việt</a></div></details>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <h1>Mỗi ngày đến trường, gọn gàng trọn vẹn</h1>
+  <p class="sub">Thời khóa biểu · Bài tập · Thói quen · Tập trung · Điểm và phần thưởng — ứng dụng quản lý học tập cho cả gia đình.</p>
+  <div class="badges">
+    <span class="pill">Tải miễn phí · Dùng thử đầy đủ 7 ngày</span>
+    <span class="pill">Mua một lần · Không gói đăng ký</span>
+    <span class="pill">Dữ liệu chỉ nằm trong iCloud của bạn</span>
+  </div>
+  <a class="cta" href="https://apps.apple.com/">Tải trên App Store</a>
+  <div class="shots-hero">
+    <div class="shot"><img src="../shots/en/01_today.jpg" alt="Hôm nay một cái nhìn"></div>
+    <div class="shot"><img src="../shots/en/02_timetable.jpg" alt="Thời khóa biểu"></div>
+    <div class="shot"><img src="../shots/en/06_rewards.jpg" alt="Điểm và phần thưởng"></div>
+  </div>
+</div></div>
+
+<section><div class="wrap">
+  <h2>Một ứng dụng cho cả ngày học</h2>
+  <p class="lead">Sáu tính năng đan xen: sắp tiết học, ghi bài tập, giữ thói quen, giữ tập trung — và duy trì động lực bằng phần thưởng.</p>
+  <div class="grid"><div class="feat"><img src="../shots/en/01_today.jpg" alt="Hôm nay một cái nhìn"><div><h3>Hôm nay một cái nhìn</h3><p>Tiết học hôm nay, bài tập chưa xong, điểm danh thói quen và phần thưởng đổi được — tất cả trên một màn hình.</p></div></div><div class="feat"><img src="../shots/en/02_timetable.jpg" alt="Thời khóa biểu"><div><h3>Thời khóa biểu</h3><p>Thời khóa biểu thứ Hai đến Chủ nhật: buổi sáng, buổi chiều và giờ ra chơi — giờ mỗi tiết tự do tùy chỉnh.</p></div></div><div class="feat"><img src="../shots/en/03_homework.jpg" alt="Bài tập"><div><h3>Bài tập</h3><p>Ghi bài tập theo môn với hạn nộp; tích khi xong — không bỏ sót gì.</p></div></div><div class="feat"><img src="../shots/en/04_habits.jpg" alt="Rèn thói quen"><div><h3>Rèn thói quen</h3><p>Điểm danh hằng ngày, chuỗi ngày liên tục và huy hiệu khiến thói quen tốt trở nên hữu hình.</p></div></div><div class="feat"><img src="../shots/en/05_focus.jpg" alt="Hẹn giờ tập trung"><div><h3>Hẹn giờ tập trung</h3><p>25/35/45 phút hoặc tự đặt; phiên hoàn thành được ghi lại tự động.</p></div></div><div class="feat"><img src="../shots/en/06_rewards.jpg" alt="Điểm và phần thưởng"><div><h3>Điểm và phần thưởng</h3><p>Kiếm điểm từ nhiệm vụ hoàn thành và đổi lấy phần thưởng phụ huynh cài đặt — động lực tích cực bền lâu.</p></div></div></div>
+</div></section>
+
+<section style="background:#eef3fb"><div class="wrap">
+  <h2>Thiết kế cho gia đình</h2>
+  <p class="lead">Không chỉ là sổ ghi chép — bảng điều khiển dành cho phụ huynh.</p>
+  <div class="hlgrid"><div class="hl"><h3>☁️ Chia sẻ gia đình iCloud</h3><p>Đồng bộ thời gian thực giữa cả hai phụ huynh — cùng quản lý thời khóa biểu và phần thưởng, mời ông bà cùng xem.</p></div><div class="hl"><h3>👨‍👩‍👧‍👦 Nhiều không gian học</h3><p>Mỗi không gian có riêng thời khóa biểu, bài tập, thói quen và điểm. Chuyển bằng một chạm.</p></div><div class="hl"><h3>🌍 21 ngôn ngữ</h3><p>English · 简体中文 · 繁體中文 · 日本語 · 한국어 · Español · Português (BR) · Français · Deutsch · Italiano · Nederlands · Polski · Svenska · Norsk (bokmål) · Dansk · Bahasa Indonesia · Bahasa Melayu · Filipino · Türkçe · Tiếng Việt · Русский</p></div><div class="hl"><h3>🔒 Khóa thiết bị (PIN)</h3><p>Mã PIN bảo vệ phần cài đặt — giao máy cho người khác cũng yên tâm.</p></div><div class="hl"><h3>🛡️ Riêng tư từ thiết kế</h3><p>Không tài khoản, không máy chủ, không theo dõi quảng cáo. Mọi thứ chỉ nằm trong cơ sở dữ liệu iCloud riêng của bạn.</p></div><div class="hl"><h3>📴 Dùng khi offline</h3><p>Xem thời khóa biểu, ghi bài tập và điểm danh thói quen không cần mạng; tự đồng bộ khi có lại kết nối.</p></div></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Câu hỏi thường gặp</h2>
+  <p class="lead">Mọi thứ về dữ liệu, tài khoản và mua hàng.</p>
+  <dl class="faq"><dt>Dữ liệu được lưu ở đâu? Có an toàn không?</dt><dd>Mọi dữ liệu chỉ nằm trong cơ sở dữ liệu iCloud riêng của bạn (Apple CloudKit). Nhà phát triển không thể đọc hay xuất chúng. Không có hệ thống tài khoản và không có SDK phân tích hay quảng cáo bên thứ ba.</dd><dt>Có cần đăng ký tài khoản không?</dt><dd>Không. Tải về và dùng ngay — đăng nhập iCloud, đồng bộ và Chia sẻ gia đình tự động hoạt động.</dd><dt>Dùng thử miễn phí thế nào?</dt><dd>Toàn bộ tính năng miễn phí trong 7 ngày. Sau đó một lần mua mở khóa tất cả — không gói đăng ký, không bất ngờ.</dd><dt>Hỗ trợ thiết bị nào?</dt><dd>iPhone và iPad, mỗi loại có giao diện riêng tối ưu. Dữ liệu đồng bộ giữa các thiết bị qua iCloud.</dd></dl>
+</div></section>
+
+<footer><div class="wrap">
+  <div>© 2026 LearnNest · Ứng dụng quản lý học tập làm bằng cả tâm huyết</div>
+  <div><a href="https://4gk5msrpwv-cpu.github.io/privacy-pages/vi/">Chính sách quyền riêng tư & Hỗ trợ</a> · Liên hệ: Your.LearnNest@outlook.com</div>
+</div></footer>
+</body>
+</html>
