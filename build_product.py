@@ -170,7 +170,7 @@ def main():
     zh_highlights = [
         ("☁️ iCloud 家庭共享", "父母双方 App 实时同步，共同管理课表与奖励，还能邀请祖辈一起查看。"),
         ("👨‍👩‍👧‍👦 多个学习空间", "每个空间独立的课程表、作业、习惯和积分，切换即看，互不干扰。"),
-        ("🌍 21 种语言", LANG21_LIST),
+        ("🌍 22 种语言", LANG21_LIST),
         ("🔒 设备锁（PIN）", "PIN 码保护配置页面，设备交到别人手里也只能看不能改。"),
         ("🛡️ 隐私优先", "无账号、无服务器、无广告追踪。所有数据只存在你自己的 iCloud 私人数据库里。"),
         ("📴 离线可用", "没有网络也能正常查看课程表、记录作业与打卡，联网后自动同步。"),
@@ -239,7 +239,7 @@ def main():
                  highlights=[
                      ("☁️ iCloud 家庭共享", "父母雙方 App 即時同步，共同管理課表與獎勵，還能邀請祖輩一起查看。"),
                      ("👨‍👩‍👧‍👦 多個學習空間", "每個空間獨立的課程表、作業、習慣和點數，切換即看，互不干擾。"),
-                     ("🌍 21 種語言", LANG21_LIST),
+                     ("🌍 22 種語言", LANG21_LIST),
                      ("🔒 裝置鎖（PIN）", "PIN 碼保護設定頁面，裝置交到別人手裡也只能看不能改。"),
                      ("🛡️ 隱私優先", "無帳號、無伺服器、無廣告追蹤。所有資料只存在你自己的 iCloud 私人資料庫裡。"),
                      ("📴 離線可用", "沒有網路也能正常查看課程表、記錄作業與打卡，連網後自動同步。"),
@@ -284,7 +284,7 @@ def main():
         highlights=[
             ("☁️ iCloud Family Sharing", "Syncs in real time between both parents — manage timetables and rewards together, and invite grandparents to view."),
             ("👨‍👩‍👧‍👦 Multiple spaces", "Each space gets an independent timetable, homework, habits and points. Switch with one tap."),
-            ("🌍 21 languages", LANG21_LIST),
+            ("🌍 22 languages", LANG21_LIST),
             ("🔒 Device lock (PIN)", "A PIN protects the settings area — hand the device over without worry."),
             ("🛡️ Private by design", "No account, no server, no ad tracking. Everything lives only in your own private iCloud database."),
             ("📴 Works offline", "View the timetable, log homework and check in habits without network; changes sync when you're back online."),
@@ -297,7 +297,7 @@ def main():
         ],
     )
 
-    # 全部 21 语：既有 3 语 + content_product_18 的 18 语；隐私页链接与 canonical 自动生成
+    # 全部 22 语：既有 3 语 + content_product_18 的 19 语；隐私页链接与 canonical 自动生成
     def with_urls(lang, t):
         t = dict(t)
         t["switch_label"] = LABELS21[lang]
@@ -308,7 +308,7 @@ def main():
     pages = [("en", en), ("zh-Hans", zh), ("zh-Hant", zht_from_zh(zh))]
     pages += [(l, P18[l]) for l in LANGS21 if l not in ("en", "zh-Hans", "zh-Hant")]
     pages = [(l, with_urls(l, t)) for l, t in pages]
-    assert len(pages) == 21
+    assert len(pages) == 22
 
     hreflang = [(l, (f"{PRIV_BASE}/product/" if l == "en" else f"{PRIV_BASE}/product/{l}/"), LABELS21[l])
                 for l in LANGS21]

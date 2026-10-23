@@ -6,21 +6,21 @@ LearnNest 产品页 18 个新增语言内容（ja/es/pt-BR/fr/de/ko/ru + da/fil/
 - 系统语言名列表统一用各语自称（endonym），与隐私页「支持语言」行同源。
 """
 
-# 21 语列表（各语自称，全语言通用）
+# 22 语列表（各语自称，全语言通用）
 LANG21_LIST = ("English · 简体中文 · 繁體中文 · 日本語 · 한국어 · Español · Português (BR) · Français · "
                "Deutsch · Italiano · Nederlands · Polski · Svenska · Norsk (bokmål) · Dansk · "
-               "Bahasa Indonesia · Bahasa Melayu · Filipino · Türkçe · Tiếng Việt · Русский")
+               "Bahasa Indonesia · Bahasa Melayu · Filipino · Türkçe · Tiếng Việt · Русский · ไทย")
 
-# 全部 21 语及切换器标签
+# 全部 22 语及切换器标签
 LANGS21 = ["en", "zh-Hans", "zh-Hant", "ja", "es", "pt-BR", "fr", "de", "ko", "ru",
-           "da", "fil", "id", "it", "ms", "nb", "nl", "pl", "sv", "tr", "vi"]
+           "da", "fil", "id", "it", "ms", "nb", "nl", "pl", "sv", "tr", "vi", "th"]
 LABELS21 = {
     "en": "English", "zh-Hans": "简体中文", "zh-Hant": "繁體中文", "ja": "日本語",
     "es": "Español", "pt-BR": "Português (BR)", "fr": "Français", "de": "Deutsch",
     "ko": "한국어", "ru": "Русский", "da": "Dansk", "fil": "Filipino",
     "id": "Bahasa Indonesia", "it": "Italiano", "ms": "Bahasa Melayu",
     "nb": "Norsk (bokmål)", "nl": "Nederlands", "pl": "Polski", "sv": "Svenska",
-    "tr": "Türkçe", "vi": "Tiếng Việt",
+    "tr": "Türkçe", "vi": "Tiếng Việt", "th": "ไทย",
 }
 
 P18 = {}
@@ -53,7 +53,7 @@ P18["ja"] = dict(
     highlights=[
         ("☁️ iCloudファミリー共有", "両親のアプリ間でリアルタイム同期。時間割や報酬を一緒に管理し、祖父母の閲覧も招待可能。"),
         ("👨‍👩‍👧‍👦 複数の学習スペース", "スペースごとに独立した時間割・宿題・習慣・ポイント。ワンタップで切替。"),
-        ("🌍 21言語", LANG21_LIST),
+        ("🌍 22言語", LANG21_LIST),
         ("🔒 デバイスロック（PIN）", "PINで設定画面を保護。デバイスを渡しても安心。"),
         ("🛡️ プライバシー優先", "アカウント不要、サーバーなし、広告トラッキングなし。データはあなた自身のiCloudプライベートデータベースだけに。"),
         ("📴 オフライン対応", "ネットがなくても時間割の閲覧・宿題の記録・チェックインが可能。オンラインに戻ると自動同期。"),
@@ -94,7 +94,7 @@ P18["es"] = dict(
     highlights=[
         ("☁️ iCloud Compartir en familia", "Sincroniza en tiempo real entre ambos padres — gestionen horarios y recompensas juntos, e inviten a los abuelos a consultar."),
         ("👨‍👩‍👧‍👦 Varios espacios", "Cada espacio tiene su propio horario, tareas, hábitos y puntos. Cambia con un toque."),
-        ("🌍 21 idiomas", LANG21_LIST),
+        ("🌍 22 idiomas", LANG21_LIST),
         ("🔒 Bloqueo de dispositivo (PIN)", "Un PIN protege la zona de ajustes — entrega el dispositivo sin preocuparte."),
         ("🛡️ Privado por diseño", "Sin cuenta, sin servidor, sin rastreo publicitario. Todo vive solo en tu propia base de datos privada de iCloud."),
         ("📴 Funciona sin conexión", "Consulta el horario, anota tareas y registra hábitos sin red; se sincroniza al volver la conexión."),
@@ -135,7 +135,7 @@ P18["pt-BR"] = dict(
     highlights=[
         ("☁️ Compartilhamento Familiar iCloud", "Sincroniza em tempo real entre os dois pais — gerenciem horários e recompensas juntos e convide os avós para acompanhar."),
         ("👨‍👩‍👧‍👦 Vários espaços", "Cada espaço tem horários, tarefas, hábitos e pontos independentes. Troque com um toque."),
-        ("🌍 21 idiomas", LANG21_LIST),
+        ("🌍 22 idiomas", LANG21_LIST),
         ("🔒 Bloqueio de dispositivo (PIN)", "Um PIN protege a área de ajustes — entregue o dispositivo sem preocupação."),
         ("🛡️ Privado por design", "Sem conta, sem servidor, sem rastreamento de anúncios. Tudo vive apenas no seu banco de dados privado do iCloud."),
         ("📴 Funciona off-line", "Veja horários, registre tarefas e faça check-in sem internet; sincroniza quando a conexão volta."),
@@ -176,7 +176,7 @@ P18["fr"] = dict(
     highlights=[
         ("☁️ Partage familial iCloud", "Synchronisation en temps réel entre les deux parents — gérez emploi du temps et récompenses ensemble, et invitez les grands-parents à consulter."),
         ("👨‍👩‍👧‍👦 Plusieurs espaces", "Chaque espace a son emploi du temps, ses devoirs, habitudes et points. Basculez en un geste."),
-        ("🌍 21 langues", LANG21_LIST),
+        ("🌍 22 langues", LANG21_LIST),
         ("🔒 Verrouillage (PIN)", "Un code PIN protège les réglages — confiez l'appareil l'esprit tranquille."),
         ("🛡️ Privé par conception", "Sans compte, sans serveur, sans pistage publicitaire. Tout ne vit que dans votre propre base iCloud privée."),
         ("📴 Fonctionne hors ligne", "Consultez l'emploi du temps, notez les devoirs et cochez les habitudes sans réseau ; synchronisation au retour de la connexion."),
@@ -217,7 +217,7 @@ P18["de"] = dict(
     highlights=[
         ("☁️ iCloud Familienfreigabe", "Echtzeit-Sync zwischen beiden Eltern — Stundenpläne und Belohnungen gemeinsam verwalten, Großeltern zum Mitsehen einladen."),
         ("👨‍👩‍👧‍👦 Mehrere Bereiche", "Jeder Bereich hat eigenen Stundenplan, Hausaufgaben, Gewohnheiten und Punkte. Wechseln mit einem Tipp."),
-        ("🌍 21 Sprachen", LANG21_LIST),
+        ("🌍 22 Sprachen", LANG21_LIST),
         ("🔒 Gerätesperre (PIN)", "Eine PIN schützt den Einstellungsbereich — das Gerät kann bedenkenlos weitergegeben werden."),
         ("🛡️ Privat von Grund auf", "Kein Konto, kein Server, kein Werbetracking. Alles liegt nur in deiner eigenen privaten iCloud-Datenbank."),
         ("📴 Offline nutzbar", "Stundenplan ansehen, Hausaufgaben erfassen und Gewohnheiten abhaken ohne Netz; synchronisiert, sobald du wieder online bist."),
@@ -258,7 +258,7 @@ P18["ko"] = dict(
     highlights=[
         ("☁️ iCloud 가족 공유", "부모 양쪽 앱에서 실시간 동기화 — 시간표와 보상을 함께 관리하고 조부모 열람도 초대 가능."),
         ("👨‍👩‍👧‍👦 여러 학습 공간", "공간별로 독립된 시간표·숙제·습관·포인트, 한 번에 전환."),
-        ("🌍 21개 언어", LANG21_LIST),
+        ("🌍 22개 언어", LANG21_LIST),
         ("🔒 기기 잠금(PIN)", "PIN으로 설정 화면을 보호 — 기기를 맡겨도 안심."),
         ("🛡️ 프라이버시 최우선", "계정 없음, 서버 없음, 광고 추적 없음. 모든 데이터는 내 iCloud 프라이빗 데이터베이스에만."),
         ("📴 오프라인 사용", "네트워크 없이도 시간표 조회·숙제 기록·체크인 가능, 연결되면 자동 동기화."),
@@ -299,7 +299,7 @@ P18["ru"] = dict(
     highlights=[
         ("☁️ Семейный доступ iCloud", "Синхронизация в реальном времени между родителями — расписание и награды ведите вместе, бабушек и дедушек можно пригласить для просмотра."),
         ("👨‍👩‍👧‍👦 Несколько пространств", "У каждого пространства своё расписание, задания, привычки и баллы. Переключение одним касанием."),
-        ("🌍 21 язык", LANG21_LIST),
+        ("🌍 22 язык", LANG21_LIST),
         ("🔒 Блокировка устройства (PIN)", "PIN-код защищает настройки — устройство можно смело передать ребёнку."),
         ("🛡️ Конфиденциальность прежде всего", "Без аккаунтов, серверов и рекламных трекеров. Все данные — только в вашей личной базе iCloud."),
         ("📴 Работает офлайн", "Смотрите расписание, записывайте задания и отмечайте привычки без сети; синхронизация при подключении."),
@@ -340,7 +340,7 @@ P18["da"] = dict(
     highlights=[
         ("☁️ iCloud Familiedeling", "Synkroniserer i realtid mellem begge forældre — styr skema og belønninger sammen, og invitér bedsteforældre til at se med."),
         ("👨‍👩‍👧‍👦 Flere rum", "Hvert rum har sit eget skema, lektier, vaner og point. Skift med ét tryk."),
-        ("🌍 21 sprog", LANG21_LIST),
+        ("🌍 22 sprog", LANG21_LIST),
         ("🔒 Enhedslås (PIN)", "En PIN beskytter indstillingerne — giv gerne enheden videre uden bekymring."),
         ("🛡️ Privat af design", "Ingen konto, ingen server, ingen annoncetracking. Alt lever kun i din egen private iCloud-database."),
         ("📴 Virker offline", "Se skema, registrér lektier og afkryds vaner uden net; synkroniserer, når du er online igen."),
@@ -381,7 +381,7 @@ P18["fil"] = dict(
     highlights=[
         ("☁️ iCloud Family Sharing", "Real-time na sync sa pagitan ng dalawang magulang — sama-samang pamahalaan ang iskedyul at gantimpala; puwede ring imbitahan ang lolo't lola."),
         ("👨‍👩‍👧‍👦 Maraming space", "May sariling iskedyul, takdang-aralin, gawi at puntos bawat space. Isang tap lang ang palit."),
-        ("🌍 21 wika", LANG21_LIST),
+        ("🌍 22 wika", LANG21_LIST),
         ("🔒 Device lock (PIN)", "PIN ang proteksyon sa settings — puwedeng ipamigay ang device nang walang alalahanin."),
         ("🛡️ Pribado sa disenyo", "Walang account, walang server, walang ad tracking. Lahat ay nasa iyong sariling private iCloud database lang."),
         ("📴 Gumagana offline", "Tingnan ang iskedyul, magtala ng takdang-aralin at mag-check-in kahit walang net; awtomatikong mag-s-sync kapag nakakonekta na."),
@@ -422,7 +422,7 @@ P18["id"] = dict(
     highlights=[
         ("☁️ Berbagi Keluarga iCloud", "Sinkron real-time antara kedua orang tua — kelola jadwal dan hadiah bersama; kakek-nenek bisa diundang melihat."),
         ("👨‍👩‍👧‍👦 Beberapa ruang", "Setiap ruang punya jadwal, PR, kebiasaan, dan poin sendiri. Ganti dengan sekali ketuk."),
-        ("🌍 21 bahasa", LANG21_LIST),
+        ("🌍 22 bahasa", LANG21_LIST),
         ("🔒 Kunci perangkat (PIN)", "PIN melindungi area pengaturan — perangkat bisa diserahkan dengan tenang."),
         ("🛡️ Privat sejak desain", "Tanpa akun, tanpa server, tanpa pelacakan iklan. Semua hanya di basis data pribadi iCloud-mu."),
         ("📴 Bisa offline", "Lihat jadwal, catat PR, dan centang kebiasaan tanpa jaringan; tersinkron saat online kembali."),
@@ -463,7 +463,7 @@ P18["it"] = dict(
     highlights=[
         ("☁️ Condivisione familiare iCloud", "Sincronizzazione in tempo reale tra entrambi i genitori — gestite insieme orari e premi, e invitate i nonni a consultare."),
         ("👨‍👩‍👧‍👦 Più spazi", "Ogni spazio ha il suo orario, compiti, abitudini e punti. Si passa con un tocco."),
-        ("🌍 21 lingue", LANG21_LIST),
+        ("🌍 22 lingue", LANG21_LIST),
         ("🔒 Blocco dispositivo (PIN)", "Un PIN protegge le impostazioni — puoi affidare il dispositivo senza pensieri."),
         ("🛡️ Privato per progetto", "Nessun account, nessun server, nessun tracciamento pubblicitario. Tutto vive solo nel tuo database privato iCloud."),
         ("📴 Funziona offline", "Consulta l'orario, registra i compiti e spunta le abitudini senza rete; si sincronizza al rientro della connessione."),
@@ -504,7 +504,7 @@ P18["ms"] = dict(
     highlights=[
         ("☁️ Perkongsian Keluarga iCloud", "Segerak masa nyata antara kedua-dua ibu bapa — urus jadual dan ganjaran bersama; datuk nenek boleh dijemput melihat."),
         ("👨‍👩‍👧‍👦 Beberapa ruang", "Setiap ruang ada jadual, kerja rumah, tabiat dan mata tersendiri. Tukar dengan satu ketukan."),
-        ("🌍 21 bahasa", LANG21_LIST),
+        ("🌍 22 bahasa", LANG21_LIST),
         ("🔒 Kunci peranti (PIN)", "PIN melindungi kawasan tetapan — peranti boleh diserahkan dengan tenang."),
         ("🛡️ Peribadi secara reka bentuk", "Tiada akaun, tiada pelayan, tiada penjejakan iklan. Semua hanya dalam pangkalan data peribadi iCloud anda."),
         ("📴 Berfungsi luar talian", "Lihat jadual, rekod kerja rumah dan daftar masuk tabiat tanpa rangkaian; segerak semula apabila dalam talian."),
@@ -545,7 +545,7 @@ P18["nb"] = dict(
     highlights=[
         ("☁️ iCloud Familiedeling", "Synkroniserer i sanntid mellom begge foreldre — styr timeplan og belønninger sammen, og inviter besteforeldre til å følge med."),
         ("👨‍👩‍👧‍👦 Flere rom", "Hvert rom har egen timeplan, lekser, vaner og poeng. Bytt med ett trykk."),
-        ("🌍 21 språk", LANG21_LIST),
+        ("🌍 22 språk", LANG21_LIST),
         ("🔒 Enhetslås (PIN)", "En PIN beskytter innstillingene — enheten kan gis videre uten bekymring."),
         ("🛡️ Privat av design", "Ingen konto, ingen server, ingen annonsetracking. Alt lever bare i din egen private iCloud-database."),
         ("📴 Fungerer offline", "Se timeplan, registrer lekser og huk av vaner uten nett; synkroniserer når du er online igjen."),
@@ -586,7 +586,7 @@ P18["nl"] = dict(
     highlights=[
         ("☁️ iCloud Familien Delen", "Synchroniseert in realtime tussen beide ouders — beheer rooster en beloningen samen en nodig grootouders uit om mee te kijken."),
         ("👨‍👩‍👧‍👦 Meerdere ruimtes", "Elke ruimte heeft een eigen rooster, huiswerk, gewoontes en punten. Wisselen met één tik."),
-        ("🌍 21 talen", LANG21_LIST),
+        ("🌍 22 talen", LANG21_LIST),
         ("🔒 Apparaatslot (PIN)", "Een PIN beschermt het instellingengedeelte — geef het apparaat gerust door."),
         ("🛡️ Privé van opzet", "Geen account, geen server, geen advertentietracking. Alles leeft alleen in je eigen privé-iCloud-database."),
         ("📴 Werkt offline", "Bekijk het rooster, noteer huiswerk en vink gewoontes af zonder netwerk; synchroniseert zodra je weer online bent."),
@@ -627,7 +627,7 @@ P18["pl"] = dict(
     highlights=[
         ("☁️ Udostępnianie rodzinne iCloud", "Synchronizacja w czasie rzeczywistym między obojgiem rodziców — prowadźcie plan i nagrody wspólnie, a dziadków zaproście do podglądu."),
         ("👨‍👩‍👧‍👦 Wiele przestrzeni", "Każda przestrzeń ma własny plan, zadania, nawyki i punkty. Przełączenie jednym dotknięciem."),
-        ("🌍 21 języków", LANG21_LIST),
+        ("🌍 22 języków", LANG21_LIST),
         ("🔒 Blokada urządzenia (PIN)", "Kod PIN chroni ustawienia — urządzenie można spokojnie przekazać dziecku."),
         ("🛡️ Prywatność w projekcie", "Bez kont, serwerów i śledzenia reklam. Wszystko tylko w Twojej prywatnej bazie iCloud."),
         ("📴 Działa offline", "Przeglądaj plan, zapisuj zadania i odhaczaj nawyki bez sieci; synchronizacja po powrocie połączenia."),
@@ -668,7 +668,7 @@ P18["sv"] = dict(
     highlights=[
         ("☁️ iCloud Familjedelning", "Synkas i realtid mellan båda föräldrar — sköt schema och belöningar tillsammans och bjud in mor- och farföräldrar att titta på."),
         ("👨‍👩‍👧‍👦 Flera utrymmen", "Varje utrymme har eget schema, läxor, vanor och poäng. Byt med ett tryck."),
-        ("🌍 21 språk", LANG21_LIST),
+        ("🌍 22 språk", LANG21_LIST),
         ("🔒 Enhetslås (PIN)", "En PIN skyddar inställningarna — ge gärna över enheten lugnt."),
         ("🛡️ Privat i grunden", "Inget konto, ingen server, ingen annonsspårning. Allt lever bara i din egen privata iCloud-databas."),
         ("📴 Fungerar offline", "Se schemat, föra läxor och bocka av vanor utan nät; synkar när du är online igen."),
@@ -709,7 +709,7 @@ P18["tr"] = dict(
     highlights=[
         ("☁️ iCloud Aile Paylaşımı", "İki ebeveyn arasında gerçek zamanlı eşitleme — program ve ödülleri birlikte yönetin, büyükanne-büyükbabayı da davet edin."),
         ("👨‍👩‍👧‍👦 Birden fazla alan", "Her alanın kendi programı, ödevleri, alışkanlıkları ve puanları var. Tek dokunuşla geçiş."),
-        ("🌍 21 dil", LANG21_LIST),
+        ("🌍 22 dil", LANG21_LIST),
         ("🔒 Cihaz kilidi (PIN)", "PIN, ayarlar bölümünü korur — cihazı gönül rahatlığıyla devredin."),
         ("🛡️ Tasarımdan gizli", "Hesap yok, sunucu yok, reklam takibi yok. Her şey yalnızca sizin özel iCloud veritabanınızda yaşar."),
         ("📴 Çevrimdışı çalışır", "Programa bakın, ödev kaydedin, alışkanlık işaretleyin — internetsiz; bağlantı gelince otomatik eşitlenir."),
@@ -750,7 +750,7 @@ P18["vi"] = dict(
     highlights=[
         ("☁️ Chia sẻ gia đình iCloud", "Đồng bộ thời gian thực giữa cả hai phụ huynh — cùng quản lý thời khóa biểu và phần thưởng, mời ông bà cùng xem."),
         ("👨‍👩‍👧‍👦 Nhiều không gian học", "Mỗi không gian có riêng thời khóa biểu, bài tập, thói quen và điểm. Chuyển bằng một chạm."),
-        ("🌍 21 ngôn ngữ", LANG21_LIST),
+        ("🌍 22 ngôn ngữ", LANG21_LIST),
         ("🔒 Khóa thiết bị (PIN)", "Mã PIN bảo vệ phần cài đặt — giao máy cho người khác cũng yên tâm."),
         ("🛡️ Riêng tư từ thiết kế", "Không tài khoản, không máy chủ, không theo dõi quảng cáo. Mọi thứ chỉ nằm trong cơ sở dữ liệu iCloud riêng của bạn."),
         ("📴 Dùng khi offline", "Xem thời khóa biểu, ghi bài tập và điểm danh thói quen không cần mạng; tự đồng bộ khi có lại kết nối."),
@@ -760,5 +760,46 @@ P18["vi"] = dict(
         ("Có cần đăng ký tài khoản không?", "Không. Tải về và dùng ngay — đăng nhập iCloud, đồng bộ và Chia sẻ gia đình tự động hoạt động."),
         ("Dùng thử miễn phí thế nào?", "Toàn bộ tính năng miễn phí trong 7 ngày. Sau đó một lần mua mở khóa tất cả — không gói đăng ký, không bất ngờ."),
         ("Hỗ trợ thiết bị nào?", "iPhone và iPad, mỗi loại có giao diện riêng tối ưu. Dữ liệu đồng bộ giữa các thiết bị qua iCloud."),
+    ],
+)
+
+P18["th"] = dict(
+    html_lang="th",
+    title="LearnNest — จัดการการเรียน: ตารางเรียน · การบ้าน · นิสัย · จดจ่อ · คะแนนและของรางวัล",
+    desc="LearnNest แอปจัดการการเรียนสำหรับผู้ปกครอง: ตารางเรียน การบ้าน การเช็คอินนิสัย ตัวจับเวลาจดจ่อ และคะแนนแลกของรางวัล ซิงค์ผ่าน iCloud เน้นความเป็นส่วนตัว ทดลองใช้ฟรี 7 วัน จ่ายครั้งเดียว",
+    hero_h1="จัดระเบียบการเรียนในแต่ละวันให้เป็นระบบ",
+    hero_sub="ตารางเรียน · การบ้าน · นิสัย · จดจ่อ · คะแนนและของรางวัล — แอปจัดการการเรียนที่ออกแบบมาเพื่อครอบครัว",
+    pill1="ดาวน์โหลดฟรี · ทดลองใช้ฟูลีเดช 7 วัน", pill2="จ่ายครั้งเดียว · ไม่มีการสมัครสมาชิก", pill3="ข้อมูลอยู่ใน iCloud ของคุณเท่านั้น",
+    cta="ดาวน์โหลดบน App Store",
+    alt1="ภาพรวมวันนี้", alt2="ตารางเรียน", alt3="คะแนนและของรางวัล",
+    feat_h2="แอปเดียว ดูแลทุกวันเรียนของลูก",
+    feat_lead="6 ฟังก์ชันเชื่อมโยงกัน: วางแผนคาบเรียน บันทึกการบ้าน รักษานิสัย จดจ่อได้นาน และสร้างวงจรบวกด้วยของรางวัล",
+    hl_h2="ออกแบบมาเพื่อครอบครัว",
+    hl_lead="ไม่ใช่แค่สมุดจดบันทึก — เป็นแดชบอร์ดจัดการสำหรับผู้ปกครอง",
+    faq_h2="คำถามที่พบบ่อย",
+    faq_lead="ทุกเรื่องที่ต้องรู้เกี่ยวกับข้อมูล บัญชี และการซื้อ",
+    made="แอปจัดการการเรียนที่สร้างด้วยความตั้งใจ",
+    privacy_label="นโยบายความเป็นส่วนตัวและการสนับสนุน", contact_label="ติดต่อ:",
+    features=[
+        ("01_today.jpg", "ภาพรวมวันนี้", "ภาพรวมวันนี้", "คาบเรียนวันนี้ การบ้านที่ยังไม่เสร็จ การเช็คอินนิสัย และของรางวัลที่แลกได้ — ครบในหน้าจอเดียว"),
+        ("02_timetable.jpg", "ตารางเรียน", "ตารางเรียน", "ตารางเรียนจันทร์ถึงอาทิตย์: ช่วงเช้า ช่วงบ่าย และพักกลางวัน — เวลาแต่ละคาบกำหนดเองได้อิสระ"),
+        ("03_homework.jpg", "การบ้าน", "การบ้าน", "บันทึกการบ้านตามวิชาพร้อมวันครบกำหนด ทำเสร็จติ๊กรับ — ไม่พลาดทุกข้อ"),
+        ("04_habits.jpg", "สร้างนิสัย", "สร้างนิสัย", "เช็คอินทุกวัน สถิติต่อเนื่อง และตราสัญลักษณ์ ทำให้นิสัยที่ดีมองเห็นได้"),
+        ("05_focus.jpg", "ตัวจับเวลาจดจ่อ", "ตัวจับเวลาจดจ่อ", "25/35/45 นาทีหรือกำหนดเอง ทุกช่วงที่จบจะบันทึกอัตโนมัติ"),
+        ("06_rewards.jpg", "คะแนนและของรางวัล", "คะแนนและของรางวัล", "สะสมคะแนนจากงานที่เสร็จแล้วแลกของรางวัลที่ผู้ปกครองตั้งไว้ — สร้างแรงจูงใจเชิงบวกที่ยั่งยืน"),
+    ],
+    highlights=[
+        ("☁️ แชร์ครอบครัวผ่าน iCloud", "ซิงค์เรียลไทม์ระหว่างแอปของผู้ปกครองทั้งสองฝ่าย — จัดการตารางเรียนและของรางวัลร่วมกัน เชิญคุณปู่คุณย่ามาดูได้"),
+        ("👨‍👩‍👧‍👦 หลายพื้นที่การเรียน", "แต่ละพื้นที่มีตารางเรียน การบ้าน นิสัย และคะแนนเป็นของตัวเอง สลับด้วยการแตะเดียว"),
+        ("🌍 22 ภาษา", LANG21_LIST),
+        ("🔒 ล็อกอุปกรณ์ (PIN)", "PIN ป้องกันหน้าตั้งค่า — ส่งอุปกรณ์ให้ลูกใช้ได้อย่างอุ่นใจ"),
+        ("🛡️ เน้นความเป็นส่วนตัว", "ไม่มีบัญชี ไม่มีเซิร์ฟเวอร์ ไม่มีการติดตามโฆษณา ข้อมูลทั้งหมดอยู่ในฐานข้อมูล iCloud ส่วนตัวของคุณเท่านั้น"),
+        ("📴 ใช้งานออฟไลน์ได้", "ดูตารางเรียน บันทึกการบ้าน และเช็คอินนิสัยได้แม้ไม่มีเน็ต กลับออนไลน์เมื่อไหร่ซิงค์ให้เอง"),
+    ],
+    faq=[
+        ("ข้อมูลการเรียนเก็บไว้ที่ไหน? ปลอดภัยหรือไม่?", "ข้อมูลทั้งหมดอยู่ในฐานข้อมูล iCloud ส่วนตัวของคุณเอง (Apple CloudKit) เท่านั้น นักพัฒนาอ่านหรือส่งออกไม่ได้ ไม่มีการสมัครบัญชี และไม่มี SDK วิเคราะห์หรือโฆษณาจากบุคคลที่สาม"),
+        ("ต้องสมัครบัญชีหรือไม่?", "ไม่ต้อง ดาวน์โหลดแล้วใช้ได้ทันที — ล็อกอิน iCloud แล้วระบบซิงค์และแชร์ครอบครัวจะทำงานอัตโนมัติ"),
+        ("การทดลองใช้ฟรีเป็นอย่างไร?", "ใช้ฟูลีเดชได้ฟรี 7 วัน จากนั้นจ่ายครั้งเดียวปลดล็อกทุกอย่าง — ไม่มีสมาชิกรายเดือน ไม่มีค่าใช้จ่ายแอบแฝง"),
+        ("รองรับอุปกรณ์อะไรบ้าง?", "iPhone และ iPad โดยแต่ละชนิดมีเลย์เอาต์ที่ปรับให้เหมาะสม ข้อมูลซิงค์ระหว่างอุปกรณ์ผ่าน iCloud"),
     ],
 )

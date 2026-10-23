@@ -24,7 +24,7 @@ DEV = "Frank Zhou"
 MAIL = "Your.LearnNest@outlook.com"
 
 LANGS = ["en", "zh-Hans", "zh-Hant", "ja", "es", "pt-BR", "fr", "de", "ko", "ru",
-         "da", "fil", "id", "it", "ms", "nb", "nl", "pl", "sv", "tr", "vi"]
+         "da", "fil", "id", "it", "ms", "nb", "nl", "pl", "sv", "tr", "vi", "th"]
 CANON = {l: ("" if l == "en" else "/" + l) for l in LANGS}   # 各语种路径
 # 说明：en 恒为根目录（ASC「隐私政策网址」只有一个字段，必须是审核员可读的英文）。
 
@@ -34,7 +34,7 @@ SWITCH_LABEL = {
     "ko": "한국어", "ru": "Русский",
     "da": "Dansk", "fil": "Filipino", "id": "Bahasa Indonesia", "it": "Italiano",
     "ms": "Bahasa Melayu", "nb": "Norsk (bokmål)", "nl": "Nederlands", "pl": "Polski",
-    "sv": "Svenska", "tr": "Türkçe", "vi": "Tiếng Việt",
+    "sv": "Svenska", "tr": "Türkçe", "vi": "Tiếng Việt", "th": "ไทย",
 }
 
 # ---------------------------------------------------------------------------
@@ -43,6 +43,8 @@ SWITCH_LABEL = {
 CONTENT = {}
 import content_11
 CONTENT.update(content_11.CONTENT11A)
+import content_th
+CONTENT.update(content_th.CONTENT_TH)
 
 CONTENT["en"] = {
     "html_lang": "en",
@@ -119,7 +121,7 @@ CONTENT["en"] = {
         ("Restore purchases", "Tap \"Restore Purchases\" at the bottom of the paywall — no additional charge."),
         ("Delete all data", "See section 5 above. Deleting the app does not remove iCloud data."),
         ("Scan text (OCR)", "Runs fully on device via Apple Vision; no upload, no network required."),
-        ("Supported languages", "21 languages: Simplified & Traditional Chinese, English, Japanese, Korean, Spanish, Portuguese (BR), French, German, Italian, Dutch, Polish, Swedish, Norwegian (bokmål), Danish, Indonesian, Malay, Filipino, Turkish, Vietnamese and Russian."),
+        ("Supported languages", "22 languages: Simplified & Traditional Chinese, English, Japanese, Korean, Spanish, Portuguese (BR), French, German, Italian, Dutch, Polish, Swedish, Norwegian (bokmål), Danish, Indonesian, Malay, Filipino, Turkish, Vietnamese, Russian and Thai."),
         ("System requirements", "iOS / iPadOS 17.0 or later (iPhone and iPad, including home-screen widgets)."),
         ("Contact", "Email <b>{mail}</b> — replies within 3 business days."),
     ],
@@ -201,7 +203,7 @@ CONTENT["zh-Hans"] = {
         ("恢复购买", "打开付费页，点击底部「恢复购买」，按系统提示用购买时使用的 Apple ID 验证即可，不会重复扣费。"),
         ("彻底删除数据", "见上方「数据存储、安全与删除」章节。卸载 App 不会删除 iCloud 数据。"),
         ("拍照识字（OCR）", "使用 Apple Vision 在设备端识别，无需联网，图片不上传。"),
-        ("支持的语言", "简体中文、繁体中文、English、日本語、한국어、Español、Português (BR)、Français、Deutsch、Italiano、Nederlands、Polski、Svenska、Norsk (bokmål)、Dansk、Bahasa Indonesia、Bahasa Melayu、Filipino、Türkçe、Tiếng Việt、Русский（共 21 种）。"),
+        ("支持的语言", "简体中文、繁体中文、English、日本語、한국어、Español、Português (BR)、Français、Deutsch、Italiano、Nederlands、Polski、Svenska、Norsk (bokmål)、Dansk、Bahasa Indonesia、Bahasa Melayu、Filipino、Türkçe、Tiếng Việt、Русский、ไทย（共 22 种）。"),
         ("系统要求", "iOS / iPadOS 17.0 或更高版本（iPhone 与 iPad 通用，含桌面小组件）。"),
         ("联系我们", "邮箱：<b>{mail}</b>（一般 3 个工作日内回复）。"),
     ],
@@ -283,7 +285,7 @@ CONTENT["ja"] = {
         ("購入の復元", "購入画面下部の「購入を復元」をタップしてください。重複して課金されることはありません。"),
         ("データの完全削除", "上記「5. データの保存・保護・削除」をご覧ください。アプリの削除では iCloud のデータは消えません。"),
         ("文字認識（OCR）", "Apple Vision により端末内で処理します。アップロードもネットワーク接続も不要です。"),
-        ("対応言語", "簡体字中国語、繁体字中国語、英語、日本語、韓国語、スペイン語、ポルトガル語（ブラジル）、フランス語、ドイツ語、イタリア語、オランダ語、ポーランド語、スウェーデン語、ノルウェー語（ブークモール）、デンマーク語、インドネシア語、マレー語、フィリピノ語、トルコ語、ベトナム語、ロシア語（全 21 言語）。"),
+        ("対応言語", "簡体字中国語、繁体字中国語、英語、日本語、韓国語、スペイン語、ポルトガル語（ブラジル）、フランス語、ドイツ語、イタリア語、オランダ語、ポーランド語、スウェーデン語、ノルウェー語（ブークモール）、デンマーク語、インドネシア語、マレー語、フィリピノ語、トルコ語、ベトナム語、ロシア語、タイ語（全 22 言語）。"),
         ("システム要件", "iOS / iPadOS 17.0 以降（iPhone と iPad 対応、ホーム画面ウィジェットを含む）。"),
         ("お問い合わせ", "メール：<b>{mail}</b>（通常 3 営業日以内に返信）。"),
     ],
@@ -365,7 +367,7 @@ CONTENT["es"] = {
         ("Restaurar compras", "Toca «Restaurar compras» en la parte inferior de la pantalla de compra: no se realiza ningún cargo adicional."),
         ("Eliminar todos los datos", "Consulta la sección 5. Eliminar la app no borra los datos de iCloud."),
         ("Escanear texto (OCR)", "Se ejecuta íntegramente en el dispositivo con Apple Vision; sin subidas ni conexión de red."),
-        ("Idiomas admitidos", "21 idiomas: chino simplificado y tradicional, inglés, japonés, coreano, español, portugués (Brasil), francés, alemán, italiano, neerlandés, polaco, sueco, noruego (bokmål), danés, indonesio, malayo, filipino, turco, vietnamita y ruso."),
+        ("Idiomas admitidos", "22 idiomas: chino simplificado y tradicional, inglés, japonés, coreano, español, portugués (Brasil), francés, alemán, italiano, neerlandés, polaco, sueco, noruego (bokmål), danés, indonesio, malayo, filipino, turco, vietnamita, ruso y tailandés."),
         ("Requisitos del sistema", "iOS / iPadOS 17.0 o posterior (iPhone y iPad, incluidos los widgets de la pantalla de inicio)."),
         ("Contacto", "Escribe a <b>{mail}</b>: respondemos en un plazo de 3 días laborables."),
     ],
@@ -447,7 +449,7 @@ CONTENT["pt-BR"] = {
         ("Restaurar compras", "Toque em «Restaurar Compras» na parte inferior da tela de compra: não há cobrança adicional."),
         ("Excluir todos os dados", "Veja a seção 5 acima. Excluir o app não remove os dados do iCloud."),
         ("Ler texto (OCR)", "Executado inteiramente no dispositivo com o Apple Vision; sem envio e sem necessidade de rede."),
-        ("Idiomas suportados", "21 idiomas: chinês simplificado e tradicional, inglês, japonês, coreano, espanhol, português (Brasil), francês, alemão, italiano, holandês, polonês, sueco, norueguês (bokmål), dinamarquês, indonésio, malaio, filipino, turco, vietnamita e russo."),
+        ("Idiomas suportados", "22 idiomas: chinês simplificado e tradicional, inglês, japonês, coreano, espanhol, português (Brasil), francês, alemão, italiano, holandês, polonês, sueco, norueguês (bokmål), dinamarquês, indonésio, malaio, filipino, turco, vietnamita, russo e tailandês."),
         ("Requisitos do sistema", "iOS / iPadOS 17.0 ou posterior (iPhone e iPad, incluindo widgets na tela de início)."),
         ("Contato", "E-mail: <b>{mail}</b> (resposta em até 3 dias úteis)."),
     ],
@@ -529,7 +531,7 @@ CONTENT["fr"] = {
         ("Restaurer les achats", "Touchez « Restaurer les achats » en bas de l'écran d'achat : aucun débit supplémentaire."),
         ("Supprimer toutes les données", "Voir la section 5 ci-dessus. Supprimer l'app n'efface pas les données iCloud."),
         ("Numériser du texte (OCR)", "Exécuté entièrement sur l'appareil via Apple Vision ; aucun téléversement ni connexion réseau."),
-        ("Langues prises en charge", "21 langues : chinois simplifié et traditionnel, anglais, japonais, coréen, espagnol, portugais (Brésil), français, allemand, italien, néerlandais, polonais, suédois, norvégien (bokmål), danois, indonésien, malais, philippin, turc, vietnamien et russe."),
+        ("Langues prises en charge", "22 langues : chinois simplifié et traditionnel, anglais, japonais, coréen, espagnol, portugais (Brésil), français, allemand, italien, néerlandais, polonais, suédois, norvégien (bokmål), danois, indonésien, malais, philippin, turc, vietnamien, russe et thaï."),
         ("Configuration requise", "iOS / iPadOS 17.0 ou version ultérieure (iPhone et iPad, y compris les widgets de l'écran d'accueil)."),
         ("Contact", "E-mail : <b>{mail}</b> (réponse sous 3 jours ouvrés)."),
     ],
@@ -611,7 +613,7 @@ CONTENT["de"] = {
         ("Käufe wiederherstellen", "Tippen Sie unten auf der Kaufseite auf „Käufe wiederherstellen“ – es werden keine zusätzlichen Kosten berechnet."),
         ("Alle Daten löschen", "Siehe Abschnitt 5. Das Löschen der App entfernt die iCloud-Daten nicht."),
         ("Text scannen (OCR)", "Läuft vollständig auf dem Gerät über Apple Vision; kein Upload, keine Netzwerkverbindung erforderlich."),
-        ("Unterstützte Sprachen", "21 Sprachen: vereinfachtes und traditionelles Chinesisch, Englisch, Japanisch, Koreanisch, Spanisch, Portugiesisch (Brasilien), Französisch, Deutsch, Italienisch, Niederländisch, Polnisch, Schwedisch, Norwegisch (Bokmål), Dänisch, Indonesisch, Malaiisch, Filipino, Türkisch, Vietnamesisch und Russisch."),
+        ("Unterstützte Sprachen", "22 Sprachen: vereinfachtes und traditionelles Chinesisch, Englisch, Japanisch, Koreanisch, Spanisch, Portugiesisch (Brasilien), Französisch, Deutsch, Italienisch, Niederländisch, Polnisch, Schwedisch, Norwegisch (Bokmål), Dänisch, Indonesisch, Malaiisch, Filipino, Türkisch, Vietnamesisch, Russisch und Thailändisch."),
         ("Systemvoraussetzungen", "iOS / iPadOS 17.0 oder neuer (iPhone und iPad, einschließlich Home-Bildschirm-Widgets)."),
         ("Kontakt", "E-Mail: <b>{mail}</b> (Antwort in der Regel innerhalb von 3 Werktagen)."),
     ],
@@ -693,7 +695,7 @@ CONTENT["ko"] = {
         ("구매 복원", "결제 화면 하단의 ‘구매 복원’을 탭하세요. 추가 요금이 부과되지 않습니다."),
         ("모든 데이터 삭제", "위 5항을 참조하세요. 앱 삭제는 iCloud 데이터를 지우지 않습니다."),
         ("텍스트 스캔(OCR)", "Apple Vision으로 기기 내에서 전부 처리됩니다. 업로드도 네트워크 연결도 필요 없습니다."),
-        ("지원 언어", "간체·번체 중국어, 영어, 일본어, 한국어, 스페인어, 포르투갈어(브라질), 프랑스어, 독일어, 이탈리아어, 네덜란드어, 폴란드어, 스웨덴어, 노르웨이어(복말), 덴마크어, 인도네시아어, 말레이어, 필리핀어, 튀르키예어, 베트남어, 러시아어(총 21개)."),
+        ("지원 언어", "간체·번체 중국어, 영어, 일본어, 한국어, 스페인어, 포르투갈어(브라질), 프랑스어, 독일어, 이탈리아어, 네덜란드어, 폴란드어, 스웨덴어, 노르웨이어(복말), 덴마크어, 인도네시아어, 말레이어, 필리핀어, 튀르키예어, 베트남어, 러시아어, 태국어(총 22개)."),
         ("시스템 요구 사항", "iOS / iPadOS 17.0 이상(iPhone·iPad 공용, 홈 화면 위젯 포함)."),
         ("문의", "이메일: <b>{mail}</b>(통상 영업일 3일 이내 회신)."),
     ],
@@ -775,7 +777,7 @@ CONTENT["ru"] = {
         ("Восстановить покупки", "Нажмите «Восстановить покупки» в нижней части экрана покупки — повторного списания не будет."),
         ("Удалить все данные", "См. раздел 5 выше. Удаление приложения не удаляет данные из iCloud."),
         ("Распознавание текста (OCR)", "Полностью выполняется на устройстве средствами Apple Vision; без загрузки и без подключения к сети."),
-        ("Поддерживаемые языки", "21 язык: упрощённый и традиционный китайский, английский, японский, корейский, испанский, португальский (Бразилия), французский, немецкий, итальянский, нидерландский, польский, шведский, норвежский (букмол), датский, индонезийский, малайский, филиппинский, турецкий, вьетнамский и русский."),
+        ("Поддерживаемые языки", "22 язык: упрощённый и традиционный китайский, английский, японский, корейский, испанский, португальский (Бразилия), французский, немецкий, итальянский, нидерландский, польский, шведский, норвежский (букмол), датский, индонезийский, малайский, филиппинский, турецкий, вьетнамский, русский и тайский."),
         ("Системные требования", "iOS / iPadOS 17.0 или новее (iPhone и iPad, включая виджеты домашнего экрана)."),
         ("Контакт", "Электронная почта: <b>{mail}</b> (обычно отвечаем в течение 3 рабочих дней)."),
     ],
